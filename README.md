@@ -51,3 +51,20 @@ swoje IP do Google.
 
 Formularz demo korzysta obecnie z `mailto:`. Po uruchomieniu backendu należy podmienić jego
 `action` na właściwy endpoint zapisujący zgodę i adres e-mail.
+
+## Treść MVP — 14 października 2026
+
+Strona główna skupia się na osobistym MVP iOS: plan do kolejnego wpływu,
+rachunki i rezerwy, import w opisanym formacie CSV oraz cel i symulacja wpłat.
+`/projekt/` opisuje cele i hipotezy pracy licencjackiej, wyraźnie jako założenia
+przed badaniem. Nie publikujemy twierdzeń o potwierdzonej retencji ani skuteczności.
+
+Zachowano istniejący `styles.css`, kolory, typografię i elementy makiet.
+PL/EN działa przez atrybuty `data-pl` i `data-en`, bez zależności.
+Nawigacja główna nie kieruje już do rozbudowanych podstron cennika/platform/AI;
+stare adresy pozostają dostępne dla istniejących linków. Kontakt w sprawie
+testów otwiera pocztę, nie udaje automatycznego zapisu na listę.
+
+Pełne założenia produktu i metodologia są w repozytorium aplikacji:
+`docs/product/mvp-2026-10.md` i `docs/thesis/research-plan.md`.
+Zmiany źródłowe wymagają publikacji zgodnie z dotychczasowym procesem Vercel/GitHub Pages.
