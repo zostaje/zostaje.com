@@ -1,24 +1,18 @@
-## Czego dotyczy
-
-- [ ] Strona główna
-- [ ] Cennik
-- [ ] Pobieranie
-- [ ] Pomoc
-- [ ] Dla deweloperów
-- [ ] Demo
-- [ ] Wygląd wspólny (`styles.css`, `script.js`)
-- [ ] SEO i metadane (`sitemap.xml`, `robots.txt`, Open Graph)
-
 ## Co się zmienia
 
-Jedno–dwa zdania.
+Problem i wynik zmiany.
 
-## Jak to sprawdzić
+## Podstrony
 
-- [ ] Obejrzane lokalnie (`python3 -m http.server 8080`)
-- [ ] Walidacja HTML przechodzi
-- [ ] Sprawdzone na wąskim ekranie
+Wymień zmienione adresy.
+
+## Weryfikacja
+
+- [ ] `npm run build`
+- [ ] `npm run typecheck`
+- [ ] PL/EN i wąski ekran
+- [ ] Interakcje zmienionych komponentów
 
 ## Zrzuty
 
-Przed i po.
+Dla zmian wyglądu: przed i po.
