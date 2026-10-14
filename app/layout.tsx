@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import type { ReactNode } from "react";
 import "./globals.css";
 import "./demo.css";
+import "./site-refresh.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zostaje.com"),

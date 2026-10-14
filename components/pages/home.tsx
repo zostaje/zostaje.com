@@ -1,16 +1,16 @@
 "use client";
 
-import { T, HeroHeading, useSite } from "@/components/site-provider";
+import { T, HeroHeading } from "@/components/site-provider";
+import { ProductPreview } from "@/components/product-preview";
 import { DemoSignupForm } from "@/components/demo-signup-form";
 import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
 
 export function HomeContent() {
-  const { language } = useSite();
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
       <MinimalHeader home />
-      <main id="main">
+      <main id="main" className="product-home">
         <section className="hero" id="top">
           <div className="container hero-grid">
             <div className="hero-copy">
@@ -22,41 +22,7 @@ export function HomeContent() {
                 <T as="a" pl="Jak to działa ↓" en="How it works ↓" className="text-link" href="#jak-dziala" />
               </div>
             </div>
-            <div className="hero-visual" role="img" aria-label={language === "pl" ? "Przykład: saldo 5000 zł, rachunki 2400 zł, bufor i cel 800 zł, pozostaje 1800 zł" : "Example: balance 5,000 zł, bills 2,400 zł, buffer and goal 800 zł, remaining 1,800 zł"}>
-              <div className="balance-card">
-                <div className="mockup-topline">
-                  <T as="span" pl="Przykładowy plan" en="Example plan" />
-                  <span className="mockup-avatar" aria-hidden="true">
-                    {"Z"}
-                  </span>
-                </div>
-                <T as="p" pl="Po rachunkach i rezerwach" en="After bills and reserves" className="balance-label" />
-                <p className="balance-value">
-                  {"1 800 "}
-                  <small>
-                    {"zł"}
-                  </small>
-                </p>
-                <div className="balance-meter" aria-hidden="true">
-                  <span />
-                </div>
-                <div className="balance-caption">
-                  <T as="span" pl="Do wpływu: 14 dni" en="Until income: 14 days" />
-                  <T as="strong" pl="Szacunek" en="Estimate" />
-                </div>
-              </div>
-              <div className="floating-note">
-                <span className="note-dot" aria-hidden="true" />
-                <div>
-                  <T as="small" pl="Od salda 5 000 zł odejmujemy" en="From a 5,000 zł balance we deduct" />
-                  <T as="strong" pl="Rachunki 2 400 zł" en="Bills: 2,400 zł" />
-                </div>
-                <b>
-                  {"− 2 400 zł"}
-                </b>
-              </div>
-              <T as="div" pl="Bufor 300 zł + cel 500 zł" en="Buffer: 300 zł + goal: 500 zł" className="floating-tag" />
-            </div>
+            <ProductPreview />
           </div>
         </section>
         <section className="trust-strip" aria-label="Najważniejsze cechy">
@@ -144,13 +110,15 @@ export function HomeContent() {
                 </div>
               </div>
             </article>
-            <article className="feature-card">
+            <article className="feature-card savings-feature">
               <T as="h3" pl="Mała kwota, dłuższy horyzont" en="A small amount, a longer horizon" />
               <T as="p" pl="300 zł miesięcznie przez 10 lat to 36 000 zł samych wpłat. Symulacja pokazuje Twoje założenia, bez obietnic zysku." en="300 zł a month for 10 years means 36,000 zł in contributions alone. The simulation shows your assumptions, without promises of returns." />
+              <div className="savings-visual" aria-hidden="true"><span>300 zł × 120</span><strong>36 000 <small>zł</small></strong><div className="savings-columns">{Array.from({ length: 10 }, (_, i) => <i key={i} style={{ height: `${18 + i * 8}%` }} />)}</div></div>
             </article>
-            <article className="feature-card">
+            <article className="feature-card context-feature">
               <T as="h3" pl="Wynik z kontekstem" en="A result with context" />
               <T as="p" pl="Saldo i historia wydatków to różne rzeczy. Krótkie wyjaśnienia pomagają zrozumieć rezerwy, bufor i regularne odkładanie." en="Balance and spending history are different things. Short explanations help you understand reserves, a buffer and regular saving." />
+              <div className="context-visual"><span aria-hidden="true">=</span><T as="p" pl="Saldo − rachunki − bufor − cel" en="Balance − bills − buffer − goal" /><strong>1 800 zł</strong></div>
             </article>
           </div>
         </section>

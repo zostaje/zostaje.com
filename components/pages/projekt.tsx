@@ -8,7 +8,7 @@ export function ProjektContent() {
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
       <MinimalHeader />
-      <main id="main">
+      <main id="main" className="product-home project-page">
         <section className="section intro" id="top">
           <div className="container narrow-heading">
             <T as="p" pl="Projekt licencjacki · założenia do sprawdzenia" en="Bachelor’s thesis project · assumptions to test" className="status-pill" />

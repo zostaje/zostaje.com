@@ -30,14 +30,14 @@ Zaznaczenie tekstu używa zieleni głównej `#16A36A` z kryciem 30%, bez zmiany 
 ## Typografia
 
 - Krój: `Inter` — nawigacja, tekst, formularze, nagłówki i wartości pieniężne.
-- Nagłówki: `Inter` SemiBold, zwarty line-height i tracking `-0.02em`.
+- Nagłówki: `Inter` SemiBold, zwarty line-height i tracking od `-0.035em` do `-0.045em`.
 - Tekst: 16–20 px, bazowy line-height `1.5`.
 - Etykiety: małe litery kapitalikowe, większy tracking, kolor akcentowy.
 - Język: prosty, bez obietnic bez pokrycia; mówimy „aplikacja powstaje”, dopóki nie jest dostępna.
 
 ## Kształt i odstępy
 
-- Promienie: 8 px dla kontrolek, 12 px dla kart, 16 px dla dużych paneli.
+- Promienie: 8 px dla kontrolek i wewnętrznych paneli, 10 px dla kart strony produktowej.
 - Maksymalna szerokość treści: 1120 px, z niewielkim bezpiecznym marginesem na mobile.
 - Sekcje desktopowe: zwykle około 96 px pionowego oddechu; mobile około 68 px.
 - Karty mają cienką, spokojną linię zamiast ciężkiego cienia.
@@ -53,7 +53,11 @@ który mógłby zostać błędnie uznany za finalny.
 
 ## Styl layoutu
 
-Inspiracją jest rytm nowoczesnych stron produktowych: duże nagłówki, dużo oddechu i makiety
-produktu. Układ Zostaje pozostaje własny dzięki asymetrycznemu hero, finansowym komponentom,
-sekcji procesu 01–03 i jasnej sekcji platformowej. Nie kopiujemy ilustracji, tekstów ani
-charakterystycznych kompozycji Obsidian.
+Inspiracją strony produktowej jest [Obsidian](https://obsidian.md/): nagłówek wyrównany do lewej,
+duża typografia, wyciszony drugi wiersz, oszczędna nawigacja i duży podgląd produktu pod CTA.
+Zostaje zachowuje własną zieleń, treści oraz finansowe komponenty. Proces 01–03 ma lekkie
+separatory, a funkcje korzystają z neutralnych kart i prostych wizualizacji.
+
+Podgląd planu jest autorską ilustracją MVP z przykładowymi danymi, a nie zrzutem aplikacji
+ani deklaracją dostępności wersji desktopowej. Na telefonie wyświetlamy wyłącznie makietę
+iPhone’a. Sekcja zapisu na demo zachowuje czytelne etykiety i komunikaty formularza.
