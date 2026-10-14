@@ -1,70 +1,96 @@
 # zostaje.com
 
-Statyczna strona produktowa aplikacji Zostaje.
+Strona Zostaje w **Next.js 16, React 19 i TypeScript**, w tym samym repozytorium
+co wcześniejsza wersja HTML. Zachowano CSS, grafiki, treść, adresy podstron
+oraz przełączanie PL/EN. Interaktywne demo działa lokalnie w przeglądarce.
 
-## Lokalny podgląd
+## Uruchomienie
+
+Node.js 22 lub nowszy i npm:
 
 ```bash
-python3 -m http.server 8080
+npm ci
+npm run dev
 ```
 
-Następnie otwórz `http://localhost:8080`.
+Otwórz `http://localhost:3000`.
 
-## Wdrożenie
+Sprawdzenie wersji produkcyjnej:
 
-Strona jest statyczna — nie ma kroku budowania. Repozytorium jest przygotowane
-pod Vercel (`vercel.json`), a równolegle istnieje workflow publikujący na
-GitHub Pages (`.github/workflows/pages.yml`).
+```bash
+npm run typecheck
+npm run build
+npm start
+```
 
-**Dwa cele publikacji naraz to stan przejściowy.** Zanim wskażesz domenę
-`zostaje.com` na Vercel, zdecyduj, który zostaje — inaczej dwa źródła będą
-twierdziły, że są produkcją.
+## Deploy na Vercel
 
-### Vercel
+1. Zaimportuj repozytorium w Vercel i wybierz gałąź z migracją.
+2. **Framework Preset: Next.js**. **Root Directory: `.`** (korzeń tego repo).
+3. **Install Command: `npm ci`**, **Build Command: `npm run build`**.
+4. **Output Directory: domyślne ustawienie Next.js** — usuń wcześniejszy override
+   na korzeń repozytorium lub `out`. Nie wybieraj presetu „Other”.
+5. Dodaj domeny `zostaje.com` i `www.zostaje.com`, jeśli nie są już przypisane.
 
-1. Zaimportuj repozytorium w Vercel. Framework: **Other**, bez komendy
-   budowania, katalog wyjściowy: korzeń repozytorium.
-2. Dodaj domenę `zostaje.com` i `www.zostaje.com`.
-3. Wdrożenia idą z `main`, a każdy PR dostaje podgląd.
+`vercel.json` zawiera preset i komendy. Żadne zmienne środowiskowe ani baza
+nie są potrzebne. Nie wykonano publikacji ani zmian ustawień konta Vercel.
+Gałąź produkcyjną ustaw na `main` po sprawdzeniu i scaleniu migracji.
 
-`vercel.json` ustala:
+Poprzedni workflow GitHub Pages został usunięty, aby po scaleniu nie publikował
+kodu Next.js jako surowych plików statycznych. Właściwym celem jest Vercel.
 
-- adresy katalogowe (`/pricing/`) zgodne z `canonical` i `sitemap.xml`,
-- nagłówki bezpieczeństwa (CSP, HSTS, `X-Content-Type-Options`, `Referrer-Policy`,
-  `Permissions-Policy`),
-- czas życia cache: tydzień dla ikon, godzina dla `styles.css` i `script.js`.
+## Archiwum wcześniejszej strony
 
-CSP przepuszcza `fonts.googleapis.com` i `fonts.gstatic.com`, bo strona ładuje
-stamtąd krój Inter. Jeśli font zostanie przeniesiony do repozytorium, te dwa
-wyjątki trzeba usunąć — i warto to zrobić, bo dziś każdy odwiedzający wysyła
-swoje IP do Google.
+Pełna aktualna wersja HTML/CSS/JS sprzed migracji jest w gałęzi:
 
-## Pliki
+**`codex/archive-static-site-2026-10-14`**, commit **`efcf6c1`**.
 
-- `index.html` — treść i semantyczna struktura strony,
-- `styles.css` — responsywny wygląd bez zewnętrznych zależności,
-- `script.js` — menu mobilne oraz polska i angielska wersja językowa,
-- `BRAND.md` — skrócony przewodnik po kolorach, typografii i stylu marki,
-- `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`,
-  `site.webmanifest` — ikony i manifest,
-- `vercel.json` — adresy, nagłówki i cache na Vercelu.
+Zawiera również wcześniejsze zmiany treści MVP i `/projekt/`. Archiwum jest
+lokalne; aby udostępnić je na GitHubie, wypchnij tę gałąź osobno.
+Nie przełączaj checkoutu z niezapisanymi zmianami migracji. Do osobnego podglądu:
 
-Formularz demo korzysta obecnie z `mailto:`. Po uruchomieniu backendu należy podmienić jego
-`action` na właściwy endpoint zapisujący zgodę i adres e-mail.
+```bash
+git worktree add ../zostaje.com-static-archive codex/archive-static-site-2026-10-14
+python3 -m http.server 8080 --directory ../zostaje.com-static-archive
+```
 
-## Treść MVP — 14 października 2026
+## Struktura
 
-Strona główna skupia się na osobistym MVP iOS: plan do kolejnego wpływu,
-rachunki i rezerwy, import w opisanym formacie CSV oraz cel i symulacja wpłat.
-`/projekt/` opisuje cele i hipotezy pracy licencjackiej, wyraźnie jako założenia
-przed badaniem. Nie publikujemy twierdzeń o potwierdzonej retencji ani skuteczności.
+- `app/` — App Router, layout i metadane wszystkich siedmiu stron.
+- `app/globals.css` — dokładna kopia wcześniejszego `styles.css`.
+- `app/demo.css` — wcześniejszy wygląd demo.
+- `components/pages/` — treść stron jako JSX.
+- `components/site-chrome.tsx` — wspólne nagłówki i stopki.
+- `components/site-provider.tsx` — PL/EN, menu, focus, zapamiętanie języka.
+- `components/demo-lab.tsx`, `lib/demo.ts` — demo przepisane na stan React i TS.
+- `lib/page-copy.ts` — tytuły i opisy PL/EN; `lib/metadata.ts` — SEO Next.js.
+- `public/` — niezmienione grafiki, ikony, manifest, robots i sitemap.
+- `proxy.ts` — CSP z osobnym nonce dla każdego dokumentu.
 
-Zachowano istniejący `styles.css`, kolory, typografię i elementy makiet.
-PL/EN działa przez atrybuty `data-pl` i `data-en`, bez zależności.
-Nawigacja główna nie kieruje już do rozbudowanych podstron cennika/platform/AI;
-stare adresy pozostają dostępne dla istniejących linków. Kontakt w sprawie
-testów otwiera pocztę, nie udaje automatycznego zapisu na listę.
+## Renderowanie i nagłówki
 
-Pełne założenia produktu i metodologia są w repozytorium aplikacji:
+Strony są renderowane po stronie serwera. Istniejąca polityka CSP nie pozwalała
+na dowolne skrypty inline, a Next.js używa ich do hydratacji. Zachowujemy tę
+zasadę przez nonce na odpowiedź, zamiast dodawać `unsafe-inline` dla skryptów.
+Z tego powodu nie używamy statycznego eksportu ani cache całych dokumentów.
+Bundlowane zasoby `_next/static` zachowują standardowy cache Next.js.
+
+Dozwolone źródła fontów i wygląd pozostają takie jak wcześniej: Inter z Google
+Fonts. Nagłówki HSTS, nosniff, Referrer-Policy, Permissions-Policy i ochrona ramek
+są w `next.config.ts`; nie ma ich drugiej, sprzecznej kopii w `vercel.json`.
+
+Przełącznik języka zachowuje klucz `zostaje-language`. Demo zachowuje klucz
+`zostaje-web-demo-v1`, aby istniejące poprawne dane lokalnego demo nadal się
+wczytywały. Jego obliczenia należą do wcześniejszego demo, nie są implementacją
+aktualnego datowanego planu iOS.
+
+## Zakres produktu
+
+Strona główna opisuje osobiste MVP iOS; `/projekt/` zawiera cele, tezy i hipotezy
+licencjatu. Pozostałe istniejące adresy — `/demo/`, `/pricing/`, `/download/`,
+`/help/`, `/developers/` — zachowano. Kontakt otwiera pocztę, nie automatyczny
+zapis do bazy.
+
+Dokumentacja w repozytorium aplikacji:
 `docs/product/mvp-2026-10.md` i `docs/thesis/research-plan.md`.
-Zmiany źródłowe wymagają publikacji zgodnie z dotychczasowym procesem Vercel/GitHub Pages.
+Wyniki kontroli migracji: [docs/nextjs-migration.md](docs/nextjs-migration.md).

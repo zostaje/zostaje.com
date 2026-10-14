@@ -1,0 +1,157 @@
+{
+  "home": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://zostaje.com/#organization",
+          "name": "Zostaje",
+          "url": "https://zostaje.com/",
+          "sameAs": [
+            "https://github.com/zostaje"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": [
+            "pl",
+            "en"
+          ],
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://zostaje.com/#app",
+          "name": "Zostaje",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "iOS",
+          "description": "Rozwijany prototyp iOS do planowania kwoty do dyspozycji i symulowania regularnych wpłat.",
+          "url": "https://zostaje.com/",
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN",
+            "description": "Bezpłatny osobisty prototyp w przygotowaniu"
+          },
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        }
+      ]
+    }
+  ],
+  "projekt": [],
+  "pricing": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Cennik Zostaje",
+      "url": "https://zostaje.com/pricing/",
+      "description": "Cennik aplikacji Zostaje i informacje o bezpłatnym pierwszym demie.",
+      "mainEntity": {
+        "@type": "Offer",
+        "name": "Pierwsze zamknięte demo Zostaje",
+        "price": "0",
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/PreOrder"
+      }
+    }
+  ],
+  "download": [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Zostaje",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "url": "https://zostaje.com/download/",
+      "description": "Aplikacja do codziennych finansów, która pokazuje, ile można bezpiecznie wydać.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/PreOrder",
+        "description": "Bezpłatne pierwsze zamknięte demo"
+      }
+    }
+  ],
+  "help": [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "url": "https://zostaje.com/help/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kiedy będzie dostępne Zostaje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aplikacja jest w trakcie tworzenia. Pierwsza wersja będzie dostępna w zamkniętym demie na iOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy pierwsze demo będzie płatne?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Pierwsze zamknięte demo ma być bezpłatne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Na jakich platformach pojawi się aplikacja?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Najpierw na iOS, a w kolejnym etapie planowane są lekkie aplikacje na macOS i Windows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym będzie Zostaje MCP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Planowane publiczne MCP ma pozwolić użytkownikowi udostępniać wybrane dane kompatybilnym asystentom AI na jasno określonych zasadach."
+          }
+        }
+      ]
+    }
+  ],
+  "developers": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Zostaje Developers",
+      "url": "https://zostaje.com/developers/",
+      "description": "Centrum informacji technicznych dla programistów i testerów projektu Zostaje.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Zostaje",
+        "url": "https://zostaje.com/"
+      },
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Zostaje",
+        "applicationCategory": "FinanceApplication"
+      }
+    }
+  ],
+  "demo": [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Zostaje — interaktywne demo",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web demo",
+      "url": "https://zostaje.com/demo/",
+      "isAccessibleForFree": true,
+      "description": "Lokalne demo finansowej Skrzynki, bezpiecznej kwoty i Mapy Konsekwencji Zostaje."
+    }
+  ]
+}

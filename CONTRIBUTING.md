@@ -1,32 +1,26 @@
-# Jak pracujemy
+# Praca nad zostaje.com
 
-To repozytorium zawiera wyłącznie statyczną stronę `zostaje.com`. Kod aplikacji
-— klienty, backend, logika — jest w [`zostaje`](https://github.com/zostaje/zostaje).
+Repozytorium zawiera stronę marketingową Next.js/React/TypeScript.
+Kod aplikacji iOS i backendu pozostaje w repozytorium `zostaje`.
 
-## Jedna gałąź główna
+Pracuj na krótkiej gałęzi, domyślnie z prefiksem `codex/`. `main` jest gałęzią
+produkcyjną. Wyjątek: `codex/archive-static-site-2026-10-14` zachowuje statyczną
+wersję HTML/CSS/JS przed migracją i nie jest gałęzią dalszego rozwoju.
 
-`main` jest jedyną długowieczną gałęzią. Pracę prowadzimy na krótkich gałęziach
-z prefiksem mówiącym, czego dotyczą:
-
-```
-landing/cennik-nowe-plany     treść i sekcje strony
-landing/kontrast-naglowkow    wygląd
-content/pomoc-faq             teksty pomocy
-chore/walidacja-html          utrzymanie, CI
-```
-
-## Pull request
-
-Szablon wymaga wskazania, które podstrony się zmieniają i jak to sprawdzić.
-Strona nie ma testów jednostkowych, więc dowodem jest zrzut ekranu i przejście
-walidacji HTML.
-
-## Publikacja
-
-`main` jest publikowany na GitHub Pages workflow'em `pages.yml`. Co trafia do
-`main`, trafia na produkcję — nie ma środowiska pośredniego, więc zmiany
-sprawdzamy lokalnie przed scaleniem:
+Przed PR:
 
 ```bash
-python3 -m http.server 8080
+npm ci
+npm run typecheck
+npm run build
+npm start
 ```
+
+Sprawdź zmienione widoki w PL/EN oraz na szerokim i wąskim ekranie. Dla demo
+sprawdź zapis, ponowne wczytanie, reset i sytuację niedostępnego localStorage.
+Nie zmieniaj identyfikacji wizualnej przypadkiem; `BRAND.md` i zrzuty archiwum
+są punktem odniesienia.
+
+W PR opisz zakres, weryfikację i materialne ograniczenia; dla zmian wyglądu
+załącz zrzut. Vercel jest docelową platformą. Nie przywracaj automatycznej
+publikacji surowego repozytorium przez GitHub Pages.
