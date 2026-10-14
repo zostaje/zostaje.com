@@ -38,7 +38,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
                 </button>
               </div>
             </details>
-            <T as="a" pl="Chcę przetestować" en="I want to test it" className="button button-small button-outline" href={home ? "#demo" : "/#demo"} />
+            <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-small button-outline" href={home ? "#demo" : "/#demo"} />
             <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu">
               <span>
 

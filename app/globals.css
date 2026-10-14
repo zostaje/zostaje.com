@@ -1903,3 +1903,21 @@ body.menu-open {
     padding: 26px 20px;
   }
 }
+
+/* Inactive demo sign-up: keep the existing form style and show its status. */
+.demo-form .button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.demo-form .button:disabled:hover {
+  background: var(--green);
+  transform: none;
+}
+@media (max-width: 680px) {
+  .demo-form .input-row {
+    flex-direction: column;
+  }
+  .demo-form .input-row input {
+    flex: none;
+  }
+}

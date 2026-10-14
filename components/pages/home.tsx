@@ -1,6 +1,7 @@
 "use client";
 
 import { T, HeroHeading, useSite } from "@/components/site-provider";
+import { DemoSignupForm } from "@/components/demo-signup-form";
 import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
 
 export function HomeContent() {
@@ -17,7 +18,7 @@ export function HomeContent() {
               <HeroHeading />
               <T as="p" pl="Uwzględnij rachunki, zostaw własny bufor i sprawdź, jak regularne odkładanie przybliża Cię do celu. Ty wybierasz, co zrobisz z pieniędzmi." en="Account for bills, keep your own buffer and see how regular saving brings your goal closer. You decide what to do with your money." className="hero-lead" />
               <div className="hero-actions">
-                <T as="a" pl="Chcę przetestować iOS" en="I want to test iOS" className="button button-primary" href="#demo" />
+                <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-primary" href="#demo" />
                 <T as="a" pl="Jak to działa ↓" en="How it works ↓" className="text-link" href="#jak-dziala" />
               </div>
             </div>
@@ -167,13 +168,10 @@ export function HomeContent() {
         <section className="section demo-section" id="demo">
           <div className="container demo-panel">
             <div className="demo-copy">
-              <T as="h2" pl="Pomóż sprawdzić, czy to pomaga." en="Help us find out whether it helps." />
-              <T as="p" pl="Zostaje powstaje także jako projekt pracy licencjackiej. Szukamy osób do testów użyteczności prototypu iOS. Aplikacja nie jest jeszcze dostępna publicznie." en="Zostaje is also being developed as a bachelor’s thesis project. We are looking for people to test the iOS prototype’s usability. The app is not publicly available yet." />
+              <T as="h2" pl="Zapisz się na demo." en="Join the demo." />
+              <T as="p" pl="Chcesz przetestować pierwszą wersję na iPhone’a? Przygotowujemy listę osób zainteresowanych demem. Możliwość zapisu uruchomimy wkrótce." en="Want to try the first iPhone version? We are preparing a list of people interested in the demo. Sign-ups will open soon." />
             </div>
-            <div className="demo-form">
-              <T as="a" pl="Napisz w sprawie testów" en="Ask about testing" className="button button-primary" href="mailto:demo@zostaje.app?subject=Testy%20Zostaje%20iOS" />
-              <T as="p" pl="Link otwiera aplikację pocztową. Zgłoszenie wysyłasz samodzielnie." en="The link opens your email app. You send the message yourself." className="form-note" />
-            </div>
+            <DemoSignupForm />
           </div>
         </section>
       </main>

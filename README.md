@@ -33,7 +33,8 @@ npm start
 5. Dodaj domeny `zostaje.com` i `www.zostaje.com`, jeśli nie są już przypisane.
 
 `vercel.json` zawiera preset i komendy. Żadne zmienne środowiskowe ani baza
-nie są potrzebne. Nie wykonano publikacji ani zmian ustawień konta Vercel.
+nie są potrzebne. Repozytorium osobiste do importu: `rajanbor/zostaje.com`, gałąź `main`.
+Nie wykonano publikacji ani zmian ustawień konta Vercel.
 Gałąź produkcyjną ustaw na `main` po sprawdzeniu i scaleniu migracji.
 
 Poprzedni workflow GitHub Pages został usunięty, aby po scaleniu nie publikował
@@ -45,8 +46,7 @@ Pełna aktualna wersja HTML/CSS/JS sprzed migracji jest w gałęzi:
 
 **`codex/archive-static-site-2026-10-14`**, commit **`efcf6c1`**.
 
-Zawiera również wcześniejsze zmiany treści MVP i `/projekt/`. Archiwum jest
-lokalne; aby udostępnić je na GitHubie, wypchnij tę gałąź osobno.
+Zawiera również wcześniejsze zmiany treści MVP i `/projekt/`. Archiwum jest również w obu repozytoriach GitHub.
 Nie przełączaj checkoutu z niezapisanymi zmianami migracji. Do osobnego podglądu:
 
 ```bash
@@ -88,9 +88,39 @@ aktualnego datowanego planu iOS.
 
 Strona główna opisuje osobiste MVP iOS; `/projekt/` zawiera cele, tezy i hipotezy
 licencjatu. Pozostałe istniejące adresy — `/demo/`, `/pricing/`, `/download/`,
-`/help/`, `/developers/` — zachowano. Kontakt otwiera pocztę, nie automatyczny
-zapis do bazy.
+`/help/`, `/developers/` — zachowano. Kontakt w stopce otwiera pocztę. Sekcja „Zapisz się na demo” ma pole e-mail
+i wyłączony przycisk; formularz nie wysyła ani nie zapisuje danych.
 
 Dokumentacja w repozytorium aplikacji:
 `docs/product/mvp-2026-10.md` i `docs/thesis/research-plan.md`.
 Wyniki kontroli migracji: [docs/nextjs-migration.md](docs/nextjs-migration.md).
+
+## Kopia na profilu osobistym
+
+- `origin`: https://github.com/zostaje/zostaje.com — repozytorium organizacji.
+- `personal`: https://github.com/rajanbor/zostaje.com — niezależna prywatna kopia
+  do importu w Vercel, domyślna gałąź `main`.
+
+W obu miejscach jest ten sam commit wersji Next.js: w organizacji na
+`codex/nextjs-site`, na profilu osobistym na `main`. Archiwum statycznej strony
+zachowano w obu miejscach. Organizacyjne `main` nie jest nadpisywane.
+
+Po kolejnych zmianach i utworzeniu commita uruchom:
+
+```bash
+npm run sync:github
+```
+
+Polecenie aktualizuje obie kopie i gałąź archiwalną. Nie używa force push ani
+nie zapisuje tokenów w kodzie. Korzysta ze standardowego uwierzytelnienia Git
+na Twoim komputerze. Odrzuca niezacommitowane zmiany (poza generowanym przez
+Next.js plikiem `next-env.d.ts`) i nieoczekiwane adresy remote. Jeśli ktoś
+dodał odrębne commity w którejś kopii, Git odmówi nadpisania jej historii.
+Synchronizacja jest uruchamiana tym poleceniem; nie ma automatycznego harmonogramu.
+
+## Formularz demo — stan przejściowy
+
+`components/demo-signup-form.tsx` ma etykietę e-mail, placeholder PL/EN,
+wyłączony przycisk i informację o nieaktywnych zapisach. Wpisywanie jest możliwe,
+ale nie ma API, bazy, localStorage ani wysyłania poczty. Submit jest blokowany.
+Podłączenie bazy, zgód i obsługi zapisu pozostaje przyszłym zadaniem.
