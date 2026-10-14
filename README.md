@@ -32,8 +32,8 @@ npm start
    na korzeń repozytorium lub `out`. Nie wybieraj presetu „Other”.
 5. Dodaj domeny `zostaje.com` i `www.zostaje.com`, jeśli nie są już przypisane.
 
-`vercel.json` zawiera preset i komendy. Żadne zmienne środowiskowe ani baza
-nie są potrzebne. Repozytorium osobiste do importu: `rajanbor/zostaje.com`, gałąź `main`.
+`vercel.json` zawiera preset i komendy. Baza danych nie jest potrzebna. Dla zapisu na demo dodaj po stronie serwera
+zmienną `RESEND_API_KEY` (instrukcja poniżej). Repozytorium osobiste do importu: `rajanbor/zostaje.com`, gałąź `main`.
 Nie wykonano publikacji ani zmian ustawień konta Vercel.
 Gałąź produkcyjną ustaw na `main` po sprawdzeniu i scaleniu migracji.
 
@@ -88,8 +88,8 @@ aktualnego datowanego planu iOS.
 
 Strona główna opisuje osobiste MVP iOS; `/projekt/` zawiera cele, tezy i hipotezy
 licencjatu. Pozostałe istniejące adresy — `/demo/`, `/pricing/`, `/download/`,
-`/help/`, `/developers/` — zachowano. Kontakt w stopce otwiera pocztę. Sekcja „Zapisz się na demo” ma pole e-mail
-i wyłączony przycisk; formularz nie wysyła ani nie zapisuje danych.
+`/help/`, `/developers/` — zachowano. Kontakt w stopce otwiera pocztę. Sekcja „Zapisz się na demo” wysyła przez Resend powiadomienie do właściciela
+i potwierdzenie do osoby zgłaszającej się.
 
 Dokumentacja w repozytorium aplikacji:
 `docs/product/mvp-2026-10.md` i `docs/thesis/research-plan.md`.
@@ -118,9 +118,55 @@ Next.js plikiem `next-env.d.ts`) i nieoczekiwane adresy remote. Jeśli ktoś
 dodał odrębne commity w którejś kopii, Git odmówi nadpisania jej historii.
 Synchronizacja jest uruchamiana tym poleceniem; nie ma automatycznego harmonogramu.
 
-## Formularz demo — stan przejściowy
+## Zapis na demo przez Resend
 
-`components/demo-signup-form.tsx` ma etykietę e-mail, placeholder PL/EN,
-wyłączony przycisk i informację o nieaktywnych zapisach. Wpisywanie jest możliwe,
-ale nie ma API, bazy, localStorage ani wysyłania poczty. Submit jest blokowany.
-Podłączenie bazy, zgód i obsługi zapisu pozostaje przyszłym zadaniem.
+Formularz wysyła POST do `/api/demo-signup/`. Serwer przekazuje do Resend dwa
+maile w jednym żądaniu `POST https://api.resend.com/emails/batch`:
+
+1. Do `info@rajanbor.com`, temat **„Zostaje — ktoś zapisał się na demo”**,
+   nadawca `Zostaje Demo <demo@zostaje.com>`, Reply-To = adres uczestnika.
+2. Do uczestnika, nadawca `Zostaje Demo <demo@zostaje.com>`, potwierdzenie PL/EN
+   zgodne z językiem formularza, Reply-To = `info@rajanbor.com`.
+
+Adres uczestnika nie trafia do URL ani logów aplikacji. Nie dodajemy bazy,
+kontaktów Resend ani automatycznych kampanii; zgłoszenia trafiają do skrzynki
+właściciela, a wysyłki można sprawdzać w Resend. Odpowiedzi uczestnika wracają
+na `info@rajanbor.com`; domena nadawcza nie musi mieć osobnej skrzynki `demo`.
+
+### Konfiguracja
+
+- Domena **zostaje.com** musi być zweryfikowana w Resend (właściciel potwierdził).
+- Vercel → projekt z repo `rajanbor/zostaje.com` → Settings → Environment Variables:
+  dodaj **`RESEND_API_KEY`** dla **Production** i opcjonalnie **Preview**.
+- Użyj klucza z uprawnieniem wysyłania dla domeny `zostaje.com`. To klucz serwerowy;
+  nie nazywaj go `NEXT_PUBLIC_RESEND_API_KEY` i nie umieszczaj go w kodzie.
+- Po zmianie zmiennej uruchom nowy deployment/redeploy.
+- Lokalnie utwórz `.env.local` według `.env.example` i dodaj klucz. Plik jest ignorowany
+  przez Git. Zrestartuj dev server po zmianie zmiennych.
+
+### Zachowanie i ograniczenia
+
+Formularz ma walidację, stan wysyłania, sukces i błędy PL/EN; blokuje podwójne
+kliknięcia. API sprawdza origin, format adresu, rozmiar body i honeypot. Limit
+5 żądań / 10 minut / IP jest **per instancja**, nie jest globalnym limitem Vercela.
+Idempotency-Key Resend ogranicza ponowne wysłanie identycznej pary wiadomości
+przez 24 godziny (osobno dla języka). To ochrona ponowień, nie trwały rejestr zapisów.
+Dla większego ruchu można dodać współdzielony limiter lub weryfikację antybotową.
+
+Brak klucza daje HTTP 503 i komunikat niedostępności. Błąd dostawcy, timeout albo
+odpowiedź bez dwóch identyfikatorów wiadomości nie mogą dać sukcesu. Sukces oznacza
+przyjęcie maili przez Resend, nie potwierdzoną dostawę do skrzynki.
+
+### Testy
+
+`npm test` używa atrap fetch i nie wysyła prawdziwych maili. Obejmuje właściwe
+adresy/nadawcę/temat/Reply-To, retry i idempotencję, język, niepoprawne adresy,
+brak klucza, błędy i częściową odpowiedź dostawcy, origin, rozmiar body, honeypot
+oraz limit prób. Dodatkowo wykonaj `npm run build` i `npm run typecheck`.
+
+Rzeczywista wysyłka wymaga dodania klucza, którego nie ma w lokalnym środowisku
+podczas implementacji. Po konfiguracji wykonaj jeden zapis własnym adresem i
+sprawdź obie skrzynki oraz logi Resend; nie uznawaj testów z atrapą za dostawę maili.
+
+Dokumentacja dostawcy: [Batch emails](https://resend.com/docs/api-reference/emails/send-batch-emails)
+i [idempotency keys](https://resend.com/docs/dashboard/emails/idempotency-keys).

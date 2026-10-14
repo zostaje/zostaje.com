@@ -169,7 +169,7 @@ export function HomeContent() {
           <div className="container demo-panel">
             <div className="demo-copy">
               <T as="h2" pl="Zapisz się na demo." en="Join the demo." />
-              <T as="p" pl="Chcesz przetestować pierwszą wersję na iPhone’a? Przygotowujemy listę osób zainteresowanych demem. Możliwość zapisu uruchomimy wkrótce." en="Want to try the first iPhone version? We are preparing a list of people interested in the demo. Sign-ups will open soon." />
+              <T as="p" pl="Chcesz przetestować pierwszą wersję na iPhone’a? Zostaw adres e-mail. Wyślemy potwierdzenie i damy znać, kiedy demo będzie gotowe." en="Want to try the first iPhone version? Leave your email address. We will send a confirmation and let you know when the demo is ready." />
             </div>
             <DemoSignupForm />
           </div>

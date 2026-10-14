@@ -1921,3 +1921,7 @@ body.menu-open {
     flex: none;
   }
 }
+
+.demo-form .form-error {
+  color: var(--red, #ff6b6b);
+}
