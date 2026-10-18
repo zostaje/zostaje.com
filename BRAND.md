@@ -74,7 +74,7 @@ Szerokość wynosi 96 px w nawigacji i 112 px w stopce; wysokość wynika z prop
 
 Aktualne źródła to cztery dostarczone pliki SVG: Wordmark Dark/Light i App Icon Dark/Light.
 Z wordmarków usunięto wyłącznie prostokąt tła i zewnętrzny margines; viewBox wynosi
-`453 257 1654 510`. Zachowano ścieżki, maski, gradienty i proporcje.
+`365 199 2150 606`. Zachowano ścieżki, maski, gradienty i proporcje.
 Ikony aplikacji zachowują oryginalne zaokrąglone krawędzie i przezroczyste narożniki.
 
 - `public/brand/wordmark-dark.svg`, `wordmark-light.svg`: nawigacja, menu mobilne i stopka.
@@ -85,7 +85,7 @@ Ikony aplikacji zachowują oryginalne zaokrąglone krawędzie i przezroczyste na
 - `public/apple-touch-icon.png`: 180 px; `icon-192.png`, `icon-512.png`: manifest.
 - `public/brand/light/`: odpowiadające ikony jasnego motywu.
 - `public/favicon.svg`: aktualny ciemny znak pod historycznym adresem.
-- `public/og-image.svg`, `og-image-light.svg` i ich PNG: karty udostępniania z nowym logotypem.
+- `public/og-image.svg`, `og-image-light.svg` i ich PNG: karty udostępniania 1200 × 630 px z samym, dużym logotypem na środku.
 
 Logotypy wyświetlamy bez filtrów kolorystycznych. Obraz i link mają nazwę „Zostaje”
 dla czytników ekranu. Ikony AI stanowią osobny zestaw i nie zmieniają się wraz z logo marki.
@@ -108,3 +108,9 @@ Konto pozostaje nieaktywne do wdrożenia logowania. Sekcja zapisu ma tekst i for
 po lewej oraz dużą, przyciętą makietę telefonu po prawej. Na telefonie układa się
 pionowo. Przyciski i aktywne elementy używają nasyconego niebieskiego `#155EEF`.
 Formularz zachowuje wysyłkę przez Resend i komunikaty stanu; nie obiecuje rabatu.
+
+Favicon SVG pod historycznym adresem sam reaguje na motyw urządzenia. Po uruchomieniu
+strony pozostają wyłącznie ikony aktywnego motywu, także przy ręcznym wyborze w stopce.
+Podgląd linków Open Graph i X używa jasnej karty z dużym logo (`og-image-light.png?v=4`).
+Ma stały wariant, ponieważ aplikacje społecznościowe pobierają go niezależnie od ustawień
+motywu w przeglądarce odwiedzającego.

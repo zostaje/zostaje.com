@@ -7,16 +7,18 @@ const ThemeContext = createContext<{ preference: ThemePreference; setPreference:
 
 function ThemeAssets({ theme }: { theme: ResolvedTheme | null }) {
   return <>
-    {(["light", "dark"] as const).map(variant => {
+    {(theme === null ? ["light", "dark"] as const : [theme]).map(variant => {
       const prefix = variant === "light" ? "/brand/light" : "";
       const media = theme === null ? `(prefers-color-scheme: ${variant})` : theme === variant ? "all" : "not all";
       return <Fragment key={variant}>
-        <link rel="icon" href={`${prefix}/favicon.ico?v=3`} sizes="16x16 32x32 48x48" media={media} />
-        <link rel="icon" href={`${prefix}/favicon-16.png?v=3`} sizes="16x16" type="image/png" media={media} />
-        <link rel="icon" href={`${prefix}/favicon-32.png?v=3`} sizes="32x32" type="image/png" media={media} />
+        <link rel="icon" href={`${prefix}/favicon.ico?v=4`} sizes="16x16 32x32 48x48" media={media} />
+        <link rel="icon" href={`${prefix}/favicon-16.png?v=4`} sizes="16x16" type="image/png" media={media} />
+        <link rel="icon" href={`${prefix}/favicon-32.png?v=4`} sizes="32x32" type="image/png" media={media} />
+        {theme !== null && <link rel="icon" href={`/brand/icon-${variant}.svg?v=4`} type="image/svg+xml" />}
         <meta name="theme-color" content={variant === "light" ? "#f8fafc" : "#0f0f0f"} media={media} />
       </Fragment>;
     })}
+    {theme === null && <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />}
     <link rel="apple-touch-icon" sizes="180x180" href={theme === "light" ? "/brand/light/apple-touch-icon.png" : "/apple-touch-icon.png"} />
     <link rel="manifest" href={theme === "light" ? "/site-light.webmanifest" : "/site.webmanifest"} />
   </>;

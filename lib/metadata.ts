@@ -11,8 +11,8 @@ export function metadataFor(page: PageName): Metadata {
     openGraph: {
       type: "website", siteName: "Zostaje", locale: "pl_PL", url: copy.path,
       title: copy.title.pl, description: copy.description.pl,
-      images: [{ url: "/og-image-light.png", alt: "Zostaje" }],
+      images: [{ url: "/og-image-light.png?v=4", width: 1200, height: 630, type: "image/png", alt: "Logo Zostaje" }],
     },
-    twitter: { card: "summary_large_image", title: copy.title.pl, description: copy.description.pl, images: ["/og-image-light.png"] },
+    twitter: { card: "summary_large_image", title: copy.title.pl, description: copy.description.pl, images: ["/og-image-light.png?v=4"] },
   };
 }
