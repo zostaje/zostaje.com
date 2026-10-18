@@ -8,9 +8,10 @@
   --text: #eeeeee;
   --text-secondary: #d4d4d4;
   --text-muted: #a3a3a3;
-  --green: #16a36a;
-  --green-hover: #128257;
-  --green-light: #5ddba3;
+  --brand: #315CAA;
+  --green: var(--brand);
+  --green-hover: #274b8b;
+  --green-light: #93b4f5;
   --on-green: #ffffff;
   --warning: #f59e0b;
   --danger: #ff6b6b;
@@ -26,7 +27,7 @@
 }
 
 ::selection {
-  background: rgb(22 163 106 / 30%);
+  background: rgb(49 92 170 / 30%);
   color: inherit;
 }
 
@@ -438,8 +439,8 @@ h1 em {
   border: 1px solid var(--line);
   border-radius: 50%;
   box-shadow:
-    0 0 0 70px rgb(22 163 106 / 4%),
-    0 0 0 140px rgb(22 163 106 / 2%);
+    0 0 0 70px rgb(49 92 170 / 4%),
+    0 0 0 140px rgb(49 92 170 / 2%);
 }
 .balance-card {
   position: relative;
@@ -621,9 +622,9 @@ h3 {
   flex-direction: column;
   justify-content: flex-end;
   padding: 27px;
-  border: 1px solid #24533e;
+  border: 1px solid #293f65;
   border-radius: var(--radius-md);
-  background: #14251e;
+  background: #151e30;
 }
 .step-card.featured {
   border-color: var(--green);
@@ -632,8 +633,8 @@ h3 {
   transform: translateY(-20px);
 }
 .step-card:nth-child(3) {
-  border-color: #2a6249;
-  background: #193127;
+  border-color: #324b78;
+  background: #1a2740;
 }
 .step-number {
   margin-bottom: auto;
@@ -647,7 +648,7 @@ h3 {
 }
 .step-card p {
   margin-bottom: 0;
-  color: #b9c8c0;
+  color: #c1cbdd;
 }
 .featured p {
   color: rgb(255 255 255 / 82%);
@@ -963,7 +964,7 @@ h3 {
   margin: 55px 0 0;
   padding: 18px;
   border-radius: 12px;
-  background: rgb(22 163 106 / 14%);
+  background: rgb(49 92 170 / 14%);
   color: var(--green-light);
   text-align: center;
   font-size: 0.88rem;
@@ -1024,7 +1025,7 @@ h3 {
   display: inline-block;
   padding: 7px 10px;
   border-radius: 999px;
-  background: rgb(22 163 106 / 15%);
+  background: rgb(49 92 170 / 15%);
   color: var(--green-light);
   font-size: 0.76rem;
   font-weight: 500;

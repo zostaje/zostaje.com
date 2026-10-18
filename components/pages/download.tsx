@@ -12,8 +12,8 @@ export function DownloadContent() {
         <section className="subpage-hero">
           <div className="container subpage-hero-copy">
             <T as="p" pl="Pobierz" en="Download" className="subpage-kicker" />
-            <T as="h1" pl="Najpierw iPhone. Później Twoje biurko." en="iPhone first. Your desktop next." />
-            <T as="p" pl="Zostaje powstaje najpierw jako natywna aplikacja iOS w Swift. Wersje na macOS i Windows pojawią się w kolejnym etapie, z tym samym kontem i danymi." en="Zostaje is being built first as a native iOS app in Swift. macOS and Windows versions will follow, using the same account and data." className="subpage-lead" />
+            <T as="h1" pl="Najpierw iPhone. Kolejne platformy w przyszłości." en="iPhone first. More platforms in the future." />
+            <T as="p" pl="Zostaje powstaje jako natywna aplikacja iOS w Swift. Pierwsza wersja będzie dostępna w zamkniętym demie. Wersje komputerowe i synchronizacja to przyszły kierunek rozwoju, bez ustalonej daty premiery." en="Zostaje is being built as a native iOS app in Swift. The first version will be available through a private demo. Desktop apps and sync are future directions, with no release date set." className="subpage-lead" />
             <div className="subpage-actions">
               <T as="a" pl="Zapisz się na demo iOS" en="Join the iOS demo" className="button button-primary" href="/#demo" />
               <T as="a" pl="Sprawdź pomoc" en="Visit help" className="text-link" href="/help/" />
@@ -30,7 +30,7 @@ export function DownloadContent() {
               <T as="p" pl="Natywna aplikacja Swift projektowana do szybkiego, codziennego sprawdzania finansów. Pierwsze wydanie będzie dostępne w zamkniętym demie." en="A native Swift app designed for quick daily finance checks. The first release will be available through a private demo." />
             </article>
             <article className="subpage-card">
-              <T as="span" pl="Następny etap" en="Next stage" className="platform-status" />
+              <T as="span" pl="Planowane" en="Planned" className="platform-status" />
               <h2>
                 {"macOS + Windows"}
               </h2>

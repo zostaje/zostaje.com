@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { T, LanguageLabel, useSite } from "@/components/site-provider";
 import { ThemeSelect } from "./theme-select";
 import { AiLink, AiNote } from "@/components/ai-links";
@@ -9,6 +10,22 @@ function BrandWordmark() {
     <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
     <img className="brand-wordmark wordmark-light" src="/brand/wordmark-light.png" width={152} height={45} alt="Zostaje" />
   </>;
+}
+
+const primaryPages = [
+  { href: "/download/", label: "Download" },
+  { href: "/pricing/", label: "Pricing" },
+  { href: "/knowledge/", label: "Knowledge" },
+];
+
+function PrimaryNavLinks({ mobile = false }: { mobile?: boolean }) {
+  const pathname = usePathname();
+  const { closeMenu } = useSite();
+  return primaryPages.map(({ href, label }) => (
+    <a key={href} href={href} aria-current={pathname.replace(/\/$/, "") === href.replace(/\/$/, "") ? "page" : undefined} onClick={mobile ? () => closeMenu(false) : undefined}>
+      {label}
+    </a>
+  ));
 }
 
 export function MinimalHeader({ home = false }: { home?: boolean }) {
@@ -21,9 +38,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
             <BrandWordmark />
           </a>
           <nav className="main-nav" aria-label="Nawigacja">
-            <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
-            <T as="a" pl="Prywatność" en="Privacy" href={home ? "#bezpieczenstwo" : "/#bezpieczenstwo"} />
-            <T as="a" pl="Testy aplikacji" en="App testing" href={home ? "#demo" : "/#demo"} />
+            <PrimaryNavLinks />
           </nav>
           <div className="nav-right">
             <details className="language-menu">
@@ -77,9 +92,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
             </div>
           </div>
           <nav className="mobile-primary-nav" aria-label="Nawigacja mobilna">
-            <T as="a" pl="Jak działa" en="How it works" onClick={() => closeMenu(false)} href={home ? "#jak-dziala" : "/#jak-dziala"} />
-            <T as="a" pl="Prywatność" en="Privacy" onClick={() => closeMenu(false)} href={home ? "#bezpieczenstwo" : "/#bezpieczenstwo"} />
-            <T as="a" pl="Testy aplikacji" en="App testing" onClick={() => closeMenu(false)} href={home ? "#demo" : "/#demo"} />
+            <PrimaryNavLinks mobile />
           </nav>
           <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
             <p>
@@ -108,13 +121,7 @@ export function LegacyHeader() {
             <BrandWordmark />
           </a>
           <nav className="main-nav" aria-label="Główna nawigacja">
-            <T as="a" pl="Jak działa" en="How it works" href="/#jak-dziala" />
-            <T as="a" pl="Funkcje" en="Features" href="/#funkcje" />
-            <a href="/demo/">
-              {"Demo"}
-            </a>
-            <T as="a" pl="Cennik" en="Pricing" href="/pricing/" />
-            <T as="a" pl="Pobierz" en="Download" href="/download/" />
+            <PrimaryNavLinks />
           </nav>
           <div className="nav-right">
             <details className="language-menu">
@@ -198,14 +205,7 @@ export function LegacyHeader() {
             </div>
           </div>
           <nav className="mobile-primary-nav" aria-label="Mobilna nawigacja">
-            <T as="a" pl="Jak działa" en="How it works" onClick={() => closeMenu(false)} href="/#jak-dziala" />
-            <T as="a" pl="Funkcje" en="Features" onClick={() => closeMenu(false)} href="/#funkcje" />
-            <a onClick={() => closeMenu(false)} href="/demo/">
-              {"Demo"}
-            </a>
-            <T as="a" pl="Cennik" en="Pricing" onClick={() => closeMenu(false)} href="/pricing/" />
-            <T as="a" pl="Pobierz" en="Download" onClick={() => closeMenu(false)} href="/download/" />
-            <T as="a" pl="Zapisz się na demo" en="Join the demo" onClick={() => closeMenu(false)} href="/#demo" />
+            <PrimaryNavLinks mobile />
           </nav>
           <div className="mobile-secondary-nav">
             <T as="p" pl="Dowiedz się więcej" en="Learn more" />

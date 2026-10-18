@@ -176,7 +176,7 @@
 .demo-tag {
   padding: 5px 8px;
   border-radius: 7px;
-  background: rgb(63 193 118 / 12%);
+  background: rgb(49 92 170 / 12%);
   color: var(--green-light);
   font-size: 0.68rem;
 }
@@ -188,9 +188,9 @@
 
 .demo-safe-card {
   padding: 22px;
-  border: 1px solid #2d4738;
+  border: 1px solid #2c3e60;
   border-radius: 16px;
-  background: linear-gradient(145deg, #17241c, #151a17);
+  background: linear-gradient(145deg, #172135, #151b28);
 }
 
 .demo-safe-value {
@@ -229,7 +229,7 @@
   left: 50%;
   width: 34%;
   height: 1px;
-  background: #365843;
+  background: #364d75;
   content: "";
   transform-origin: left center;
 }
@@ -257,7 +257,7 @@
 .demo-node-entry {
   top: 50%;
   left: 14%;
-  border-color: #3f7553;
+  border-color: #4b69a0;
   color: var(--text);
   transform: translateY(-50%);
 }

@@ -179,3 +179,8 @@ Jasny motyw używa granatowego logotypu i jasnych ikon z `public/brand/light/`, 
 zachowuje wcześniejszy zestaw. Specyfikacja kolorów i znaków znajduje się w `BRAND.md`.
 Testy `tests/theme.test.ts` sprawdzają wybór przed pierwszym wyświetleniem,
 pierwszeństwo ręcznego ustawienia i działanie przy niedostępnym localStorage.
+
+Nawigacja obok logo prowadzi kolejno do Download (`/download/`), Pricing (`/pricing/`)
+i Knowledge (`/knowledge/`). Knowledge tymczasowo przekierowuje kodem 307 na `/404/`,
+gdzie działa wspólna strona `app/not-found.tsx` ze statusem 404 i brakiem indeksowania.
+Bazowy kolor akcentowy obu motywów to `#315CAA`.

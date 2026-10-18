@@ -8,8 +8,10 @@ Ręczny wybór zapamiętujemy lokalnie w tej przeglądarce; „Systemowy” usuw
 Logotypy wyświetlamy bez filtrów kolorystycznych.
 
 Zostaje ma być spokojne, konkretne i ludzkie. Marka mówi o finansach bez straszenia,
-oceniania i księgowego żargonu. Wizualnie łączy ciemne, skupione tło z zielenią oznaczającą
+oceniania i księgowego żargonu. Wizualnie łączy neutralne tła z błękitem oznaczającym
 jasność, postęp i pieniądze pozostające pod kontrolą.
+Bazowy akcent obu motywów to `#315CAA`; w ciemnym motywie tekstowe linki korzystają
+z jaśniejszego błękitu, żeby utrzymać kontrast.
 
 ## Kolory
 
@@ -22,15 +24,15 @@ jasność, postęp i pieniądze pozostające pod kontrolą.
 | Tekst główny             | `#EEEEEE` | Nagłówki i kluczowe treści            |
 | Tekst pomocniczy         | `#D4D4D4` | Akapity i opisy                       |
 | Tekst wyciszony          | `#A3A3A3` | Metadane i informacje trzeciego planu |
-| Zieleń główna            | `#16A36A` | CTA, aktywne elementy i postęp        |
-| Zieleń hover             | `#128257` | Stan hover przycisków                 |
-| Zieleń akcentowa         | `#5DDBA3` | Linki, etykiety i krótkie wyróżnienia |
-| Tekst na zieleni         | `#FFFFFF` | Treść przycisków i zielonych paneli   |
+| Akcent główny            | `#315CAA` | CTA, aktywne elementy i postęp        |
+| Akcent hover             | `#274B8B` | Stan hover przycisków                 |
+| Jasny akcent         | `#93B4F5` | Linki, etykiety i krótkie wyróżnienia |
+| Tekst na akcencie         | `#FFFFFF` | Treść przycisków i akcentowanych paneli   |
 | Ostrzeżenie              | `#F59E0B` | Statusy wymagające uwagi              |
 | Błąd                     | `#FF6B6B` | Błędy i negatywne zmiany              |
 
-Zieleni używamy oszczędnie: ma prowadzić wzrok, a nie wypełniać cały interfejs.
-Zaznaczenie tekstu używa zieleni głównej `#16A36A` z kryciem 30%, bez zmiany koloru liter.
+Koloru akcentowego używamy oszczędnie: ma prowadzić wzrok, a nie wypełniać cały interfejs.
+Zaznaczenie tekstu używa koloru głównego `#315CAA` z kryciem 30%, bez zmiany koloru liter.
 
 ## Jasny motyw
 
@@ -44,7 +46,7 @@ Zaznaczenie tekstu używa zieleni głównej `#16A36A` z kryciem 30%, bez zmiany 
 | Tekst pomocniczy | `#394A63` |
 | Tekst wyciszony | `#58677E` |
 | Akcent i przyciski | `#315CAA` |
-| Akcent hover | `#244783` |
+| Akcent hover | `#274B8B` |
 
 W jasnym motywie używamy dostarczonego granatowego napisu
 „Błyszczące logo Zostaje w granacie.png” oraz jasnej ikony z granatową wstęgą.

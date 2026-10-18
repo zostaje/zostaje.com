@@ -16,9 +16,9 @@ html[data-theme="light"] {
   --text: #18233b;
   --text-secondary: #394a63;
   --text-muted: #58677e;
-  --green: #315caa;
-  --green-hover: #244783;
-  --green-light: #264b91;
+  --green: var(--brand);
+  --green-hover: #274b8b;
+  --green-light: #315CAA;
   --warning: #986004;
   --danger: #b42338
 }
