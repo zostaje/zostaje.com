@@ -10,9 +10,16 @@ export const metadata: Metadata = {
   applicationName: "Zostaje",
   authors: [{ name: "Zostaje" }],
   manifest: "/site.webmanifest",
-  icons: { icon: "/favicon.svg", apple: "/apple-touch-icon.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
 };
-export const viewport: Viewport = { themeColor: "#0f0f0f" };
+export const viewport: Viewport = { themeColor: "#fafaf9", colorScheme: "light" };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   // Reading the request opts pages into SSR so the CSP nonce is unique per response.

@@ -10,9 +10,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
       <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-            <span className="logo-placeholder" aria-hidden="true">
-
-            </span>
+            <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
             <span>
               {"Zostaje"}
             </span>
@@ -57,9 +55,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <span className="logo-placeholder" aria-hidden="true">
-
-              </span>
+              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
               <span>
                 {"Zostaje"}
               </span>
@@ -102,9 +98,7 @@ export function LegacyHeader() {
       <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href="/" aria-label="Zostaje — strona główna">
-            <span className="logo-placeholder" aria-hidden="true">
-
-            </span>
+            <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
             <span>
               {"Zostaje"}
             </span>
@@ -170,9 +164,7 @@ export function LegacyHeader() {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href="/">
-              <span className="logo-placeholder" aria-hidden="true">
-
-              </span>
+              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
               <span>
                 {"Zostaje"}
               </span>
@@ -250,9 +242,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <span className="logo-placeholder" aria-hidden="true">
-
-              </span>
+              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
               <span>
                 {"Zostaje"}
               </span>
@@ -300,9 +290,7 @@ export function LegacyFooter() {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand footer-brand" href="/">
-              <span className="logo-placeholder" aria-hidden="true">
-
-              </span>
+              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
               <span>
                 {"Zostaje"}
               </span>

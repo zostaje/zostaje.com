@@ -3,61 +3,58 @@
 ## Kierunek
 
 Zostaje ma być spokojne, konkretne i ludzkie. Marka mówi o finansach bez straszenia,
-oceniania i księgowego żargonu. Wizualnie łączy ciemne, skupione tło z zielenią oznaczającą
-jasność, postęp i pieniądze pozostające pod kontrolą.
+oceniania i księgowego żargonu. Strona ma jeden, stały jasny motyw — bez przełącznika
+oraz bez automatycznego dopasowania do ciemnego motywu systemu.
 
 ## Kolory
 
-| Rola                     | Kolor     | Zastosowanie                          |
-| ------------------------ | --------- | ------------------------------------- |
-| Tło główne               | `#0F0F0F` | Tło całej strony i każdej sekcji      |
-| Powierzchnia             | `#171717` | Karty i spokojne wydzielenia          |
-| Powierzchnia podniesiona | `#262626` | Ważne makiety i duże karty            |
-| Linia                    | `#404040` | Obramowania i separatory              |
-| Tekst główny             | `#EEEEEE` | Nagłówki i kluczowe treści            |
-| Tekst pomocniczy         | `#D4D4D4` | Akapity i opisy                       |
-| Tekst wyciszony          | `#A3A3A3` | Metadane i informacje trzeciego planu |
-| Zieleń główna            | `#16A36A` | CTA, aktywne elementy i postęp        |
-| Zieleń hover             | `#128257` | Stan hover przycisków                 |
-| Zieleń akcentowa         | `#5DDBA3` | Linki, etykiety i krótkie wyróżnienia |
-| Tekst na zieleni         | `#FFFFFF` | Treść przycisków i zielonych paneli   |
-| Ostrzeżenie              | `#F59E0B` | Statusy wymagające uwagi              |
-| Błąd                     | `#FF6B6B` | Błędy i negatywne zmiany              |
+| Rola | Kolor | Zastosowanie |
+| --- | --- | --- |
+| Tło główne | `#FAFAF9` | Ciepła, złamana biel całej strony |
+| Powierzchnia | `#FFFFFF` | Karty, formularze i makiety |
+| Powierzchnia podniesiona | `#F0F0F2` | Paski narzędzi i spokojne wydzielenia |
+| Powierzchnia pomocnicza / linia | `#DDDDE2` | Separatory i obramowania |
+| Tekst główny | `#18181B` | Nagłówki i kluczowe wartości |
+| Tekst pomocniczy | `#45454F` | Akapity i opisy |
+| Tekst wyciszony | `#62626C` | Metadane, etykiety i drugi plan |
+| Zieleń główna / akcent | `#147D57` | CTA, linki i postęp |
+| Zieleń hover | `#106545` | Stan hover przycisków |
+| Tekst na zieleni | `#FFFFFF` | Treść przycisków |
+| Ostrzeżenie | `#A56408` | Statusy wymagające uwagi |
+| Błąd | `#BC303B` | Błędy i negatywne zmiany |
 
-Zieleni używamy oszczędnie: ma prowadzić wzrok, a nie wypełniać cały interfejs.
-Zaznaczenie tekstu używa zieleni głównej `#16A36A` z kryciem 30%, bez zmiany koloru liter.
+Neutralne szarości nawiązują do czerni, bieli i delikatnego chłodnego cieniowania logo.
+Zieleń jest oszczędnym akcentem funkcjonalnym. Tekst i kontrole mają zachować czytelny
+kontrast także w makietach oraz na starszych podstronach.
 
-## Typografia
+## Logo i ikony
 
-- Krój: `Inter` — nawigacja, tekst, formularze, nagłówki i wartości pieniężne.
-- Nagłówki: `Inter` SemiBold, zwarty line-height i tracking od `-0.035em` do `-0.045em`.
+Zatwierdzony przez właściciela znak to białe, złożone jak wstęga „Z” na czarnym,
+zaokrąglonym kwadracie. Źródłem jest dostarczony PNG 1254 × 1254 px.
+Przy przygotowaniu zasobów usunięto wyłącznie zewnętrzny margines
+(kadr: x=96, y=92, szerokość i wysokość 1066 px), a następnie przeskalowano obraz.
+Nie zmieniamy kształtu, proporcji, kolorów ani cieniowania znaku.
+
+- `public/brand/logo.png`: 256 × 256 px; nagłówek, menu mobilne i stopka, wyświetlane w 36 × 36 px.
+- `public/favicon.ico`: warianty 16, 32 i 48 px.
+- `public/favicon-16.png`, `public/favicon-32.png`: jawne ikony przeglądarkowe.
+- `public/apple-touch-icon.png`: 180 × 180 px.
+- `public/icon-192.png`, `public/icon-512.png`: ikony manifestu.
+- `public/favicon.svg`: zgodny adres historyczny, zawiera ten sam znak rastrowy.
+- `public/og-image.png` i źródłowy SVG: jasna karta udostępniania z logo.
+
+Logo obok nazwy jest dekoracyjne dla czytnika ekranu; link ma nazwę „Zostaje”.
+Ikony pozostają czarno-białe także w jasnym motywie strony.
+
+## Typografia, kształt i układ
+
+- Krój: Inter — nawigacja, tekst, formularze, nagłówki i wartości pieniężne.
+- Nagłówki: SemiBold, zwarty line-height, tracking od `-0.035em` do `-0.045em`.
 - Tekst: 16–20 px, bazowy line-height `1.5`.
-- Etykiety: małe litery kapitalikowe, większy tracking, kolor akcentowy.
-- Język: prosty, bez obietnic bez pokrycia; mówimy „aplikacja powstaje”, dopóki nie jest dostępna.
-
-## Kształt i odstępy
-
 - Promienie: 8 px dla kontrolek i wewnętrznych paneli, 10 px dla kart strony produktowej.
-- Maksymalna szerokość treści: 1120 px, z niewielkim bezpiecznym marginesem na mobile.
-- Sekcje desktopowe: zwykle około 96 px pionowego oddechu; mobile około 68 px.
-- Karty mają cienką, spokojną linię zamiast ciężkiego cienia.
-- Cień stosujemy tylko do makiet lub elementów unoszących się nad układem.
-- Nawigacja nie ma linii w stanie początkowym; po przewinięciu lekko się obniża i pokazuje separator.
-
-## Logo
-
-Na stronie są dwa puste, obramowane placeholdery na przyszły sygnet: w nagłówku i stopce.
-Docelowy sygnet powinien dobrze działać w kwadracie, mieć prostą sylwetkę i zachowywać
-czytelność w rozmiarze 24–32 px. Do czasu zatwierdzenia logo nie wstawiamy tymczasowego znaku,
-który mógłby zostać błędnie uznany za finalny.
-
-## Styl layoutu
-
-Inspiracją strony produktowej jest [Obsidian](https://obsidian.md/): nagłówek wyrównany do lewej,
-duża typografia, wyciszony drugi wiersz, oszczędna nawigacja i duży podgląd produktu pod CTA.
-Zostaje zachowuje własną zieleń, treści oraz finansowe komponenty. Proces 01–03 ma lekkie
-separatory, a funkcje korzystają z neutralnych kart i prostych wizualizacji.
-
-Podgląd planu jest autorską ilustracją MVP z przykładowymi danymi, a nie zrzutem aplikacji
-ani deklaracją dostępności wersji desktopowej. Na telefonie wyświetlamy wyłącznie makietę
-iPhone’a. Sekcja zapisu na demo zachowuje czytelne etykiety i komunikaty formularza.
+- Maksymalna szerokość treści: 1120 px, z bezpiecznym marginesem na mobile.
+- Zachowujemy obecny układ, treści i funkcje; zmiana motywu dotyczy palety i identyfikacji.
+- Inspiracją rytmu strony jest [Obsidian](https://obsidian.md/): nagłówek do lewej,
+  duża typografia, wyciszony drugi wiersz i podgląd produktu pod CTA.
+- Podgląd planu to ilustracja MVP z przykładowymi danymi, nie zrzut aplikacji ani
+  deklaracja dostępności wersji desktopowej. Na telefonie pokazujemy makietę iPhone’a.
