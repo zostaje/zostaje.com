@@ -36,19 +36,26 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
   const animationFrame = useRef<number | null>(null);
 
   const closeMenu = useCallback((returnFocus = true) => {
+    if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     setMenuOpen(false);
     setMobileLanguageOpen(false);
-    if (returnFocus) opener.current?.focus();
+    if (returnFocus) opener.current?.focus({ preventScroll: true });
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setMenuMounted(false), 180);
+    // Keep the overlay mounted until its 360 ms CSS transition has finished.
+    const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
+    closeTimer.current = setTimeout(() => setMenuMounted(false), duration);
   }, []);
   const openMenu = useCallback(() => {
     setMobileLanguageOpen(false);
     if (closeTimer.current) clearTimeout(closeTimer.current);
+    if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     setMenuMounted(true);
+    // Paint the mounted, closed state before starting the transition.
     animationFrame.current = requestAnimationFrame(() => {
-      setMenuOpen(true);
-      closer.current?.focus();
+      animationFrame.current = requestAnimationFrame(() => {
+        setMenuOpen(true);
+        closer.current?.focus({ preventScroll: true });
+      });
     });
   }, []);
   const setLanguage = useCallback((next: Language) => {
@@ -95,9 +102,9 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
     return () => observer.disconnect();
   }, [language, copy]);
   useEffect(() => {
-    document.body.classList.toggle("menu-open", menuOpen);
+    document.body.classList.toggle("menu-open", menuMounted);
     return () => document.body.classList.remove("menu-open");
-  }, [menuOpen]);
+  }, [menuMounted]);
   useEffect(() => {
     if (!menuMounted) return;
     const onKey = (event: KeyboardEvent) => {
