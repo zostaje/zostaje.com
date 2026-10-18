@@ -160,17 +160,22 @@ h2,
   font-size: 0.9rem;
   font-weight: 600;
 }
-.main-nav a {
-  padding: 7px 10px;
-  border-radius: 10px;
+.main-nav a,
+.mobile-primary-nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-muted);
   transition:
     background-color 150ms ease,
     color 150ms ease;
 }
 .main-nav a:hover,
-.main-nav a:focus-visible {
-  background: #292929;
-  color: var(--text);
+.main-nav a:focus-visible,
+.mobile-primary-nav a:hover,
+.mobile-primary-nav a:focus-visible {
+  background: #1f2937;
+  color: #ffffff;
 }
 .language-menu {
   position: relative;
@@ -1431,10 +1436,7 @@ h3 {
 }
 .mobile-primary-nav a {
   width: fit-content;
-  padding: 4px 0;
-  color: var(--text);
   font-size: 1.25rem;
-  font-weight: 600;
   line-height: 1.35;
 }
 .mobile-secondary-nav {
