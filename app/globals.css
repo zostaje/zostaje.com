@@ -162,7 +162,7 @@ h2,
 }
 .main-nav a,
 .mobile-primary-nav a {
-  padding: 8px 12px;
+  padding: 5px 8px;
   border-radius: 8px;
   font-weight: 500;
   color: var(--text-muted);
@@ -317,9 +317,9 @@ input:focus-visible {
   outline-offset: 3px;
 }
 .button-small {
-  min-height: 42px;
-  padding-inline: 17px;
-  font-size: 0.9rem;
+  min-height: 34px;
+  padding-inline: 12px;
+  font-size: 0.8125rem;
 }
 .button-primary {
   background: var(--green);
