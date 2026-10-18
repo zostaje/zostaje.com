@@ -17,13 +17,13 @@ html[data-theme="light"] {
   --text-secondary: #394a63;
   --text-muted: #58677e;
   --green: var(--brand);
-  --green-hover: #274b8b;
-  --green-light: #315CAA;
+  --green-hover: #004EEB;
+  --green-light: #155EEF;
   --warning: #986004;
   --danger: #b42338
 }
 html[data-theme="light"] ::selection {
-  background: rgb(49 92 170 / 30%)
+  background: rgb(21 94 239 / 30%)
 }
 html[data-theme="light"] .site-header {
   background: rgb(248 250 252 / 94%)
@@ -61,8 +61,8 @@ html[data-theme="light"] .hero-lead {
 }
 html[data-theme="light"] .hero-visual::before {
   box-shadow:
-    0 0 0 70px rgb(49 92 170 / 4%),
-    0 0 0 140px rgb(49 92 170 / 2%)
+    0 0 0 70px rgb(21 94 239 / 4%),
+    0 0 0 140px rgb(21 94 239 / 2%)
 }
 html[data-theme="light"] .balance-card {
   border: 1px solid #d5dde8
@@ -82,10 +82,10 @@ html[data-theme="light"] .step-card p {
   color: #465f82
 }
 html[data-theme="light"] .scene-note {
-  background: rgb(49 92 170 / 14%)
+  background: rgb(21 94 239 / 14%)
 }
 html[data-theme="light"] .pricing-status {
-  background: rgb(49 92 170 / 15%)
+  background: rgb(21 94 239 / 15%)
 }
 html[data-theme="light"] .demo-form {
   border: 1px solid var(--line)
@@ -191,11 +191,11 @@ html[data-theme="light"] .product-home .feature-card { background: #ffffff; bord
 }
 html[data-theme="light"] .product-home .mini-panel { background: #f3f6fa
 }
-html[data-theme="light"] .savings-columns i { background: #315caa26
+html[data-theme="light"] .savings-columns i { background: #155eef26
 }
 html[data-theme="light"] .context-visual { background: #f3f6fa
 }
-html[data-theme="light"] .context-visual > span { background: #315caa10
+html[data-theme="light"] .context-visual > span { background: #155eef10
 }
 html[data-theme="light"] .product-home .demo-form { background: #ffffff
 }

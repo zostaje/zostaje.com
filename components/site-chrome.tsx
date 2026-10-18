@@ -94,7 +94,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
                 </button>
               </div>
             </details>
-            <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-small button-outline" href={home ? "#demo" : "/#demo"} />
+            <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
             <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu">
               <span>
 
@@ -193,8 +193,7 @@ export function LegacyHeader() {
                 </button>
               </div>
             </details>
-            <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled={true} />
-            <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-small button-outline" href="/#demo" />
+            <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
             <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu">
               <span>
 

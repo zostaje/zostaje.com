@@ -1,7 +1,7 @@
 "use client";
 
 import { T, HeroHeading } from "@/components/site-provider";
-import { ProductPreview } from "@/components/product-preview";
+import { ProductPreview, PhonePreview } from "@/components/product-preview";
 import { DemoSignupForm } from "@/components/demo-signup-form";
 import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
 
@@ -133,13 +133,16 @@ export function HomeContent() {
             </div>
           </div>
         </section>
-        <section className="section demo-section" id="demo">
+        <section className="section demo-section" id="demo" aria-labelledby="newsletter-heading">
           <div className="container demo-panel">
             <div className="demo-copy">
-              <T as="h2" pl="Zapisz się na demo." en="Join the demo." />
-              <T as="p" pl="Chcesz przetestować pierwszą wersję na iPhone’a? Zostaw adres e-mail. Wyślemy potwierdzenie i damy znać, kiedy demo będzie gotowe." en="Want to try the first iPhone version? Leave your email address. We will send a confirmation and let you know when the demo is ready." />
+              <T as="h2" id="newsletter-heading" pl="Dowiedz się pierwszy, kiedy wystartujemy" en="Be the first to know when we launch" />
+              <T as="p" pl="Jeszcze budujemy. Zapisz się, a damy Ci znać, kiedy demo na iPhone’a będzie gotowe. Bez spamu, obiecujemy!" en="We’re still building. Subscribe and we’ll let you know when the iPhone demo is ready. No spam, we promise!" />
+              <DemoSignupForm />
             </div>
-            <DemoSignupForm />
+            <div className="newsletter-visual" aria-hidden="true">
+              <PhonePreview />
+            </div>
           </div>
         </section>
       </main>

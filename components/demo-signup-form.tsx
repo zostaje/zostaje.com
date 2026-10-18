@@ -60,8 +60,8 @@ export function DemoSignupForm() {
   }
 
   return (
-    <form method="post" action="/api/demo-signup/" className="demo-form" aria-describedby="demo-signup-status" aria-busy={sending} onSubmit={submit}>
-      <T as="label" htmlFor="demo-signup-email" pl="Twój adres e-mail" en="Your email address" />
+    <form method="post" action="/api/demo-signup/" className="demo-form" aria-describedby="demo-signup-privacy demo-signup-status" aria-busy={sending} onSubmit={submit}>
+      <T as="label" className="visually-hidden" htmlFor="demo-signup-email" pl="Twój adres e-mail" en="Your email address" />
       <div className="input-row">
         <input
           id="demo-signup-email"
@@ -70,8 +70,8 @@ export function DemoSignupForm() {
           required
           maxLength={254}
           autoComplete="email"
-          placeholder={language === "pl" ? "ty@adres.pl" : "you@example.com"}
-          aria-describedby="demo-signup-status"
+          placeholder={language === "pl" ? "Wpisz swój e-mail" : "Enter your email"}
+          aria-describedby="demo-signup-privacy demo-signup-status"
           aria-invalid={status === "invalid_email"}
           value={email}
           disabled={sending}
@@ -81,15 +81,19 @@ export function DemoSignupForm() {
           }}
         />
         <button type="submit" disabled={sending || submittedEmail.current === email.trim()} className="button button-primary">
-          {sending ? (language === "pl" ? "Wysyłanie…" : "Sending…") : (language === "pl" ? "Zapisz się na demo" : "Join the demo")}
+          {sending ? (language === "pl" ? "Wysyłanie…" : "Sending…") : (language === "pl" ? "Zapisz się" : "Subscribe")}
         </button>
       </div>
       <div hidden aria-hidden="true">
         <label htmlFor="demo-signup-website">Website</label>
         <input id="demo-signup-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
+      <p id="demo-signup-privacy" className="newsletter-privacy">
+        <T as="span" pl="Dbamy o Twoje dane. Dowiedz się więcej o " en="We care about your data. Learn more about " />
+        <T as="a" href="#bezpieczenstwo" pl="prywatności" en="privacy" />.
+      </p>
       <p id="demo-signup-status" className={"form-note" + (failed ? " form-error" : "")} role="status" aria-live="polite">
-        {messages[language][status]}
+        {status === "idle" ? null : messages[language][status]}
       </p>
     </form>
   );

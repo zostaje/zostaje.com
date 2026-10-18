@@ -36,19 +36,25 @@ export function ProductPreview() {
           </div>
         </div>
       </div>
-      <div className="phone-preview" aria-hidden="true">
-        <div className="phone-island" />
-        <div className="phone-top"><span>9:41</span><span>••• ▰</span></div>
-        <T as="p" className="phone-greeting" pl="Twój plan" en="Your plan" />
-        <T as="span" className="phone-label" pl="Zostaje do wpływu" en="Left until income" />
-        <strong className="phone-amount">1 800 <small>zł</small></strong>
-        <T as="span" className="phone-period" pl="14 dni · szacunek" en="14 days · estimate" />
-        <div className="phone-daily"><T as="span" pl="Orientacyjnie na dzień" en="Estimated per day" /><strong>128,57 zł</strong></div>
-        <div className="phone-goal"><T as="span" pl="Twój cel" en="Your goal" /><T as="strong" pl="Poduszka finansowa" en="Emergency fund" /><div /><small>500 / 5 000 zł</small></div>
-        <div className="phone-tabs"><T as="span" pl="◉ Plan" en="◉ Plan" /><T as="span" pl="↔ Historia" en="↔ History" /><T as="span" pl="◎ Cel" en="◎ Goal" /></div>
-        <div className="phone-home" />
-      </div>
+      <PhonePreview />
       <T as="figcaption" pl="Ilustracja działania MVP. Dane przykładowe." en="Illustration of the MVP. Sample data." />
     </figure>
+  );
+}
+
+export function PhonePreview() {
+  return (
+    <div className="phone-preview" aria-hidden="true">
+      <div className="phone-island" />
+      <div className="phone-top"><span>9:41</span><span>••• ▰</span></div>
+      <T as="p" className="phone-greeting" pl="Twój plan" en="Your plan" />
+      <T as="span" className="phone-label" pl="Zostaje do wpływu" en="Left until income" />
+      <strong className="phone-amount">1 800 <small>zł</small></strong>
+      <T as="span" className="phone-period" pl="14 dni · szacunek" en="14 days · estimate" />
+      <div className="phone-daily"><T as="span" pl="Orientacyjnie na dzień" en="Estimated per day" /><strong>128,57 zł</strong></div>
+      <div className="phone-goal"><T as="span" pl="Twój cel" en="Your goal" /><T as="strong" pl="Poduszka finansowa" en="Emergency fund" /><div /><small>500 / 5 000 zł</small></div>
+      <div className="phone-tabs"><T as="span" pl="◉ Plan" en="◉ Plan" /><T as="span" pl="↔ Historia" en="↔ History" /><T as="span" pl="◎ Cel" en="◎ Goal" /></div>
+      <div className="phone-home" />
+    </div>
   );
 }

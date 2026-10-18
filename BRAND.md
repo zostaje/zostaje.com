@@ -10,7 +10,7 @@ Logotypy wyświetlamy bez filtrów kolorystycznych.
 Zostaje ma być spokojne, konkretne i ludzkie. Marka mówi o finansach bez straszenia,
 oceniania i księgowego żargonu. Wizualnie łączy neutralne tła z błękitem oznaczającym
 jasność, postęp i pieniądze pozostające pod kontrolą.
-Bazowy akcent obu motywów to `#315CAA`; w ciemnym motywie tekstowe linki korzystają
+Bazowy akcent obu motywów to `#155EEF`; w ciemnym motywie tekstowe linki korzystają
 z jaśniejszego błękitu, żeby utrzymać kontrast.
 
 ## Kolory
@@ -24,15 +24,15 @@ z jaśniejszego błękitu, żeby utrzymać kontrast.
 | Tekst główny             | `#EEEEEE` | Nagłówki i kluczowe treści            |
 | Tekst pomocniczy         | `#D4D4D4` | Akapity i opisy                       |
 | Tekst wyciszony          | `#A3A3A3` | Metadane i informacje trzeciego planu |
-| Akcent główny            | `#315CAA` | CTA, aktywne elementy i postęp        |
-| Akcent hover             | `#274B8B` | Stan hover przycisków                 |
-| Jasny akcent         | `#93B4F5` | Linki, etykiety i krótkie wyróżnienia |
+| Akcent główny            | `#155EEF` | CTA, aktywne elementy i postęp        |
+| Akcent hover             | `#004EEB` | Stan hover przycisków                 |
+| Jasny akcent         | `#84ADFF` | Linki, etykiety i krótkie wyróżnienia |
 | Tekst na akcencie         | `#FFFFFF` | Treść przycisków i akcentowanych paneli   |
 | Ostrzeżenie              | `#F59E0B` | Statusy wymagające uwagi              |
 | Błąd                     | `#FF6B6B` | Błędy i negatywne zmiany              |
 
 Koloru akcentowego używamy oszczędnie: ma prowadzić wzrok, a nie wypełniać cały interfejs.
-Zaznaczenie tekstu używa koloru głównego `#315CAA` z kryciem 30%, bez zmiany koloru liter.
+Zaznaczenie tekstu używa koloru głównego `#155EEF` z kryciem 30%, bez zmiany koloru liter.
 
 ## Jasny motyw
 
@@ -45,8 +45,8 @@ Zaznaczenie tekstu używa koloru głównego `#315CAA` z kryciem 30%, bez zmiany 
 | Tekst główny | `#18233B` |
 | Tekst pomocniczy | `#394A63` |
 | Tekst wyciszony | `#58677E` |
-| Akcent i przyciski | `#315CAA` |
-| Akcent hover | `#274B8B` |
+| Akcent i przyciski | `#155EEF` |
+| Akcent hover | `#004EEB` |
 
 W jasnym motywie używamy plików `Wordmark/Light.svg` i `App Icon/Light.svg`
 dostarczonych przez właściciela. Ciemny motyw używa odpowiadających im wariantów
@@ -100,3 +100,11 @@ separatory, a funkcje korzystają z neutralnych kart i prostych wizualizacji.
 Podgląd planu jest autorską ilustracją MVP z przykładowymi danymi, a nie zrzutem aplikacji
 ani deklaracją dostępności wersji desktopowej. Na telefonie wyświetlamy wyłącznie makietę
 iPhone’a. Sekcja zapisu na demo zachowuje czytelne etykiety i komunikaty formularza.
+
+## Nawigacja i zapis przed premierą
+
+Nawigacja używa kompaktowego wyboru języka i pozycji „Konto” zamiast zapisu na demo.
+Konto pozostaje nieaktywne do wdrożenia logowania. Sekcja zapisu ma tekst i formularz
+po lewej oraz dużą, przyciętą makietę telefonu po prawej. Na telefonie układa się
+pionowo. Przyciski i aktywne elementy używają nasyconego niebieskiego `#155EEF`.
+Formularz zachowuje wysyłkę przez Resend i komunikaty stanu; nie obiecuje rabatu.
