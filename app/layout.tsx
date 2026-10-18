@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
   },
 };
-export const viewport: Viewport = { themeColor: "#fafaf9", colorScheme: "light" };
+export const viewport: Viewport = { themeColor: "#0f0f0f", colorScheme: "dark" };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   // Reading the request opts pages into SSR so the CSP nonce is unique per response.

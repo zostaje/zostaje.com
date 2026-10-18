@@ -15,6 +15,5 @@ liter zachowują oryginalne RGB; na brzegach usunięto czarną matę z antyalias
 Pozostawiono niewielki przezroczysty margines. Wynik:
 `public/brand/wordmark-transparent.png`, 1156 × 350 px, RGBA.
 
-Oryginalne jasne błękity pozostają w pliku. Wyłącznie CSS przyciemnia jego
-wyświetlanie w jasnym motywie (`brightness(.34) saturate(1.35)`), żeby znak był
-czytelny bez dodawania nieprzezroczystego prostokąta.
+Oryginalne jasne błękity pozostają w pliku i na stronie. Ciemny motyw zapewnia
+kontrast, dlatego logotyp nie ma filtrów przyciemniających ani dodatkowego tła.
