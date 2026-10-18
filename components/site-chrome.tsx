@@ -12,6 +12,18 @@ function BrandWordmark() {
   </>;
 }
 
+function FooterSocialLinks() {
+  return (
+    <div className="footer-find-us">
+      <T as="p" pl="Znajdź nas" en="Find us" className="footer-follow" />
+      <nav className="footer-socials" aria-label="Social media">
+        <a href="https://github.com/zostaje" target="_blank" rel="noopener noreferrer">GitHub · @zostaje</a>
+        <a href="https://x.com/zostaje_app" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+      </nav>
+    </div>
+  );
+}
+
 function FooterAiLinks() {
   return (
     <div className="footer-ai">
@@ -278,12 +290,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
               <BrandWordmark />
             </a>
             <T as="p" pl="Zrozum pieniądze. Wybierz po swojemu." en="Understand your money. Choose for yourself." />
-            <nav className="footer-socials" aria-label="Kontakt">
-              <a href="https://github.com/zostaje" rel="noreferrer">
-                {"GitHub"}
-              </a>
-              <T as="a" pl="Kontakt" en="Contact" href="mailto:demo@zostaje.app" />
-            </nav>
+            <FooterSocialLinks />
             <FooterAiLinks />
             <small>
               {"© 2026 Zostaje"}
@@ -296,6 +303,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
                 <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
                 <T as="a" pl="Prywatność" en="Privacy" href={home ? "#bezpieczenstwo" : "/#bezpieczenstwo"} />
                 <T as="a" pl="Testy aplikacji" en="App testing" href={home ? "#demo" : "/#demo"} />
+                <T as="a" pl="Kontakt" en="Contact" href="mailto:demo@zostaje.app" />
               </nav>
             </div>
             <div>
@@ -324,15 +332,7 @@ export function LegacyFooter() {
             <a className="brand footer-brand" href="/">
               <BrandWordmark />
             </a>
-            <T as="p" pl="Śledź nas" en="Follow us" className="footer-follow" />
-            <nav className="footer-socials" aria-label="Media społecznościowe">
-              <a href="https://github.com/zostaje">
-                {"GitHub"}
-              </a>
-              <a href="https://x.com/zostaje_app">
-                {"X · @zostaje_app"}
-              </a>
-            </nav>
+            <FooterSocialLinks />
             <FooterAiLinks />
             <details className="footer-language">
               <summary>
