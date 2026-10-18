@@ -17,8 +17,8 @@ function FooterSocialLinks() {
     <div className="footer-find-us">
       <T as="p" pl="Znajdź nas" en="Find us" className="footer-follow" />
       <nav className="footer-socials" aria-label="Social media">
-        <a href="https://github.com/zostaje" target="_blank" rel="noopener noreferrer">GitHub · @zostaje</a>
-        <a href="https://x.com/zostaje_app" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        <a href="https://github.com/zostaje" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://x.com/ZostajeApp" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
       </nav>
     </div>
   );
