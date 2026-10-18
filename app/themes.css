@@ -218,3 +218,7 @@ html[data-theme="light"] .product-home .step-card,
 html[data-theme="light"] .product-home .step-card.featured,
 html[data-theme="light"] .product-home .step-card:nth-child(3) { background: transparent; border-color: var(--line); }
 html[data-theme="light"] .product-home .status-pill { background: transparent; color: var(--text-muted); }
+
+:root[data-theme="light"] .ai-provider-logo--chatgpt {
+  filter: none;
+}

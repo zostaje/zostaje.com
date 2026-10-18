@@ -1252,16 +1252,14 @@ h3 {
   background: var(--surface-raised);
   color: var(--green-light);
 }
-.footer-ai-links svg {
+.ai-provider-logo {
+  display: block;
   width: 24px;
   height: 24px;
-  padding: 3px;
-  overflow: visible;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  object-fit: contain;
+}
+.ai-provider-logo--chatgpt {
+  filter: invert(1);
 }
 .footer-ai-links span,
 .footer-ai-links strong,

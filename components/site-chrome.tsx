@@ -12,6 +12,38 @@ function BrandWordmark() {
   </>;
 }
 
+function FooterAiLinks() {
+  return (
+    <div className="footer-ai">
+      <T as="p" pl="Zapytaj AI o Zostaje" en="Ask AI about Zostaje" className="footer-ai-heading" />
+      <div className="footer-ai-links">
+        <AiLink provider="chatgpt" target="_blank" rel="noopener noreferrer">
+          <img className="ai-provider-logo ai-provider-logo--chatgpt" src="/ai/chatgpt.webp" width={24} height={24} alt="" loading="lazy" />
+          <span>
+            <strong>ChatGPT</strong>
+            <T as="small" pl="Pełny opis projektu" en="Full project overview" />
+          </span>
+        </AiLink>
+        <AiLink provider="claude" target="_blank" rel="noopener noreferrer">
+          <img className="ai-provider-logo" src="/ai/claude.svg" width={24} height={24} alt="" loading="lazy" />
+          <span>
+            <strong>Claude</strong>
+            <T as="small" pl="Analiza z referencjami" en="Analysis with references" />
+          </span>
+        </AiLink>
+        <AiLink provider="gemini" target="_blank" rel="noopener noreferrer">
+          <img className="ai-provider-logo" src="/ai/gemini.png" width={24} height={24} alt="" loading="lazy" />
+          <span>
+            <strong>Gemini</strong>
+            <T as="small" pl="Prompt kopiowany automatycznie" en="Prompt copied automatically" />
+          </span>
+        </AiLink>
+      </div>
+      <AiNote className="footer-ai-note" />
+    </div>
+  );
+}
+
 const primaryPages = [
   { href: "/download/", label: "Download" },
   { href: "/pricing/", label: "Pricing" },
@@ -252,6 +284,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
               </a>
               <T as="a" pl="Kontakt" en="Contact" href="mailto:demo@zostaje.app" />
             </nav>
+            <FooterAiLinks />
             <small>
               {"© 2026 Zostaje"}
             </small>
@@ -300,57 +333,7 @@ export function LegacyFooter() {
                 {"X · @zostaje_app"}
               </a>
             </nav>
-            <div className="footer-ai">
-              <T as="p" pl="Zapytaj AI o Zostaje" en="Ask AI about Zostaje" className="footer-ai-heading" />
-              <div className="footer-ai-links">
-                <AiLink provider="chatgpt" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9">
-
-                    </circle>
-                    <path d="M8 9.2 12 7l4 2.2v5.2L12 17l-4-2.6Z">
-
-                    </path>
-                  </svg>
-                  <span>
-                    <strong>
-                      {"ChatGPT"}
-                    </strong>
-                    <T as="small" pl="Pełny opis projektu" en="Full project overview" />
-                  </span>
-                </AiLink>
-                <AiLink provider="claude" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 3 4.5 19h15Z">
-
-                    </path>
-                    <path d="M9.2 14h5.6">
-
-                    </path>
-                  </svg>
-                  <span>
-                    <strong>
-                      {"Claude"}
-                    </strong>
-                    <T as="small" pl="Analiza z referencjami" en="Analysis with references" />
-                  </span>
-                </AiLink>
-                <AiLink provider="gemini" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2c.8 5.7 4.3 9.2 10 10-5.7.8-9.2 4.3-10 10-.8-5.7-4.3-9.2-10-10 5.7-.8 9.2-4.3 10-10Z">
-
-                    </path>
-                  </svg>
-                  <span>
-                    <strong>
-                      {"Gemini"}
-                    </strong>
-                    <T as="small" pl="Prompt kopiowany automatycznie" en="Prompt copied automatically" />
-                  </span>
-                </AiLink>
-              </div>
-              <AiNote className="footer-ai-note" />
-            </div>
+            <FooterAiLinks />
             <details className="footer-language">
               <summary>
                 <svg className="language-globe" viewBox="0 0 24 24" aria-hidden="true">
