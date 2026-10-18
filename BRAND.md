@@ -2,7 +2,10 @@
 
 ## Kierunek
 
-Strona ma jeden stały ciemny motyw. Jasny logotyp wyświetlamy bez filtrów kolorystycznych.
+Strona ma dwa motywy: jasny i ciemny. Domyślnie podąża za ustawieniami urządzenia,
+także po ich zmianie. Tylko w stopce jest wybór „Systemowy / Jasny / Ciemny”.
+Ręczny wybór zapamiętujemy lokalnie w tej przeglądarce; „Systemowy” usuwa nadpisanie.
+Logotypy wyświetlamy bez filtrów kolorystycznych.
 
 Zostaje ma być spokojne, konkretne i ludzkie. Marka mówi o finansach bez straszenia,
 oceniania i księgowego żargonu. Wizualnie łączy ciemne, skupione tło z zielenią oznaczającą
@@ -28,6 +31,30 @@ jasność, postęp i pieniądze pozostające pod kontrolą.
 
 Zieleni używamy oszczędnie: ma prowadzić wzrok, a nie wypełniać cały interfejs.
 Zaznaczenie tekstu używa zieleni głównej `#16A36A` z kryciem 30%, bez zmiany koloru liter.
+
+## Jasny motyw
+
+| Rola | Kolor |
+| --- | --- |
+| Tło | `#F8FAFC` |
+| Karty | `#FFFFFF` |
+| Powierzchnie pomocnicze | `#EEF2F7` |
+| Linie | `#D5DDE8` |
+| Tekst główny | `#18233B` |
+| Tekst pomocniczy | `#394A63` |
+| Tekst wyciszony | `#58677E` |
+| Akcent i przyciski | `#315CAA` |
+| Akcent hover | `#244783` |
+
+W jasnym motywie używamy dostarczonego granatowego napisu
+„Błyszczące logo Zostaje w granacie.png” oraz jasnej ikony z granatową wstęgą.
+Plik `public/brand/wordmark-light.png` ma przezroczyste tło, a ikony przeglądarki,
+iPhone’a i manifestu znajdują się w `public/brand/light/`. Również karta udostępniania
+używa nowego wariantu (`public/og-image-light.png`).
+
+W ciemnym motywie pozostają wcześniejsze jasne napisy i czarna ikona z białym Z.
+Logo zachowuje szerokość 96 px w nawigacji oraz 112 px w stopce. Oba warianty
+korzystają ze wspólnego układu, kompaktowych kontrolek i płynnego menu mobilnego.
 
 ## Typografia
 

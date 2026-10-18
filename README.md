@@ -170,3 +170,12 @@ sprawdź obie skrzynki oraz logi Resend; nie uznawaj testów z atrapą za dostaw
 
 Dokumentacja dostawcy: [Batch emails](https://resend.com/docs/api-reference/emails/send-batch-emails)
 i [idempotency keys](https://resend.com/docs/dashboard/emails/idempotency-keys).
+
+## Motywy i identyfikacja
+
+Domyślny motyw odpowiada ustawieniu urządzenia. W stopce każdej strony dostępny jest
+wybór Systemowy / Jasny / Ciemny (także w EN); ręczny wybór jest zapamiętywany.
+Jasny motyw używa granatowego logotypu i jasnych ikon z `public/brand/light/`, ciemny
+zachowuje wcześniejszy zestaw. Specyfikacja kolorów i znaków znajduje się w `BRAND.md`.
+Testy `tests/theme.test.ts` sprawdzają wybór przed pierwszym wyświetleniem,
+pierwszeństwo ręcznego ustawienia i działanie przy niedostępnym localStorage.

@@ -17,3 +17,15 @@ Pozostawiono niewielki przezroczysty margines. Wynik:
 
 Oryginalne jasne błękity pozostają w pliku i na stronie. Ciemny motyw zapewnia
 kontrast, dlatego logotyp nie ma filtrów przyciemniających ani dodatkowego tła.
+
+## Wariant dla jasnego motywu
+
+Źródło: „Błyszczące logo Zostaje w granacie.png”. Technicznie usunięto białe tło
+oraz białą matę na krawędziach, zachowując granatowe wnętrza i cieniowanie liter.
+Wynik: `public/brand/wordmark-light.png`. Ikony `public/brand/light/` przygotowano
+z pliku „Jasna ikona z granatową wstęgą Z.png”, zachowując jasną płytkę ikony.
+
+Motyw domyślnie wynika z `prefers-color-scheme`. Ręczny wybór w stopce zapisuje się
+jako `zostaje-theme`; opcja systemowa usuwa ten klucz. Skrypt w nagłówku używa CSP
+nonce, ustawia kolory przed pierwszym wyświetleniem, a komponent React zarządza
+ikonami i manifestem bez modyfikowania zasobów innego motywu.

@@ -1,7 +1,15 @@
 "use client";
 
 import { T, LanguageLabel, useSite } from "@/components/site-provider";
+import { ThemeSelect } from "./theme-select";
 import { AiLink, AiNote } from "@/components/ai-links";
+
+function BrandWordmark() {
+  return <>
+    <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+    <img className="brand-wordmark wordmark-light" src="/brand/wordmark-light.png" width={152} height={45} alt="Zostaje" />
+  </>;
+}
 
 export function MinimalHeader({ home = false }: { home?: boolean }) {
   const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
@@ -10,7 +18,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
       <header className={"site-header" + (!home ? " is-subpage" : "") + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-            <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+            <BrandWordmark />
           </a>
           <nav className="main-nav" aria-label="Nawigacja">
             <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
@@ -52,7 +60,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+              <BrandWordmark />
             </a>
             <div className="mobile-menu-tools">
               <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
@@ -97,7 +105,7 @@ export function LegacyHeader() {
       <header className={"site-header is-subpage" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href="/" aria-label="Zostaje — strona główna">
-            <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+            <BrandWordmark />
           </a>
           <nav className="main-nav" aria-label="Główna nawigacja">
             <T as="a" pl="Jak działa" en="How it works" href="/#jak-dziala" />
@@ -160,7 +168,7 @@ export function LegacyHeader() {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href="/">
-              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+              <BrandWordmark />
             </a>
             <div className="mobile-menu-tools">
               <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
@@ -235,7 +243,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+              <BrandWordmark />
             </a>
             <T as="p" pl="Zrozum pieniądze. Wybierz po swojemu." en="Understand your money. Choose for yourself." />
             <nav className="footer-socials" aria-label="Kontakt">
@@ -267,6 +275,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
             </div>
           </div>
         </div>
+        <div className="container footer-preferences"><ThemeSelect /></div>
       </footer>
     </>
   );
@@ -280,7 +289,7 @@ export function LegacyFooter() {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand footer-brand" href="/">
-              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
+              <BrandWordmark />
             </a>
             <T as="p" pl="Śledź nas" en="Follow us" className="footer-follow" />
             <nav className="footer-socials" aria-label="Media społecznościowe">
@@ -436,6 +445,7 @@ export function LegacyFooter() {
             </div>
           </div>
         </div>
+        <div className="container footer-preferences"><ThemeSelect /></div>
       </footer>
     </>
   );
