@@ -48,15 +48,10 @@ Zaznaczenie tekstu używa koloru głównego `#315CAA` z kryciem 30%, bez zmiany 
 | Akcent i przyciski | `#315CAA` |
 | Akcent hover | `#274B8B` |
 
-W jasnym motywie używamy dostarczonego granatowego napisu
-„Błyszczące logo Zostaje w granacie.png” oraz jasnej ikony z granatową wstęgą.
-Plik `public/brand/wordmark-light.png` ma przezroczyste tło, a ikony przeglądarki,
-iPhone’a i manifestu znajdują się w `public/brand/light/`. Również karta udostępniania
-używa nowego wariantu (`public/og-image-light.png`).
-
-W ciemnym motywie pozostają wcześniejsze jasne napisy i czarna ikona z białym Z.
-Logo zachowuje szerokość 96 px w nawigacji oraz 112 px w stopce. Oba warianty
-korzystają ze wspólnego układu, kompaktowych kontrolek i płynnego menu mobilnego.
+W jasnym motywie używamy plików `Wordmark/Light.svg` i `App Icon/Light.svg`
+dostarczonych przez właściciela. Ciemny motyw używa odpowiadających im wariantów
+`Dark.svg`. Logotypy mają przezroczyste tło i zachowują oryginalne kolory.
+Szerokość wynosi 96 px w nawigacji i 112 px w stopce; wysokość wynika z proporcji.
 
 ## Typografia
 
@@ -77,25 +72,23 @@ korzystają ze wspólnego układu, kompaktowych kontrolek i płynnego menu mobil
 
 ## Logo i ikony
 
-Zatwierdzony przez właściciela znak to białe, złożone jak wstęga „Z” na czarnym,
-zaokrąglonym kwadracie. Źródłem jest dostarczony PNG 1254 × 1254 px.
-Przy przygotowaniu zasobów usunięto wyłącznie zewnętrzny margines
-(kadr: x=96, y=92, szerokość i wysokość 1066 px), a następnie przeskalowano obraz.
-Nie zmieniamy kształtu, proporcji, kolorów ani cieniowania znaku.
+Aktualne źródła to cztery dostarczone pliki SVG: Wordmark Dark/Light i App Icon Dark/Light.
+Z wordmarków usunięto wyłącznie prostokąt tła i zewnętrzny margines; viewBox wynosi
+`453 257 1654 510`. Zachowano ścieżki, maski, gradienty i proporcje.
+Ikony aplikacji zachowują oryginalne zaokrąglone krawędzie i przezroczyste narożniki.
 
-- `public/brand/logo.png`: 256 × 256 px; wcześniejszy znak, zachowany jako zasób.
-- `public/brand/wordmark-transparent.png`: pełny logotyp z napisem; nawigacja, jej menu mobilne i stopka. Tło jest przezroczyste. Na ciemnej stronie wyświetlamy oryginalną jasnobłękitną kolorystykę bez filtrów.
-- `public/favicon.ico`: warianty 16, 32 i 48 px.
-- `public/favicon-16.png`, `public/favicon-32.png`: jawne ikony przeglądarkowe.
-- `public/apple-touch-icon.png`: 180 × 180 px.
-- `public/icon-192.png`, `public/icon-512.png`: ikony manifestu.
-- `public/favicon.svg`: zgodny adres historyczny, zawiera ten sam znak rastrowy.
-- `public/og-image.png` i źródłowy SVG: ciemna karta udostępniania z logo.
+- `public/brand/wordmark-dark.svg`, `wordmark-light.svg`: nawigacja, menu mobilne i stopka.
+- `public/brand/icon-dark.svg`, `icon-light.svg`: źródła ikon.
+- `public/brand/wordmark-transparent.png`, `wordmark-light.png`: rastrowe wersje zgodności.
+- `public/brand/logo.png`, `public/brand/light/logo.png`: znaki 256 × 256 px.
+- `public/favicon.ico`: ikony 16, 32 i 48 px; `favicon-16.png`, `favicon-32.png`: PNG.
+- `public/apple-touch-icon.png`: 180 px; `icon-192.png`, `icon-512.png`: manifest.
+- `public/brand/light/`: odpowiadające ikony jasnego motywu.
+- `public/favicon.svg`: aktualny ciemny znak pod historycznym adresem.
+- `public/og-image.svg`, `og-image-light.svg` i ich PNG: karty udostępniania z nowym logotypem.
 
-Pełny logotyp zastępuje ikonę i osobny tekst nazwy w nawigacji oraz stopce.
-Obraz i link mają nazwę „Zostaje” dla czytników ekranu.
-Ikony pozostają czarno-białe w ciemnym motywie strony.
-
+Logotypy wyświetlamy bez filtrów kolorystycznych. Obraz i link mają nazwę „Zostaje”
+dla czytników ekranu. Ikony AI stanowią osobny zestaw i nie zmieniają się wraz z logo marki.
 
 ## Styl layoutu
 
