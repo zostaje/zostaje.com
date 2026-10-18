@@ -7,7 +7,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
   const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
   return (
     <>
-      <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
+      <header className={"site-header" + (!home ? " is-subpage" : "") + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
             <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
@@ -48,27 +48,32 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
           </div>
         </div>
       </header>
-      <div className={"mobile-menu" + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
+      <div className={"mobile-menu" + (!home ? " is-subpage" : "") + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
               <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
-            <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button">
-              <span>
+            <div className="mobile-menu-tools">
+              <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
+                <LanguageLabel />
+              </button>
+              <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button">
+                <span>
 
-              </span>
-              <span>
+                </span>
+                <span>
 
-              </span>
-            </button>
+                </span>
+              </button>
+            </div>
           </div>
           <nav className="mobile-primary-nav" aria-label="Nawigacja mobilna">
             <T as="a" pl="Jak działa" en="How it works" onClick={() => closeMenu(false)} href={home ? "#jak-dziala" : "/#jak-dziala"} />
             <T as="a" pl="Prywatność" en="Privacy" onClick={() => closeMenu(false)} href={home ? "#bezpieczenstwo" : "/#bezpieczenstwo"} />
             <T as="a" pl="Testy aplikacji" en="App testing" onClick={() => closeMenu(false)} href={home ? "#demo" : "/#demo"} />
           </nav>
-          <div hidden={!mobileLanguageOpen} className="mobile-language-panel">
+          <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
             <p>
               {"PL / EN"}
             </p>
@@ -89,7 +94,7 @@ export function LegacyHeader() {
   const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
   return (
     <>
-      <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
+      <header className={"site-header is-subpage" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href="/" aria-label="Zostaje — strona główna">
             <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
@@ -151,14 +156,14 @@ export function LegacyHeader() {
           </div>
         </div>
       </header>
-      <div className={"mobile-menu" + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
+      <div className={"mobile-menu is-subpage" + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href="/">
               <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
             <div className="mobile-menu-tools">
-              <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label="Zmień język">
+              <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
                 <svg className="language-globe" viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="10">
 
@@ -205,7 +210,7 @@ export function LegacyHeader() {
               <T as="a" pl="Kontakt" en="Contact" onClick={() => closeMenu(false)} href="mailto:demo@zostaje.app" />
             </div>
           </div>
-          <div hidden={!mobileLanguageOpen} className="mobile-language-panel">
+          <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
             <p>
               {"Język strony"}
             </p>

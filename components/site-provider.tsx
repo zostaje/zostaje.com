@@ -29,7 +29,7 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuMounted, setMenuMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileLanguageOpen, setMobileLanguageOpen] = useState(minimal);
+  const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const opener = useRef<HTMLButtonElement>(null);
   const closer = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -37,11 +37,13 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
 
   const closeMenu = useCallback((returnFocus = true) => {
     setMenuOpen(false);
+    setMobileLanguageOpen(false);
     if (returnFocus) opener.current?.focus();
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setMenuMounted(false), 180);
   }, []);
   const openMenu = useCallback(() => {
+    setMobileLanguageOpen(false);
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setMenuMounted(true);
     animationFrame.current = requestAnimationFrame(() => {
@@ -51,6 +53,7 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
   }, []);
   const setLanguage = useCallback((next: Language) => {
     setLanguageState(next);
+    setMobileLanguageOpen(false);
     try { localStorage.setItem("zostaje-language", next); } catch { /* Optional preference. */ }
     document.querySelectorAll(".language-menu, .footer-language").forEach(element => element.removeAttribute("open"));
   }, []);
