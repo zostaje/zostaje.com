@@ -29,3 +29,10 @@ Motyw domyślnie wynika z `prefers-color-scheme`. Ręczny wybór w stopce zapisu
 jako `zostaje-theme`; opcja systemowa usuwa ten klucz. Skrypt w nagłówku używa CSP
 nonce, ustawia kolory przed pierwszym wyświetleniem, a komponent React zarządza
 ikonami i manifestem bez modyfikowania zasobów innego motywu.
+
+## Przezroczyste narożniki favicon
+
+Warianty favicon (ICO 16/32/48 px, PNG 16/32 px i historyczny SVG) mają
+zaokrąglone, przezroczyste narożniki zamiast białych kwadratów. Korekta obejmuje
+oba motywy. Adresy ikon przeglądarkowych mają wersję `?v=2`, żeby odświeżyć cache.
+Ikony ekranu początkowego i logo na stronie pozostają bez zmian.

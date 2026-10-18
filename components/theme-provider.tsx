@@ -11,9 +11,9 @@ function ThemeAssets({ theme }: { theme: ResolvedTheme | null }) {
       const prefix = variant === "light" ? "/brand/light" : "";
       const media = theme === null ? `(prefers-color-scheme: ${variant})` : theme === variant ? "all" : "not all";
       return <Fragment key={variant}>
-        <link rel="icon" href={`${prefix}/favicon.ico`} sizes="16x16 32x32 48x48" media={media} />
-        <link rel="icon" href={`${prefix}/favicon-16.png`} sizes="16x16" type="image/png" media={media} />
-        <link rel="icon" href={`${prefix}/favicon-32.png`} sizes="32x32" type="image/png" media={media} />
+        <link rel="icon" href={`${prefix}/favicon.ico?v=2`} sizes="16x16 32x32 48x48" media={media} />
+        <link rel="icon" href={`${prefix}/favicon-16.png?v=2`} sizes="16x16" type="image/png" media={media} />
+        <link rel="icon" href={`${prefix}/favicon-32.png?v=2`} sizes="32x32" type="image/png" media={media} />
         <meta name="theme-color" content={variant === "light" ? "#f8fafc" : "#0f0f0f"} media={media} />
       </Fragment>;
     })}
