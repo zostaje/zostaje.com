@@ -1226,7 +1226,7 @@ h3 {
   color: var(--green-light);
 }
 .footer-ai {
-  margin: 28px 0;
+  margin: 24px 0;
 }
 .footer-ai-heading {
   margin-bottom: 10px;
@@ -1234,53 +1234,48 @@ h3 {
   font-size: 0.78rem;
 }
 .footer-ai-links {
-  display: grid;
+  display: flex;
+  align-items: center;
   gap: 5px;
 }
 .footer-ai-links a {
-  display: grid;
-  grid-template-columns: 30px 1fr;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px;
-  border-radius: 9px;
-  color: var(--text);
-  transition:
-    color 150ms ease,
-    background-color 150ms ease;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 40px;
+  border-radius: 6px;
+  transition: background-color 150ms ease;
 }
-.footer-ai-links a:hover {
+.footer-ai-links a:hover,
+.footer-ai-links a:focus-visible {
   background: var(--surface-raised);
-  color: var(--green-light);
+}
+.footer-ai-links a:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 .ai-provider-logo {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
+  filter: brightness(0) invert(0.68);
+  transition: filter 150ms ease;
 }
-.ai-provider-logo--chatgpt {
-  filter: invert(1);
-}
-.footer-ai-links span,
-.footer-ai-links strong,
-.footer-ai-links small {
-  display: block;
-}
-.footer-ai-links strong {
-  font-size: 0.78rem;
-}
-.footer-ai-links small {
-  margin-top: 2px;
-  color: var(--text-muted);
-  font-size: 0.68rem;
-  font-weight: 400;
+.footer-ai-links a:hover .ai-provider-logo,
+.footer-ai-links a:focus-visible .ai-provider-logo {
+  filter: brightness(0) invert(1);
 }
 .footer-ai-note {
-  margin: 9px 8px 0;
+  margin: 8px 0 0;
   color: var(--text-muted);
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   line-height: 1.45;
+}
+.footer-ai-note:empty {
+  display: none;
 }
 .footer-language {
   position: relative;
@@ -1612,8 +1607,7 @@ body.menu-open {
   .footer-about {
     width: 100%;
   }
-  .footer-follow,
-  .footer-ai-heading {
+  .footer-follow {
     font-size: 0.95rem;
   }
   .footer-socials {
@@ -1621,18 +1615,10 @@ body.menu-open {
     gap: 32px;
     font-size: 1rem;
   }
-  .footer-ai-links {
-    max-width: 340px;
-  }
-  .footer-ai-links strong {
-    font-size: 0.95rem;
-  }
-  .footer-ai-links small {
-    font-size: 0.8rem;
-  }
-  .footer-ai-note {
-    max-width: 330px;
-    font-size: 0.75rem;
+  .footer-ai-links a {
+    flex-basis: 40px;
+    width: 40px;
+    height: 44px;
   }
   .footer-language {
     width: 210px;

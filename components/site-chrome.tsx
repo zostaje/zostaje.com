@@ -25,31 +25,25 @@ function FooterSocialLinks() {
 }
 
 function FooterAiLinks() {
+  const { language } = useSite();
+  const providers = [
+    { id: "chatgpt", name: "ChatGPT", file: "chatgpt.webp" },
+    { id: "grok", name: "Grok", file: "grok.png" },
+    { id: "perplexity", name: "Perplexity", file: "perplexity.png" },
+    { id: "gemini", name: "Gemini", file: "gemini.png" },
+    { id: "claude", name: "Claude", file: "claude.svg" },
+  ] as const;
   return (
     <div className="footer-ai">
       <T as="p" pl="Zapytaj AI o Zostaje" en="Ask AI about Zostaje" className="footer-ai-heading" />
       <div className="footer-ai-links">
-        <AiLink provider="chatgpt" target="_blank" rel="noopener noreferrer">
-          <img className="ai-provider-logo ai-provider-logo--chatgpt" src="/ai/chatgpt.webp" width={24} height={24} alt="" loading="lazy" />
-          <span>
-            <strong>ChatGPT</strong>
-            <T as="small" pl="Pełny opis projektu" en="Full project overview" />
-          </span>
-        </AiLink>
-        <AiLink provider="claude" target="_blank" rel="noopener noreferrer">
-          <img className="ai-provider-logo" src="/ai/claude.svg" width={24} height={24} alt="" loading="lazy" />
-          <span>
-            <strong>Claude</strong>
-            <T as="small" pl="Analiza z referencjami" en="Analysis with references" />
-          </span>
-        </AiLink>
-        <AiLink provider="gemini" target="_blank" rel="noopener noreferrer">
-          <img className="ai-provider-logo" src="/ai/gemini.png" width={24} height={24} alt="" loading="lazy" />
-          <span>
-            <strong>Gemini</strong>
-            <T as="small" pl="Prompt kopiowany automatycznie" en="Prompt copied automatically" />
-          </span>
-        </AiLink>
+        {providers.map(({ id, name, file }) => (
+          <AiLink key={id} provider={id} target="_blank" rel="noopener noreferrer"
+            aria-label={`${language === "pl" ? "Zapytaj o Zostaje w" : "Ask about Zostaje in"} ${name}`}
+            title={name}>
+            <img className="ai-provider-logo" src={`/ai/${file}`} width={28} height={28} alt="" loading="lazy" />
+          </AiLink>
+        ))}
       </div>
       <AiNote className="footer-ai-note" />
     </div>
