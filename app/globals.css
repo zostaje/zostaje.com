@@ -136,14 +136,16 @@ h2,
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
 }
-.brand-logo {
-  width: 36px;
-  height: 36px;
+/* Preserve the pale source asset; darken its display for the fixed light theme. */
+.brand-wordmark {
   display: block;
+  width: 152px;
+  height: auto;
   flex-shrink: 0;
-  border-radius: 9px;
-  object-fit: contain;
+  filter: brightness(.34) saturate(1.35);
 }
+.brand:has(.brand-wordmark) { flex-shrink: 0; }
+.site-footer .brand-wordmark { width: 168px; }
 .nav-right {
   display: flex;
   align-items: center;

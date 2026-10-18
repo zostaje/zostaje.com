@@ -35,7 +35,8 @@ Przy przygotowaniu zasobów usunięto wyłącznie zewnętrzny margines
 (kadr: x=96, y=92, szerokość i wysokość 1066 px), a następnie przeskalowano obraz.
 Nie zmieniamy kształtu, proporcji, kolorów ani cieniowania znaku.
 
-- `public/brand/logo.png`: 256 × 256 px; nagłówek, menu mobilne i stopka, wyświetlane w 36 × 36 px.
+- `public/brand/logo.png`: 256 × 256 px; wcześniejszy znak, zachowany jako zasób.
+- `public/brand/wordmark-transparent.png`: pełny logotyp z napisem; nawigacja, jej menu mobilne i stopka. Tło jest przezroczyste. Na jasnej stronie CSS przyciemnia wyświetlanie, zachowując oryginalny jasnobłękitny plik.
 - `public/favicon.ico`: warianty 16, 32 i 48 px.
 - `public/favicon-16.png`, `public/favicon-32.png`: jawne ikony przeglądarkowe.
 - `public/apple-touch-icon.png`: 180 × 180 px.
@@ -43,7 +44,8 @@ Nie zmieniamy kształtu, proporcji, kolorów ani cieniowania znaku.
 - `public/favicon.svg`: zgodny adres historyczny, zawiera ten sam znak rastrowy.
 - `public/og-image.png` i źródłowy SVG: jasna karta udostępniania z logo.
 
-Logo obok nazwy jest dekoracyjne dla czytnika ekranu; link ma nazwę „Zostaje”.
+Pełny logotyp zastępuje ikonę i osobny tekst nazwy w nawigacji oraz stopce.
+Obraz i link mają nazwę „Zostaje” dla czytników ekranu.
 Ikony pozostają czarno-białe także w jasnym motywie strony.
 
 ## Typografia, kształt i układ

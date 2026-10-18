@@ -10,10 +10,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
       <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-            <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-            <span>
-              {"Zostaje"}
-            </span>
+            <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
           </a>
           <nav className="main-nav" aria-label="Nawigacja">
             <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
@@ -55,10 +52,7 @@ export function MinimalHeader({ home = false }: { home?: boolean }) {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-              <span>
-                {"Zostaje"}
-              </span>
+              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
             <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button">
               <span>
@@ -98,10 +92,7 @@ export function LegacyHeader() {
       <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
         <div className="container nav-wrap">
           <a className="brand" href="/" aria-label="Zostaje — strona główna">
-            <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-            <span>
-              {"Zostaje"}
-            </span>
+            <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
           </a>
           <nav className="main-nav" aria-label="Główna nawigacja">
             <T as="a" pl="Jak działa" en="How it works" href="/#jak-dziala" />
@@ -164,10 +155,7 @@ export function LegacyHeader() {
         <div className="mobile-menu-inner">
           <div className="mobile-menu-top">
             <a onClick={() => closeMenu(false)} className="brand" href="/">
-              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-              <span>
-                {"Zostaje"}
-              </span>
+              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
             <div className="mobile-menu-tools">
               <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label="Zmień język">
@@ -242,10 +230,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-              <span>
-                {"Zostaje"}
-              </span>
+              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
             <T as="p" pl="Zrozum pieniądze. Wybierz po swojemu." en="Understand your money. Choose for yourself." />
             <nav className="footer-socials" aria-label="Kontakt">
@@ -290,10 +275,7 @@ export function LegacyFooter() {
         <div className="container footer-grid">
           <div className="footer-about">
             <a className="brand footer-brand" href="/">
-              <img className="brand-logo" src="/brand/logo.png" width={36} height={36} alt="" />
-              <span>
-                {"Zostaje"}
-              </span>
+              <img className="brand-wordmark" src="/brand/wordmark-transparent.png" width={152} height={45} alt="Zostaje" />
             </a>
             <T as="p" pl="Śledź nas" en="Follow us" className="footer-follow" />
             <nav className="footer-socials" aria-label="Media społecznościowe">
