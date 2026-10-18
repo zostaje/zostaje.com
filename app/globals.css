@@ -138,12 +138,12 @@ h2,
 }
 .brand-wordmark {
   display: block;
-  width: 152px;
+  width: 120px;
   height: auto;
   flex-shrink: 0;
 }
 .brand:has(.brand-wordmark) { flex-shrink: 0; }
-.site-footer .brand-wordmark { width: 168px; }
+.site-footer .brand-wordmark { width: 136px; }
 .nav-right {
   display: flex;
   align-items: center;
