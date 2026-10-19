@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { T, LanguageLabel, useSite } from "@/components/site-provider";
-import { ThemeSelect } from "./theme-select";
+import { ThemeToggle } from "./theme-toggle";
 import { AiLink, AiNote } from "@/components/ai-links";
 
 function BrandWordmark() {
@@ -285,9 +285,6 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
             <T as="p" pl="Zrozum pieniądze. Wybierz po swojemu." en="Understand your money. Choose for yourself." />
             <FooterSocialLinks />
             <FooterAiLinks />
-            <small>
-              {"© 2026 Zostaje"}
-            </small>
           </div>
           <div className="footer-links">
             <div>
@@ -309,7 +306,10 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
             </div>
           </div>
         </div>
-        <div className="container footer-preferences"><ThemeSelect /></div>
+        <div className="container footer-bottom">
+          <small>© 2026 Zostaje</small>
+          <ThemeToggle />
+        </div>
       </footer>
     </>
   );
@@ -361,9 +361,6 @@ export function LegacyFooter() {
                 </button>
               </div>
             </details>
-            <small>
-              {"© 2026 Zostaje"}
-            </small>
           </div>
           <div className="footer-links">
             <div>
@@ -421,7 +418,10 @@ export function LegacyFooter() {
             </div>
           </div>
         </div>
-        <div className="container footer-preferences"><ThemeSelect /></div>
+        <div className="container footer-bottom">
+          <small>© 2026 Zostaje</small>
+          <ThemeToggle />
+        </div>
       </footer>
     </>
   );

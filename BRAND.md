@@ -3,7 +3,8 @@
 ## Kierunek
 
 Strona ma dwa motywy: jasny i ciemny. Domyślnie podąża za ustawieniami urządzenia,
-także po ich zmianie. Tylko w stopce jest wybór „Systemowy / Jasny / Ciemny”.
+także po ich zmianie. Tylko w stopce jest przycisk z ikoną, przełączający kolejno: systemowy → jasny → ciemny.
+Znajduje się po prawej stronie wiersza z copyrightem, bez separatora i osobnego paska.
 Ręczny wybór zapamiętujemy lokalnie w tej przeglądarce; „Systemowy” usuwa nadpisanie.
 Logotypy wyświetlamy bez filtrów kolorystycznych.
 
