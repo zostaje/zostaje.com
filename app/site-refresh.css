@@ -3,21 +3,6 @@
 .site-header .nav-wrap { min-height: 88px; }
 .site-header.is-scrolled .nav-wrap { min-height: 68px; }
 .main-nav a { font-size: .9rem; font-weight: 500; }
-/* Subpages keep navigation distinct from their content and secondary labels. */
-.site-header.is-subpage { background: rgb(23 23 23 / 96%); border-bottom-color: #404040; }
-.site-header.is-subpage .main-nav a,
-.site-header.is-subpage .language-menu summary,
-.site-header.is-subpage .menu-toggle,
-.mobile-menu.is-subpage .mobile-primary-nav a { color: #eeeeee; }
-.site-header.is-subpage .main-nav a:hover,
-.site-header.is-subpage .main-nav a:focus-visible,
-.mobile-menu.is-subpage .mobile-primary-nav a:hover,
-.mobile-menu.is-subpage .mobile-primary-nav a:focus-visible { color: #ffffff; background: #293548; }
-.site-header.is-subpage .button-outline { color: #ffffff; border-color: #707070; }
-.site-header.is-subpage .button-outline:hover { background: #303030; border-color: #999999; }
-.site-header.is-subpage .menu-toggle { border-color: #707070; }
-.mobile-menu.is-subpage { background: #151515; }
-
 .button { border-radius: 8px; box-shadow: none; transition: background 160ms, border-color 160ms; }
 .button:hover { transform: none; }
 .button-outline { background: transparent; border-color: #414141; }
@@ -174,9 +159,7 @@
 }
 
 .main-nav a[aria-current="page"],
-.mobile-primary-nav a[aria-current="page"],
-.site-header.is-subpage .main-nav a[aria-current="page"],
-.mobile-menu.is-subpage .mobile-primary-nav a[aria-current="page"] {
+.mobile-primary-nav a[aria-current="page"] {
   color: var(--text);
   background: rgb(21 94 239 / 14%);
   box-shadow: inset 0 -2px 0 var(--brand);

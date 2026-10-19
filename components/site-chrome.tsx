@@ -66,210 +66,53 @@ function PrimaryNavLinks({ mobile = false }: { mobile?: boolean }) {
   ));
 }
 
-export function MinimalHeader({ home = false }: { home?: boolean }) {
+export function SiteHeader() {
   const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
-  return (
-    <>
-      <header className={"site-header" + (!home ? " is-subpage" : "") + (scrolled ? " is-scrolled" : "")}>
-        <div className="container nav-wrap">
-          <a className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-            <BrandWordmark />
-          </a>
-          <nav className="main-nav" aria-label="Nawigacja">
-            <PrimaryNavLinks />
-          </nav>
-          <div className="nav-right">
-            <details className="language-menu">
-              <summary aria-label="Język / Language">
-                <span className="current-language">
-                  <LanguageLabel />
-                </span>
-              </summary>
-              <div className="language-dropdown">
-                <button onClick={() => setLanguage("pl")} type="button" data-language="pl">
-                  {"Polski"}
-                </button>
-                <button onClick={() => setLanguage("en")} type="button" data-language="en">
-                  {"English"}
-                </button>
-              </div>
-            </details>
-            <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
-            <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu">
-              <span>
-
-              </span>
-              <span>
-
-              </span>
-              <span>
-
-              </span>
-            </button>
-          </div>
-        </div>
-      </header>
-      <div className={"mobile-menu" + (!home ? " is-subpage" : "") + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
-        <div className="mobile-menu-inner">
-          <div className="mobile-menu-top">
-            <a onClick={() => closeMenu(false)} className="brand" href={home ? "#top" : "/#top"} aria-label="Zostaje">
-              <BrandWordmark />
-            </a>
-            <div className="mobile-menu-tools">
-              <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
-                <LanguageLabel />
-              </button>
-              <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button">
-                <span>
-
-                </span>
-                <span>
-
-                </span>
-              </button>
+  return <>
+    <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
+      <div className="container nav-wrap">
+        <a className="brand" href="/" aria-label={language === "pl" ? "Zostaje — strona główna" : "Zostaje — home"}><BrandWordmark /></a>
+        <nav className="main-nav" aria-label={language === "pl" ? "Główna nawigacja" : "Main navigation"}><PrimaryNavLinks /></nav>
+        <div className="nav-right">
+          <details className="language-menu">
+            <summary aria-label="Język / Language"><span className="current-language"><LanguageLabel /></span></summary>
+            <div className="language-dropdown">
+              <button onClick={() => setLanguage("pl")} type="button" data-language="pl">Polski</button>
+              <button onClick={() => setLanguage("en")} type="button" data-language="en">English</button>
             </div>
-          </div>
-          <nav className="mobile-primary-nav" aria-label="Nawigacja mobilna">
-            <PrimaryNavLinks mobile />
-          </nav>
-          <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
-            <p>
-              {"PL / EN"}
-            </p>
-            <button onClick={() => setLanguage("pl")} type="button" data-language="pl">
-              {"Polski"}
-            </button>
-            <button onClick={() => setLanguage("en")} type="button" data-language="en">
-              {"English"}
-            </button>
-          </div>
+          </details>
+          <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
+          <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu"><span /><span /><span /></button>
         </div>
       </div>
-    </>
-  );
-}
-
-export function LegacyHeader() {
-  const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
-  return (
-    <>
-      <header className={"site-header is-subpage" + (scrolled ? " is-scrolled" : "")}>
-        <div className="container nav-wrap">
-          <a className="brand" href="/" aria-label="Zostaje — strona główna">
-            <BrandWordmark />
-          </a>
-          <nav className="main-nav" aria-label="Główna nawigacja">
-            <PrimaryNavLinks />
-          </nav>
-          <div className="nav-right">
-            <details className="language-menu">
-              <summary aria-label="Zmień język">
-                <svg className="language-globe" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10">
-
-                  </circle>
-                  <path d="M2 12h20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 1 0 20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 0 0 20">
-
-                  </path>
-                </svg>
-                <svg className="language-chevron" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m6 9 6 6 6-6">
-
-                  </path>
-                </svg>
-              </summary>
-              <div className="language-dropdown">
-                <button onClick={() => setLanguage("pl")} type="button" data-language="pl">
-                  {"Polski"}
-                </button>
-                <button onClick={() => setLanguage("en")} type="button" data-language="en">
-                  {"English"}
-                </button>
-              </div>
-            </details>
-            <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
-            <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu">
-              <span>
-
-              </span>
-              <span>
-
-              </span>
-              <span>
-
-              </span>
-            </button>
+    </header>
+    <div className={"mobile-menu" + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
+      <div className="mobile-menu-inner">
+        <div className="mobile-menu-top">
+          <a onClick={() => closeMenu(false)} className="brand" href="/" aria-label="Zostaje"><BrandWordmark /></a>
+          <div className="mobile-menu-tools">
+            <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel"><LanguageLabel /></button>
+            <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button"><span /><span /></button>
           </div>
         </div>
-      </header>
-      <div className={"mobile-menu is-subpage" + (menuOpen ? " is-open" : "")} hidden={!menuMounted} id="mobile-menu">
-        <div className="mobile-menu-inner">
-          <div className="mobile-menu-top">
-            <a onClick={() => closeMenu(false)} className="brand" href="/">
-              <BrandWordmark />
-            </a>
-            <div className="mobile-menu-tools">
-              <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel">
-                <svg className="language-globe" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10">
-
-                  </circle>
-                  <path d="M2 12h20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 1 0 20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 0 0 20">
-
-                  </path>
-                </svg>
-              </button>
-              <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button">
-                <span>
-
-                </span>
-                <span>
-
-                </span>
-              </button>
-            </div>
+        <nav className="mobile-primary-nav" aria-label={language === "pl" ? "Nawigacja mobilna" : "Mobile navigation"}><PrimaryNavLinks mobile /></nav>
+        <div className="mobile-secondary-nav">
+          <T as="p" pl="Dowiedz się więcej" en="Learn more" />
+          <div>
+            <T as="a" pl="Pomoc" en="Help" onClick={() => closeMenu(false)} href="/help/" />
+            <a onClick={() => closeMenu(false)} href="https://github.com/zostaje">GitHub</a>
+            <T as="a" pl="Historia wersji" en="Release history" onClick={() => closeMenu(false)} href="/releases/" />
+            <T as="a" pl="Polityka prywatności" en="Privacy policy" onClick={() => closeMenu(false)} href="/privacy/" />
           </div>
-          <nav className="mobile-primary-nav" aria-label="Mobilna nawigacja">
-            <PrimaryNavLinks mobile />
-          </nav>
-          <div className="mobile-secondary-nav">
-            <T as="p" pl="Dowiedz się więcej" en="Learn more" />
-            <div>
-              <T as="a" pl="Pomoc" en="Help" onClick={() => closeMenu(false)} href="/help/" />
-              <a onClick={() => closeMenu(false)} href="https://github.com/zostaje">
-                {"GitHub"}
-              </a>
-              <T as="a" pl="Bezpieczeństwo" en="Security" onClick={() => closeMenu(false)} href="/#bezpieczenstwo" />
-              <T as="a" pl="Kontakt" en="Contact" onClick={() => closeMenu(false)} href="mailto:demo@zostaje.app" />
-            </div>
-          </div>
-          <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
-            <p>
-              {"Język strony"}
-            </p>
-            <button onClick={() => setLanguage("pl")} type="button" data-language="pl">
-              {"Polski"}
-            </button>
-            <button onClick={() => setLanguage("en")} type="button" data-language="en">
-              {"English"}
-            </button>
-          </div>
+        </div>
+        <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
+          <T as="p" pl="Język strony" en="Website language" />
+          <button onClick={() => setLanguage("pl")} type="button" data-language="pl">Polski</button>
+          <button onClick={() => setLanguage("en")} type="button" data-language="en">English</button>
         </div>
       </div>
-    </>
-  );
+    </div>
+  </>;
 }
 
 export function MinimalFooter({ home = false }: { home?: boolean }) {

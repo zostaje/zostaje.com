@@ -3,13 +3,13 @@
 import { T, HeroHeading } from "@/components/site-provider";
 import { ProductPreview, PhonePreview } from "@/components/product-preview";
 import { DemoSignupForm } from "@/components/demo-signup-form";
-import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
+import { SiteHeader, MinimalFooter } from "@/components/site-chrome";
 
 export function HomeContent() {
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-      <MinimalHeader home />
+      <SiteHeader />
       <main id="main" className="product-home">
         <section className="hero" id="top">
           <div className="container hero-grid">

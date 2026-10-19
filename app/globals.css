@@ -111,7 +111,7 @@ h2,
   transition: border-color 180ms ease;
 }
 .site-header.is-scrolled {
-  border-bottom-color: rgb(42 55 49 / 82%);
+  border-bottom-color: var(--line);
 }
 
 .nav-wrap {

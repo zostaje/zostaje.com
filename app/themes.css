@@ -159,26 +159,6 @@ html[data-theme="light"] .demo-entry-list li {
 }
 html[data-theme="light"] { --line: #d5dde8
 }
-html[data-theme="light"] .site-header.is-subpage { background: rgb(255 255 255 / 96%); border-bottom-color: #d5dde8
-}
-html[data-theme="light"] .site-header.is-subpage .main-nav a,
-html[data-theme="light"] .site-header.is-subpage .language-menu summary,
-html[data-theme="light"] .site-header.is-subpage .menu-toggle,
-html[data-theme="light"] .mobile-menu.is-subpage .mobile-primary-nav a { color: #18233b
-}
-html[data-theme="light"] .site-header.is-subpage .main-nav a:hover,
-html[data-theme="light"] .site-header.is-subpage .main-nav a:focus-visible,
-html[data-theme="light"] .mobile-menu.is-subpage .mobile-primary-nav a:hover,
-html[data-theme="light"] .mobile-menu.is-subpage .mobile-primary-nav a:focus-visible { background: #dfe8f6
-}
-html[data-theme="light"] .site-header.is-subpage .button-outline { border-color: #8c9db6
-}
-html[data-theme="light"] .site-header.is-subpage .button-outline:hover { background: #d5dde8; border-color: #5b7399
-}
-html[data-theme="light"] .site-header.is-subpage .menu-toggle { border-color: #8c9db6
-}
-html[data-theme="light"] .mobile-menu.is-subpage { background: #f8fafc
-}
 html[data-theme="light"] .button-outline { border-color: #c5cfde
 }
 html[data-theme="light"] .button-outline:hover { background: #f0f4f9
@@ -230,12 +210,7 @@ html[data-theme="light"] .product-home .demo-form { background: #ffffff
 html[data-theme="light"] .main-nav a:hover,
 html[data-theme="light"] .main-nav a:focus-visible,
 html[data-theme="light"] .mobile-primary-nav a:hover,
-html[data-theme="light"] .mobile-primary-nav a:focus-visible,
-html[data-theme="light"] .site-header.is-subpage .main-nav a:hover,
-html[data-theme="light"] .site-header.is-subpage .main-nav a:focus-visible,
-html[data-theme="light"] .mobile-menu.is-subpage .mobile-primary-nav a:hover,
-html[data-theme="light"] .mobile-menu.is-subpage .mobile-primary-nav a:focus-visible,
-html[data-theme="light"] .site-header.is-subpage .button-outline { color: var(--text); }
+html[data-theme="light"] .mobile-primary-nav a:focus-visible { color: var(--text); }
 
 html[data-theme="light"] .button-outline { background: transparent; }
 html[data-theme="light"] .product-home .step-card,

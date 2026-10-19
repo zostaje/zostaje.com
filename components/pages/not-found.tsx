@@ -1,12 +1,12 @@
 "use client";
 
 import { T } from "@/components/site-provider";
-import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
+import { SiteHeader, MinimalFooter } from "@/components/site-chrome";
 
 export function NotFoundContent() {
   return <>
     <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-    <MinimalHeader />
+    <SiteHeader />
     <main className="subpage-main" id="main">
       <section className="not-found-section">
         <div className="container not-found-grid">

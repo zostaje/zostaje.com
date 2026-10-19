@@ -1,7 +1,7 @@
 "use client";
 
 import { T, useSite } from "@/components/site-provider";
-import { LegacyHeader, LegacyFooter } from "@/components/site-chrome";
+import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 import { releases } from "@/lib/releases";
 
 export function ReleasesContent() {
@@ -9,7 +9,7 @@ export function ReleasesContent() {
   const formatDate = (date: string) => new Intl.DateTimeFormat(language === "pl" ? "pl-PL" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(date));
   return <>
     <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-    <LegacyHeader />
+    <SiteHeader />
     <main className="subpage-main releases-page" id="main">
       <header className="container releases-heading">
         <T as="p" className="subpage-kicker" pl="Rozwój Zostaje" en="Zostaje development" />

@@ -1,13 +1,13 @@
 "use client";
 
 import { T } from "@/components/site-provider";
-import { MinimalHeader, MinimalFooter } from "@/components/site-chrome";
+import { SiteHeader, MinimalFooter } from "@/components/site-chrome";
 
 export function ProjektContent() {
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-      <MinimalHeader />
+      <SiteHeader />
       <main id="main" className="product-home project-page">
         <section className="section intro" id="top">
           <div className="container narrow-heading">

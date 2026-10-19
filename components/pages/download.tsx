@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { T, useSite } from "@/components/site-provider";
-import { LegacyHeader, LegacyFooter } from "@/components/site-chrome";
+import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 import { DownloadEmblem } from "@/components/download-emblem";
 import { detectPlatform, platforms, releases, type PlatformId } from "@/lib/releases";
 
@@ -16,7 +16,7 @@ export function DownloadContent() {
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-      <LegacyHeader />
+      <SiteHeader />
       <main className="subpage-main download-page" id="main">
         <section className="download-hero" aria-labelledby="download-heading">
           <div className="container">

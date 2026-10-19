@@ -1,12 +1,12 @@
 "use client";
 
 import { T } from "@/components/site-provider";
-import { LegacyHeader, LegacyFooter } from "@/components/site-chrome";
+import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 
 export function PrivacyContent() {
   return <>
     <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-    <LegacyHeader />
+    <SiteHeader />
     <main className="subpage-main policy-page" id="main">
       <header className="container policy-heading">
         <T as="p" className="subpage-kicker" pl="Twoje dane" en="Your data" />

@@ -116,3 +116,9 @@ strony pozostają wyłącznie ikony aktywnego motywu, także przy ręcznym wybor
 Podgląd linków Open Graph i X używa jasnej karty z dużym logo (`og-image-light.png?v=4`).
 Ma stały wariant, ponieważ aplikacje społecznościowe pobierają go niezależnie od ustawień
 motywu w przeglądarce odwiedzającego.
+
+## Wspólny nagłówek
+
+Wszystkie strony, także 404, używają jednego `SiteHeader`. Wybór PL/EN, wysokość
+nagłówka przed i po przewinięciu, kolory, odstępy oraz menu mobilne są wspólne.
+Aktywny link jest jedynym wyróżnieniem zależnym od aktualnej podstrony.

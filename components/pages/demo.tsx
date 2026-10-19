@@ -1,14 +1,14 @@
 "use client";
 
 import { T } from "@/components/site-provider";
-import { LegacyHeader, LegacyFooter } from "@/components/site-chrome";
+import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 import { DemoLab } from "@/components/demo-lab";
 
 export function DemoContent() {
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
-      <LegacyHeader />
+      <SiteHeader />
       <main className="subpage-main" id="main">
         <section className="subpage-hero demo-lab-hero">
           <div className="container subpage-hero-copy">
