@@ -388,13 +388,18 @@ void main() {
   vec2 cloudDelta = (frag - uLens.xy) / vec2(uLens.z * 1.65, uLens.z * 0.8);
   float pointerCloud = exp(-dot(cloudDelta, cloudDelta)) * uLens.w;
   float cloudZone = smoothstep(sy + iconHeight * 0.15, sy + iconHeight * 0.65, p.y)
-    * (1.0 - smoothstep(sb + 80.0 / uScale, sb + 160.0 / uScale, p.y));
+    * (1.0 - smoothstep(sb - 80.0 / uScale, sb + 160.0 / uScale, p.y));
+  // An elliptical feather dissolves the cloud before any canvas boundary.
+  // Independent horizontal/vertical clipping leaves visible rectangular corners.
+  vec2 cloudBounds = vec2(
+    (frag.x - uResolution.x * 0.5) / (uResolution.x * 0.48),
+    (frag.y - (uSurface.w - 30.0)) / (iconHeight * uScale * 0.85 + 100.0)
+  );
+  float cloudFeather = pow(1.0 - smoothstep(0.15, 1.0, length(cloudBounds)), 2.0);
   vec2 cloudUV = p / 115.0 + vec2(t * 0.025, -t * 0.018);
   float cloudTexture = fbm(cloudUV + vec2(fbm(cloudUV + 2.7), fbm(cloudUV - 4.1)));
-  float atmosphere = pointerCloud * cloudZone * (0.12 + 0.48 * cloudTexture)
-    * smoothstep(-0.75, 0.25, sd * uScale) * uAtmosphere
-    * smoothstep(0.0, 160.0, frag.x)
-    * (1.0 - smoothstep(uResolution.x - 160.0, uResolution.x, frag.x));
+  float atmosphere = pointerCloud * cloudZone * cloudFeather * (0.18 + 0.42 * cloudTexture)
+    * smoothstep(-0.75, 0.25, sd * uScale) * uAtmosphere;
   emit += (1.0 - exp(-BEAM * atmosphere)) * mix(1.0, 0.65, uTheme);
   float peak = max(emit.r, max(emit.g, emit.b));
   if (uTheme > 0.5) {

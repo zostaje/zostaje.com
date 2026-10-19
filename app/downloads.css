@@ -19,8 +19,8 @@
   left: -160px;
   width: calc(100% + 320px);
   height: calc(100% + 160px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(100% - 70px), transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(100% - 70px), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 32px, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent, #000 32px, #000 55%, transparent 100%);
 }
 .download-hero .download-wordmark { width: 300px; max-width: 80%; margin: 0 auto 32px; font-size: 0; line-height: 0; }
 .download-wordmark .brand-wordmark { width: 100%; height: auto; }
