@@ -20,8 +20,10 @@ export function DownloadContent() {
       <main className="subpage-main download-page" id="main">
         <section className="download-hero" aria-labelledby="download-heading">
           <div className="container">
-            <T as="h1" id="download-heading" pl="Twoje pieniądze. Twój plan." en="Your money. Your plan." />
-            <T as="p" className="download-lead" pl="Zostaje na Twoim urządzeniu." en="Zostaje on your device." />
+            <div className="download-heading-copy">
+              <T as="h1" id="download-heading" pl="Twoje pieniądze. Twój plan." en="Your money. Your plan." />
+              <T as="p" className="download-lead" pl="Zostaje na Twoim urządzeniu." en="Zostaje on your device." />
+            </div>
             <DownloadEmblem />
             <div className="download-action" aria-live="polite">
               {platform?.downloadUrl

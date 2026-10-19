@@ -150,8 +150,8 @@ float roundBox(vec2 p, vec2 b, float r) {
 vec3 spill(float e, float fall, float strength, float front, float t, out vec3 glow) {
   glow = vec3(0.0);
   if (strength < 0.0005) return vec3(0.0);
-  // Stretch the fall to reach the bottom corners of the app icon.
-  float f = max(fall, 0.0) / 1.8;
+  // Stretch the fall past the app icon toward the download action.
+  float f = max(fall, 0.0) / 2.4;
   float d = max(e, 0.0);
   float u = d / (6.0 + 0.28 * f);
   float start = smoothstep(-6.0, 12.0, fall);
