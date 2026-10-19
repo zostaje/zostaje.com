@@ -10,31 +10,17 @@
 }
 .download-emblem { position: absolute; top: var(--icon-top); left: 50%; transform: translateX(-50%); width: var(--icon-size); height: var(--icon-size); border-radius: calc(var(--icon-size) * .227); }
 .download-emblem img { width: 100%; height: 100%; }
-.download-emblem-glow {
-  pointer-events: none;
-  position: absolute;
-  top: calc(var(--icon-top) + var(--icon-size) * .25);
-  left: 50%;
-  width: 1120px;
-  height: calc(var(--icon-size) + 180px);
-  transform: translate(calc(-50% + var(--glow-x, 0px)), var(--glow-y, 0px));
-  background: radial-gradient(ellipse at 50% 55%, #155eef30 0%, #155eef18 32%, #155eef08 52%, transparent 72%);
-  -webkit-mask-image: linear-gradient(transparent, #000 28%, #000 65%, transparent);
-  mask-image: linear-gradient(transparent, #000 28%, #000 65%, transparent);
-  opacity: .65;
-  transition: transform 650ms cubic-bezier(.16, 1, .3, 1), opacity 650ms ease;
-  z-index: -1;
-}
-.download-emblem-stage[data-pointer="active"] .download-emblem-glow { opacity: 1; }
+.download-emblem-glow { pointer-events: none; position: absolute; top: var(--icon-top); left: 50%; width: calc(var(--icon-size) + 40px); height: calc(var(--icon-size) + 32px); transform: translateX(-50%); background: radial-gradient(ellipse, #155eef26, transparent 70%); z-index: -1; }
 .download-hero .download-wordmark { position: relative; z-index: 1; }
 .laser-flow {
   pointer-events: none;
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(var(--icon-top) + var(--icon-size) / 4), transparent calc(var(--icon-top) + var(--icon-size) / 2));
-  mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(var(--icon-top) + var(--icon-size) / 4), transparent calc(var(--icon-top) + var(--icon-size) / 2));
+  top: 0;
+  left: -160px;
+  width: calc(100% + 320px);
+  height: calc(100% + 160px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(100% - 70px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 24px, #000 calc(100% - 70px), transparent);
 }
 .download-hero .download-wordmark { width: 300px; max-width: 80%; margin: 0 auto 32px; font-size: 0; line-height: 0; }
 .download-wordmark .brand-wordmark { width: 100%; height: auto; }
@@ -92,7 +78,6 @@
 @media (max-width: 640px) {
   .download-hero { padding-top: 16px; padding-bottom: 40px; }
   .download-emblem-stage { --icon-size: 216px; --icon-top: 88px; margin: 0 -12px 24px; }
-  .download-emblem-glow { width: 760px; }
   .download-hero .download-wordmark { width: 260px; margin-bottom: 28px; }
   .download-availability { font-size: .85rem; }
   .download-version { max-width: 300px; margin-inline: auto; line-height: 1.8; }

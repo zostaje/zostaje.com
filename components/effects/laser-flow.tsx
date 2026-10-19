@@ -150,10 +150,10 @@ float roundBox(vec2 p, vec2 b, float r) {
 vec3 spill(float e, float fall, float strength, float front, float t, out vec3 glow) {
   glow = vec3(0.0);
   if (strength < 0.0005) return vec3(0.0);
-  // Stretch the fall past the app icon toward the download action.
+  // Broaden the falling streams independently of the upper beam.
   float f = max(fall, 0.0) / 2.4;
   float d = max(e, 0.0);
-  float u = d / (6.0 + 0.28 * f);
+  float u = d / (14.0 + 0.5 * f);
   float start = smoothstep(-6.0, 12.0, fall);
   float fade = exp(-sq(max(f - 125.0, 0.0) / 40.0));
   // Moving bands make the downward flow legible after the intro settles.
@@ -163,8 +163,8 @@ vec3 spill(float e, float fall, float strength, float front, float t, out vec3 g
   float soft = sqrt(strength);
   float warmth = smoothstep(90.0, 130.0, f);
   vec3 coreK = mix(WHITE, WARM, warmth * exp(-d / 9.0));
-  float core = mix(9.0, 2.6, warmth) * exp(-sq(d / (3.5 + 0.04 * f))) * exp(-sq(max(f - 130.0, 0.0) / 38.0));
-  float wall = 24.0 * exp(-sq(d / 1.1)) * exp(-sq(max(f - 100.0, 0.0) / 30.0));
+  float core = mix(9.0, 2.6, warmth) * exp(-sq(d / (6.0 + 0.08 * f))) * exp(-sq(max(f - 130.0, 0.0) / 38.0));
+  float wall = 24.0 * exp(-sq(d / 2.0)) * exp(-sq(max(f - 100.0, 0.0) / 30.0));
   float bandCenter = 0.7 - 0.3 * smoothstep(30.0, 110.0, f);
   float offset = u - bandCenter;
   float decay = (1.05 - bandCenter) / 1.31;
@@ -179,7 +179,7 @@ vec3 spill(float e, float fall, float strength, float front, float t, out vec3 g
   glow += fanK * 4.5 * profile * fade * streak * bright;
   glow += MIST * 0.7 * exp(-max(u - 1.0, 0.0) / 0.9) * smoothstep(0.7, 1.2, u) * fade * soft;
   glow += EMBER * 0.35 * exp(-sq((f - 165.0) / 22.0)) * exp(-d / 25.0) * bright;
-  float lag = u * (6.0 + 0.28 * f) * 0.35;
+  float lag = u * (14.0 + 0.5 * f) * 0.35;
   float reveal = 1.0 - smoothstep(front - 70.0, front + 8.0, f + lag);
   glow *= start * reveal;
   return thread * start * reveal;
@@ -377,6 +377,25 @@ void main() {
   col *= smoothstep(-0.75, 0.25, sd * uScale);
 
   vec3 emit = 1.0 - exp(-col * mix(1.0, 0.6, uTheme));
+  // Fade emitted light after tone mapping so bright side streams cannot
+  // remain opaque until the last few pixels of a CSS mask.
+  float iconHeight = sb - sy;
+  float waterfallFade = 1.0 - smoothstep(sy + iconHeight * 0.12, sy + iconHeight * 0.64, p.y);
+  emit *= waterfallFade;
+
+  // A separate, wide cloud follows the pointer behind the wordmark. Its
+  // vertical envelope keeps the added atmosphere below the beam's impact.
+  vec2 cloudDelta = (frag - uLens.xy) / vec2(uLens.z * 1.65, uLens.z * 0.8);
+  float pointerCloud = exp(-dot(cloudDelta, cloudDelta)) * uLens.w;
+  float cloudZone = smoothstep(sy + iconHeight * 0.15, sy + iconHeight * 0.65, p.y)
+    * (1.0 - smoothstep(sb + 80.0 / uScale, sb + 160.0 / uScale, p.y));
+  vec2 cloudUV = p / 115.0 + vec2(t * 0.025, -t * 0.018);
+  float cloudTexture = fbm(cloudUV + vec2(fbm(cloudUV + 2.7), fbm(cloudUV - 4.1)));
+  float atmosphere = pointerCloud * cloudZone * (0.12 + 0.48 * cloudTexture)
+    * smoothstep(-0.75, 0.25, sd * uScale) * uAtmosphere
+    * smoothstep(0.0, 160.0, frag.x)
+    * (1.0 - smoothstep(uResolution.x - 160.0, uResolution.x, frag.x));
+  emit += (1.0 - exp(-BEAM * atmosphere)) * mix(1.0, 0.65, uTheme);
   float peak = max(emit.r, max(emit.g, emit.b));
   if (uTheme > 0.5) {
     float low = min(emit.r, min(emit.g, emit.b));
@@ -734,8 +753,10 @@ export const LaserFlow = ({
       const s = settingsRef.current;
       resolveColor(s);
       const { width, height } = state;
-      const scale = Math.max(0.2, Math.min(width / 585, height / 507));
       let surface = measure(s, width, height);
+      // The larger canvas gives pointer fog room without scaling the beam.
+      const effectHeight = surface.real ? surface.bottom : height;
+      const scale = Math.max(0.2, Math.min(width / 585, effectHeight / 507));
       let beamX = s.beamPosition * width;
       if (surface.real) {
         const margin = surface.radius + 6;
@@ -792,7 +813,7 @@ export const LaserFlow = ({
       gl.uniform3f(uniforms.uIntro, front, bloom, flash);
       gl.uniform4f(uniforms.uPour, frontL, frontR, fillL, fillR);
       gl.uniform2f(uniforms.uRun, runFront, beadStrength);
-      gl.uniform4f(uniforms.uLens, state.lens.x, state.lens.y, 95 * scale, state.lens.strength);
+      gl.uniform4f(uniforms.uLens, state.lens.x, state.lens.y, 300 * scale, state.lens.strength);
       resolveReveal(s);
       const { reveal } = state;
       const cover = Math.max(width / reveal.width, height / reveal.height);
@@ -863,6 +884,7 @@ export const LaserFlow = ({
     };
 
     const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
       const rect = container.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
