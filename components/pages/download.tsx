@@ -20,11 +20,11 @@ export function DownloadContent() {
       <main className="subpage-main download-page" id="main">
         <section className="download-hero" aria-labelledby="download-heading">
           <div className="container">
-            <div className="download-heading-copy">
-              <T as="h1" id="download-heading" pl="Twoje pieniądze. Twój plan." en="Your money. Your plan." />
-              <T as="p" className="download-lead" pl="Zostaje na Twoim urządzeniu." en="Zostaje on your device." />
-            </div>
             <DownloadEmblem />
+            <h1 className="download-wordmark" id="download-heading">
+              <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-dark.svg?v=5" width={2150} height={606} alt="Zostaje" />
+              <img className="brand-wordmark wordmark-light" src="/brand/wordmark-light.svg?v=5" width={2150} height={606} alt="Zostaje" />
+            </h1>
             <div className="download-action" aria-live="polite">
               {platform?.downloadUrl
                 ? <a className="button button-primary download-primary" href={platform.downloadUrl}>{language === "pl" ? "Pobierz dla" : "Download for"} {platform.name}</a>

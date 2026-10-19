@@ -122,3 +122,10 @@ motywu w przeglądarce odwiedzającego.
 Wszystkie strony, także 404, używają jednego `SiteHeader`. Wybór PL/EN, wysokość
 nagłówka przed i po przewinięciu, kolory, odstępy oraz menu mobilne są wspólne.
 Aktywny link jest jedynym wyróżnieniem zależnym od aktualnej podstrony.
+
+## Strona Download
+
+Sekcja otwiera się ikoną aplikacji (248 px desktop, 216 px mobile) oraz dużym
+logotypem pod nią (300 / 260 px). Nie ma dodatkowego nagłówka reklamowego.
+Animacja nad ikoną płynnie wygasa do połowy jej wysokości; logotyp i przycisk
+pobierania pozostają poza spływającym światłem. Oba znaki zmieniają wariant z motywem.
