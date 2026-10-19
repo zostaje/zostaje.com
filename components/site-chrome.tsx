@@ -7,8 +7,8 @@ import { AiLink, AiNote } from "@/components/ai-links";
 
 function BrandWordmark() {
   return <>
-    <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-dark.svg" width={2150} height={606} alt="Zostaje" />
-    <img className="brand-wordmark wordmark-light" src="/brand/wordmark-light.svg" width={2150} height={606} alt="Zostaje" />
+    <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-dark.svg?v=5" width={2150} height={606} alt="Zostaje" />
+    <img className="brand-wordmark wordmark-light" src="/brand/wordmark-light.svg?v=5" width={2150} height={606} alt="Zostaje" />
   </>;
 }
 

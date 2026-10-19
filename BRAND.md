@@ -74,7 +74,8 @@ Szerokość wynosi 96 px w nawigacji i 112 px w stopce; wysokość wynika z prop
 
 Aktualne źródła to cztery dostarczone pliki SVG: Wordmark Dark/Light i App Icon Dark/Light.
 Z wordmarków usunięto wyłącznie prostokąt tła i zewnętrzny margines; viewBox wynosi
-`365 199 2150 606`. Zachowano ścieżki, maski, gradienty i proporcje.
+`365 199 2150 606`. Zachowano ścieżki, gradienty i proporcje. Binarne maski alfa zamieniono na
+wektorowe clipPath, żeby uprościć renderowanie małego logo w przeglądarkach mobilnych.
 Ikony aplikacji zachowują oryginalne zaokrąglone krawędzie i przezroczyste narożniki.
 
 - `public/brand/wordmark-dark.svg`, `wordmark-light.svg`: nawigacja, menu mobilne i stopka.
