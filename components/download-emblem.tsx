@@ -24,7 +24,7 @@ export function DownloadEmblem() {
         <img className="wordmark-dark" src="/brand/icon-dark.svg" width={240} height={240} alt="Zostaje" />
         <img className="wordmark-light" src="/brand/icon-light.svg" width={240} height={240} alt="Zostaje" />
       </div>
-      {!reducedMotion && <LaserFlow surfaceRef={surface} beamPosition={0.5} color="#155EEF" intensity={1.5} flare={1.1} spread={0.65} spill={0.6} fog={0.12} dust={0.7} speed={0.8} dpr={1.5} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
+      {!reducedMotion && <LaserFlow surfaceRef={surface} beamPosition={0.5} color="#155EEF" intensity={1.35} flare={1.1} spread={1.25} spill={0.8} fog={0.1} dust={1.1} streaks={1.8} pulse={1} speed={1.1} dpr={1.5} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
     </div>
   );
 }

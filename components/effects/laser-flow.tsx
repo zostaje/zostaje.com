@@ -150,12 +150,15 @@ float roundBox(vec2 p, vec2 b, float r) {
 vec3 spill(float e, float fall, float strength, float front, float t, out vec3 glow) {
   glow = vec3(0.0);
   if (strength < 0.0005) return vec3(0.0);
-  float f = max(fall, 0.0);
+  // Stretch the fall to reach the bottom corners of the app icon.
+  float f = max(fall, 0.0) / 1.8;
   float d = max(e, 0.0);
   float u = d / (6.0 + 0.28 * f);
   float start = smoothstep(-6.0, 12.0, fall);
   float fade = exp(-sq(max(f - 125.0, 0.0) / 40.0));
-  float streak = 0.88 + 0.24 * noise(vec2(u * 6.0, f / 22.0 - t * 1.7));
+  // Moving bands make the downward flow legible after the intro settles.
+  float streak = 0.65 + 0.6 * noise(vec2(u * 6.0, f / 22.0 - t * 1.7))
+    + 0.25 * pow(0.5 + 0.5 * sin(f / 14.0 - t * 5.0), 3.0);
   float bright = pow(strength, 1.5);
   float soft = sqrt(strength);
   float warmth = smoothstep(90.0, 130.0, f);
@@ -288,8 +291,10 @@ void main() {
   float haloL = exp(-length(p - vec2(sl + 0.3 * radius, sy + 0.3 * radius)) / 40.0) * sqrt(strengthL);
   vec3 glowR;
   vec3 glowL;
-  col += spill(sd, fallY, strengthR, uPour.y, t, glowR) * rightHalf;
-  col += spill(sd, fallY, strengthL, uPour.x, t, glowL) * (1.0 - rightHalf);
+  // Continue vertically past the side edges instead of wrapping under the icon.
+  float spillDistance = mix(sd, min(abs(p.x - sl), abs(p.x - sr)), smoothstep(sy + radius, sy + radius + 20.0, p.y));
+  col += spill(spillDistance, fallY, strengthR, uPour.y, t, glowR) * rightHalf;
+  col += spill(spillDistance, fallY, strengthL, uPour.x, t, glowL) * (1.0 - rightHalf);
   col += easeLight(glowR * rightHalf + NAVY * 0.9 * haloR, uPour.w);
   col += easeLight(glowL * (1.0 - rightHalf) + NAVY * 0.9 * haloL, uPour.z);
 

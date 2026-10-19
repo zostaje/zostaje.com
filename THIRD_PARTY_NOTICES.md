@@ -1,7 +1,7 @@
 # React Bits — LaserFlow
 
 Source: https://github.com/DavidHDev/react-bits
-Integrated from the source supplied by the project owner. Local changes adapt CSS classes. The host component handles theme changes and reduced-motion preferences.
+Integrated from the source supplied by the project owner. Local changes adapt CSS classes and extend the falling light with more visible moving streaks. The host component handles theme changes and reduced-motion preferences.
 
 MIT + Commons Clause License Condition v1.0
 
