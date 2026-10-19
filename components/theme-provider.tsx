@@ -3,7 +3,7 @@
 import { Fragment, createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { parseThemePreference, resolveTheme, THEME_STORAGE_KEY, type ResolvedTheme, type ThemePreference } from "@/lib/theme";
 
-const ThemeContext = createContext<{ preference: ThemePreference; setPreference: (value: ThemePreference) => void } | null>(null);
+const ThemeContext = createContext<{ preference: ThemePreference; resolvedTheme: ResolvedTheme | null; setPreference: (value: ThemePreference) => void } | null>(null);
 
 function ThemeAssets({ theme }: { theme: ResolvedTheme | null }) {
   return <>
@@ -69,7 +69,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     };
   }, [preference]);
 
-  return <ThemeContext.Provider value={{ preference: preference ?? "system", setPreference }}><ThemeAssets theme={theme} />{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ preference: preference ?? "system", resolvedTheme: theme, setPreference }}><ThemeAssets theme={theme} />{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {

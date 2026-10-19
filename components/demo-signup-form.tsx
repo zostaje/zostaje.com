@@ -89,8 +89,8 @@ export function DemoSignupForm() {
         <input id="demo-signup-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
       <p id="demo-signup-privacy" className="newsletter-privacy">
-        <T as="span" pl="Dbamy o Twoje dane. Dowiedz się więcej o " en="We care about your data. Learn more about " />
-        <T as="a" href="#bezpieczenstwo" pl="prywatności" en="privacy" />.
+        <T as="span" pl="Zapis oznacza zgodę na wiadomości o wersjach i rozwoju Zostaje. Bez reklam. Więcej o " en="Signing up means you agree to Zostaje release and development updates. No ads. More about " />
+        <T as="a" href="/privacy/" pl="prywatności" en="privacy" />.
       </p>
       <p id="demo-signup-status" className={"form-note" + (failed ? " form-error" : "")} role="status" aria-live="polite">
         {status === "idle" ? null : messages[language][status]}

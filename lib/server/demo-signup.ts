@@ -34,11 +34,11 @@ function emails({ email, language }: Signup) {
   const confirmation = language === "pl"
     ? {
         subject: "Zostaje — potwierdzenie zapisu na demo",
-        text: "Cześć!\n\nDziękujemy za zgłoszenie do demo Zostaje. Otrzymaliśmy Twój adres e-mail. Damy Ci znać, kiedy pierwsza wersja na iPhone’a będzie gotowa do testów.\n\nNie musisz teraz nic robić. Jeśli to nie Ty wysłałeś zgłoszenie albo chcesz zrezygnować, odpowiedz na tę wiadomość.\n\nDo zobaczenia,\nZostaje",
+        text: "Cześć!\n\nDziękujemy za zgłoszenie do demo Zostaje. Otrzymaliśmy Twój adres e-mail. Będziemy informować Cię o nowych wersjach, dostępności demo i rozwoju Zostaje. Bez ofert sprzedażowych, marketingu i reklam. Polityka prywatności: https://zostaje.com/privacy/\n\nNie musisz teraz nic robić. Jeśli to nie Ty wysłałeś zgłoszenie albo chcesz zrezygnować, odpowiedz na tę wiadomość.\n\nDo zobaczenia,\nZostaje",
       }
     : {
         subject: "Zostaje — demo sign-up confirmation",
-        text: "Hi!\n\nThanks for signing up for the Zostaje demo. We have received your email address. We will let you know when the first iPhone version is ready to test.\n\nNo action is needed now. If you did not sign up or would like to withdraw, reply to this message.\n\nSee you soon,\nZostaje",
+        text: "Hi!\n\nThanks for signing up for the Zostaje demo. We have received your email address. We will keep you informed about new versions, demo availability and Zostaje development. No sales offers, marketing or ads. Privacy policy: https://zostaje.com/privacy/\n\nNo action is needed now. If you did not sign up or would like to withdraw, reply to this message.\n\nSee you soon,\nZostaje",
       };
   return [
     {

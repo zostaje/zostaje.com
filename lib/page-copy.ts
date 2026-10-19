@@ -36,12 +36,12 @@ export const pageCopy = {
   },
   "download": {
     "title": {
-      "pl": "Pobierz Zostaje — iOS, macOS i Windows",
-      "en": "Download Zostaje — iOS, macOS and Windows"
+      "pl": "Pobierz Zostaje — macOS, Linux, Windows, Android i iOS",
+      "en": "Download Zostaje — macOS, Linux, Windows, Android and iOS"
     },
     "description": {
-      "pl": "Pobierz Zostaje na iOS lub zapisz się na pierwsze demo. Sprawdź planowane wersje aplikacji na iPhone, macOS i Windows.",
-      "en": "Download Zostaje for iOS or join the first demo. See the roadmap for iPhone, macOS and Windows."
+      "pl": "Wybierz platformę, sprawdź dostępność Zostaje i historię wersji. Publiczne instalatory są w przygotowaniu.",
+      "en": "Choose your platform, check Zostaje availability and browse release history. Public installers are in development."
     },
     "path": "/download/"
   },
@@ -77,6 +77,28 @@ export const pageCopy = {
       "en": "Try the interactive Zostaje demo: add an expense, plan, goal or question and see your safe-to-spend amount and Consequence Map."
     },
     "path": "/demo/"
+  },
+  "privacy": {
+    "title": {
+      "pl": "Polityka prywatności Zostaje",
+      "en": "Zostaje privacy policy"
+    },
+    "description": {
+      "pl": "Jak przetwarzamy adres e-mail: informacje o wersjach i rozwoju aplikacji, bez reklam i ofert sprzedażowych.",
+      "en": "How we use your email: app release and development updates, without ads or sales offers."
+    },
+    "path": "/privacy/"
+  },
+  "releases": {
+    "title": {
+      "pl": "Historia wersji Zostaje",
+      "en": "Zostaje release history"
+    },
+    "description": {
+      "pl": "Wersje projektu Zostaje, daty publikacji i wprowadzone zmiany.",
+      "en": "Zostaje project versions, publication dates and changes."
+    },
+    "path": "/releases/"
   }
 } satisfies Record<string, PageCopy & { path: string }>;
 

@@ -184,3 +184,19 @@ Nawigacja obok logo prowadzi kolejno do Download (`/download/`), Pricing (`/pric
 i Knowledge (`/knowledge/`). Knowledge tymczasowo przekierowuje kodem 307 na `/404/`,
 gdzie działa wspólna strona `app/not-found.tsx` ze statusem 404 i brakiem indeksowania.
 Bazowy kolor akcentowy obu motywów to `#315CAA`.
+
+## Pobieranie i historia wersji
+
+- `/download/` rozpoznaje system urządzenia i pozwala ręcznie wybrać platformę.
+- Źródłem prezentowanych wydań jest `lib/releases.ts`, sprawdzone z GitHub Releases 19.10.2026.
+- Aby opublikować pobieranie, najpierw dodaj prawdziwy instalator lub oficjalny link do sklepu,
+  a następnie ustaw `downloadUrl` odpowiedniej platformy. Brak adresu oznacza „Wkrótce”.
+- Po nowym wydaniu dopisz wersję, datę i zmiany PL/EN na początku listy `releases`.
+- LaserFlow jest ładowany tylko na Download; respektuje ograniczenie ruchu,
+  zatrzymuje klatki poza ekranem i w tle. Bez WebGL2 pozostaje logo ze statyczną poświatą.
+  Źródło i licencja są w `THIRD_PARTY_NOTICES.md`.
+- `/privacy/` opisuje newsletter projektu studenckiego Rajana Bora. Kontakt wskazany przez
+  właściciela: `infor@rajanbor.com`. Dotychczasowa skrzynka powiadomień Resend pozostaje
+  `info@rajanbor.com`; rezygnacja jest obsługiwana przez odpowiedź na e-mail lub kontakt z polityki.
+- `/releases/` pokazuje rzeczywiste wydania projektu. Historyczne wydania desktop/web nie oznaczają
+  gotowej publicznej wersji obecnego MVP iOS.

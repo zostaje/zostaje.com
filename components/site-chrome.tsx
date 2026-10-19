@@ -291,7 +291,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
               <nav aria-label="Produkt">
                 <T as="strong" pl="Zostaje" en="Zostaje" />
                 <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
-                <T as="a" pl="Prywatność" en="Privacy" href={home ? "#bezpieczenstwo" : "/#bezpieczenstwo"} />
+                <T as="a" pl="Polityka prywatności" en="Privacy policy" href="/privacy/" />
                 <T as="a" pl="Testy aplikacji" en="App testing" href={home ? "#demo" : "/#demo"} />
                 <T as="a" pl="Kontakt" en="Contact" href="mailto:demo@zostaje.app" />
               </nav>
@@ -386,6 +386,7 @@ export function LegacyFooter() {
                 <a href="https://github.com/zostaje">
                   {"GitHub"}
                 </a>
+                <T as="a" pl="Historia wersji" en="Release history" href="/releases/" />
                 <a href="/developers/">
                   {"Developers"}
                 </a>
@@ -413,7 +414,7 @@ export function LegacyFooter() {
                 <T as="strong" pl="Informacje" en="Information" />
                 <T as="a" pl="Pomoc" en="Help" href="/help/" />
                 <T as="a" pl="Zamknięte demo" en="Private demo" href="/#demo" />
-                <T as="a" pl="Prywatność danych" en="Data privacy" href="/#bezpieczenstwo" />
+                <T as="a" pl="Polityka prywatności" en="Privacy policy" href="/privacy/" />
               </nav>
             </div>
           </div>

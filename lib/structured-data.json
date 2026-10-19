@@ -67,19 +67,10 @@
   "download": [
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Zostaje",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "iOS",
+      "@type": "WebPage",
+      "name": "Pobierz Zostaje",
       "url": "https://zostaje.com/download/",
-      "description": "Aplikacja do codziennych finansów, która pokazuje, ile można bezpiecznie wydać.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "PLN",
-        "availability": "https://schema.org/PreOrder",
-        "description": "Bezpłatne pierwsze zamknięte demo"
-      }
+      "description": "Dostępność aplikacji na docelowe platformy i historia wydań. Publiczne instalatory nie są jeszcze dostępne."
     }
   ],
   "help": [
@@ -152,6 +143,30 @@
       "url": "https://zostaje.com/demo/",
       "isAccessibleForFree": true,
       "description": "Lokalne demo finansowej Skrzynki, bezpiecznej kwoty i Mapy Konsekwencji Zostaje."
+    }
+  ],
+  "privacy": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Polityka prywatności Zostaje",
+      "url": "https://zostaje.com/privacy/",
+      "inLanguage": [
+        "pl",
+        "en"
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Historia wersji Zostaje",
+      "url": "https://zostaje.com/releases/",
+      "inLanguage": [
+        "pl",
+        "en"
+      ]
     }
   ]
 }

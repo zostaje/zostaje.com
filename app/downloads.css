@@ -1,0 +1,78 @@
+.download-hero { padding: 56px 0 64px; text-align: center; overflow: hidden; }
+.download-hero h1 { margin: 0 0 12px; font-size: clamp(2.1rem, 4vw, 3.5rem); line-height: 1.15; letter-spacing: -.045em; }
+.download-lead { margin: 0; color: var(--text-muted); font-size: 1.15rem; }
+.download-emblem-stage { position: relative; height: 390px; max-width: 760px; margin: -8px auto 0; isolation: isolate; }
+.download-emblem { position: absolute; top: 120px; left: 50%; transform: translateX(-50%); width: 220px; height: 220px; border-radius: 50px; }
+.download-emblem img { width: 100%; height: 100%; }
+.download-emblem-glow { position: absolute; top: 116px; left: 50%; width: 270px; height: 260px; transform: translateX(-50%); background: radial-gradient(ellipse, #155eef30, transparent 70%); z-index: -1; }
+.laser-flow { pointer-events: none; position: absolute; inset: 0; width: 100%; height: 100%; }
+.laser-flow-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.download-primary { min-height: 56px; min-width: 250px; gap: 16px; padding: 14px 24px; font-size: 1rem; }
+.download-primary:disabled { cursor: default; background: var(--brand); color: #fff; opacity: .85; transform: none; }
+.download-soon { padding: 3px 7px; border-radius: 5px; background: #ffffff26; font-size: .7rem; font-weight: 500; }
+.download-availability { margin: 20px auto 10px; max-width: 490px; color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+.download-version { margin: 32px 0 8px; color: var(--text-muted); font-size: .8rem; }
+.download-version strong { color: var(--text-secondary); font-weight: 500; }
+.download-history-link { color: var(--green-light); font-size: .85rem; }
+.download-platforms { padding-top: 32px; padding-bottom: 88px; }
+.download-platforms h2 { font-size: 1.6rem; letter-spacing: -.03em; margin-bottom: 12px; }
+.download-platforms > p { max-width: 650px; color: var(--text-muted); font-size: .95rem; line-height: 1.6; margin-bottom: 32px; }
+.release-table-wrap { overflow-x: auto; }
+.release-table { width: 100%; border-collapse: collapse; text-align: left; font-size: .9rem; }
+.release-table th, .release-table td { padding: 20px 18px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.release-table thead th { color: var(--text-muted); font-size: .75rem; font-weight: 500; }
+.release-table tbody th { font-weight: 500; }
+.release-table td { color: var(--text-secondary); }
+.release-table th:first-child, .release-table td:first-child { padding-left: 0; }
+.release-table th:last-child, .release-table td:last-child { padding-right: 0; }
+.platform-table th:last-child, .platform-table td:last-child { text-align: right; }
+.platform-table .platform-selected { background: rgb(21 94 239 / 5%); }
+.platform-pick { display: inline-block; padding: 7px 11px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--text-secondary); font: inherit; font-size: .8rem; cursor: pointer; }
+.platform-pick:hover { background: var(--surface-raised); color: var(--text); }
+.platform-pick[aria-pressed="true"] { border-color: var(--brand); color: var(--green-light); }
+.platform-pick:focus-visible { outline: 2px solid var(--green-light); outline-offset: 3px; }
+.releases-page { padding-bottom: 80px; }
+.releases-heading { padding-top: 64px; padding-bottom: 40px; }
+.releases-heading h1, .policy-heading h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); letter-spacing: -.04em; line-height: 1.15; }
+.releases-heading > p:not(.subpage-kicker) { max-width: 720px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; }
+.history-table { min-width: 650px; }
+.history-table td, .history-table th { vertical-align: top; }
+.history-table tbody th { min-width: 155px; }
+.history-table tbody th a { color: var(--green-light); white-space: nowrap; }
+.history-table td:nth-child(2) { white-space: nowrap; min-width: 150px; }
+.history-table ul { margin: 0; padding-left: 18px; line-height: 1.7; }
+.release-mobile-date { display: none; }
+.release-source { margin-top: 24px; color: var(--text-muted); font-size: .85rem; }
+.release-source a { color: var(--green-light); }
+.policy-page { padding-bottom: 80px; }
+.policy-heading { max-width: 800px; padding-top: 64px; padding-bottom: 32px; }
+.policy-lead { font-size: 1.2rem; color: var(--text-secondary); }
+.policy-date { color: var(--text-muted); font-size: .8rem; }
+.policy-body { max-width: 800px; }
+.policy-body section { padding-block: 28px; border-top: 1px solid var(--line); }
+.policy-body h2 { font-size: 1.35rem; letter-spacing: -.025em; }
+.policy-body p { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; }
+.policy-body p:last-child { margin-bottom: 0; }
+.policy-body a { color: var(--green-light); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.policy-body .policy-promise { padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin-block: 12px 28px; }
+@media (max-width: 640px) {
+  .download-hero { padding-top: 40px; padding-bottom: 40px; }
+  .download-emblem-stage { height: 340px; margin-inline: -12px; }
+  .download-emblem { top: 110px; width: 192px; height: 192px; border-radius: 44px; }
+  .download-emblem-glow { top: 90px; width: 230px; }
+  .download-availability { font-size: .85rem; }
+  .download-version { max-width: 300px; margin-inline: auto; line-height: 1.8; }
+  .download-version > span { display: block; }
+  .download-platforms { padding-top: 24px; padding-bottom: 56px; }
+  .release-table { font-size: .8rem; }
+  .release-table th, .release-table td { padding: 16px 8px; }
+  .platform-pick { font-size: .75rem; padding: 7px 9px; }
+  .history-table { min-width: 0; font-size: .85rem; }
+  .history-table th:nth-child(2), .history-table td:nth-child(2) { display: none; }
+  .history-table tbody th, .history-table th:first-child { min-width: 0; width: 116px; }
+  .history-table tbody th a { white-space: normal; }
+  .release-mobile-date { display: block; margin-top: 8px; color: var(--text-muted); font-size: .75rem; font-weight: 400; }
+  .history-table ul { padding-left: 15px; }
+  .releases-heading, .policy-heading { padding-top: 40px; }
+  .policy-body .policy-promise { padding: 22px; }
+}
