@@ -153,6 +153,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
           <small>© 2026 Zostaje</small>
           <ThemeToggle />
         </div>
+        <div className="footer-signature" aria-hidden="true"><span>Zostaje</span></div>
       </footer>
     </>
   );
@@ -266,6 +267,7 @@ export function LegacyFooter() {
           <small>© 2026 Zostaje</small>
           <ThemeToggle />
         </div>
+        <div className="footer-signature" aria-hidden="true"><span>Zostaje</span></div>
       </footer>
     </>
   );
