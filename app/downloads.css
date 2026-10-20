@@ -1,4 +1,8 @@
 .download-hero { padding: 24px 0 64px; text-align: center; overflow: hidden; }
+.download-release-pill { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; margin-bottom: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--text-secondary); font-size: .75rem; font-weight: 500; line-height: 1.4; transition: border-color 160ms ease, color 160ms ease; }
+.download-release-pill:hover { border-color: var(--green-light); color: var(--text); }
+.download-release-pill:focus-visible { outline: 2px solid var(--green-light); outline-offset: 4px; }
+.download-release-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green-light); }
 .download-emblem-stage {
   --icon-size: 248px;
   --icon-top: 112px;

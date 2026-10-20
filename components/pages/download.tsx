@@ -20,6 +20,11 @@ export function DownloadContent() {
       <main className="subpage-main download-page" id="main">
         <section className="download-hero" aria-labelledby="download-heading">
           <div className="container">
+            <a className="download-release-pill" href="/releases/" aria-label={`${language === "pl" ? "Najnowsza wersja" : "Latest release"}: ${latest.version}. ${language === "pl" ? "Historia wersji" : "Release history"}`}>
+              <span className="download-release-dot" aria-hidden="true" />
+              v{latest.version}
+              <span aria-hidden="true">↗</span>
+            </a>
             <DownloadEmblem />
             <h1 className="download-wordmark" id="download-heading">
               <img className="brand-wordmark wordmark-dark" src="/brand/wordmark-dark.svg?v=5" width={2150} height={606} alt="Zostaje" />
