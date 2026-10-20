@@ -436,6 +436,8 @@ const BASE_SATURATION = 0.78;
 const MAX_RENDER_DIM = 2048;
 const INTRO_DROP = 1.25;
 const INTRO_END = 5;
+// Keep the original falling sequence, compressed from five to two seconds.
+const INTRO_PLAYBACK_RATE = 2.5;
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 const easeOut = (x: number) => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
@@ -855,7 +857,7 @@ export const LaserFlow = ({
       const moving = !s.paused && !reduce;
       if (moving) state.time += dt * s.speed;
       const introducing = state.introTime < INTRO_END;
-      if (introducing) state.introTime = Math.min(INTRO_END, state.introTime + dt);
+      if (introducing) state.introTime = Math.min(INTRO_END, state.introTime + dt * INTRO_PLAYBACK_RATE);
 
       const { pointer, lens } = state;
       const active = s.mouseInteraction && pointer.inside && !reduce;
