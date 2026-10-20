@@ -32,3 +32,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+# Aceternity UI — Glare Card
+
+Author: Manu Arora. Source supplied by the project owner:
+https://ui.aceternity.com/registry/glare-card-demo.json
+and https://ui.aceternity.com/registry/glare-card.json.
+
+The local adaptation uses TypeScript and the site's existing CSS instead of Tailwind utility classes and `cn`. It limits the reflection and tilt to the download icon, removes demo artwork and logging, and respects reduced-motion preferences and touch input.
