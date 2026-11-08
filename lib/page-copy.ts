@@ -25,12 +25,12 @@ export const pageCopy = {
   },
   "pricing": {
     "title": {
-      "pl": "Cennik Zostaje — pierwsze demo bezpłatnie",
-      "en": "Zostaje pricing — first demo free"
+      "pl": "Cennik Zostaje — Darmowy, Premium i Founders Edition",
+      "en": "Zostaje pricing — Free, Premium and Founders Edition"
     },
     "description": {
-      "pl": "Cennik aplikacji Zostaje. Pierwsze zamknięte demo na iOS będzie bezpłatne, a finalne plany poznamy przed publiczną premierą.",
-      "en": "Zostaje pricing. The first private iOS demo will be free, with final plans announced before public launch."
+      "pl": "Pełna aplikacja lokalna za darmo. Premium z obsługą AI i rozszerzoną analityką za 39 zł miesięcznie. Founders Edition dla freelancerów, startupów i JDG.",
+      "en": "The full local app is free. Premium with managed AI and advanced analytics for PLN 39 per month. Founders Edition for freelancers, startups and sole traders."
     },
     "path": "/pricing/"
   },
