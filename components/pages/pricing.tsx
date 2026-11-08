@@ -60,11 +60,11 @@ export function PricingContent() {
                 <T as="p" className="pricing-page-price pricing-page-price-custom" pl="Porozmawiajmy" en="Let’s talk" />
                 <T as="p" className="pricing-billing-detail" pl="Cena i forma rozliczenia ustalane indywidualnie." en="Pricing and billing agreed individually." />
               </div>
-              <T as="p" className="pricing-plan-description" pl="Freelancer, startup czy JDG? Zostaje to więcej niż domowy budżet. Pomoże Ci pilnować finansów także na starcie własnej działalności." en="Freelancer, startup or sole trader? Zostaje goes beyond a household budget, helping you keep track of finances as you start your business." />
+              <T as="p" className="pricing-plan-description" pl="Budujesz biznes? Dopasujemy Zostaje do Twoich potrzeb, pokażemy Ci, jak działa, i udostępnimy więcej narzędzi analitycznych w Founders Edition." en="Building a business? We’ll tailor Zostaje to your needs, show you how it works and provide more analytical tools in Founders Edition." />
               <ul className="pricing-page-list">
-                <T as="li" pl="Wspólnie określony zakres i cena" en="Scope and pricing agreed together" />
-                <T as="li" pl="Rozwój funkcji wokół potrzeb Twojej działalności" en="Features shaped around your business needs" />
-                <T as="li" pl="Bezpośredni kontakt z zespołem" en="Direct contact with the team" />
+                <T as="li" pl="Zakres i cena dopasowane do Twojego budżetu" en="Scope and pricing shaped around your budget" />
+                <T as="li" pl="Dostosowanie aplikacji i rozszerzona analityka" en="A tailored app and advanced analytics" />
+                <T as="li" pl="Wdrożenie i pokaz działania aplikacji" en="Setup and a walkthrough of the app" />
               </ul>
               <div className="pricing-plan-action"><T as="a" pl="Poznaj Founders Edition" en="Explore Founders Edition" className="button button-outline" href="/founders-edition/" />
               <a className="pricing-sales-email" href="mailto:sales@zostaje.com">sales@zostaje.com</a></div>

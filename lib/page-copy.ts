@@ -25,7 +25,7 @@ export const pageCopy = {
   },
   "founders": {
     "title": { "pl": "Founders Edition — Zostaje dla Twojej działalności", "en": "Founders Edition — Zostaje for your business" },
-    "description": { "pl": "Founders Edition dla freelancerów, startupów i JDG. Poznaj kierunki rozwoju wersji biznesowej, zasady współpracy i indywidualnej wyceny.", "en": "Founders Edition for freelancers, startups and sole traders. Explore the business edition’s direction, collaboration process and tailored pricing." },
+    "description": { "pl": "Founders Edition dla freelancerów, startupów i JDG. Dostosowanie aplikacji, rozszerzona analityka, wdrożenie na własnym serwerze i wycena dopasowana do Twoich potrzeb.", "en": "Founders Edition for freelancers, startups and sole traders. A tailored app, advanced analytics, self-hosting and pricing shaped around your needs." },
     "path": "/founders-edition/"
   },
   "pricing": {

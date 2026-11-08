@@ -1862,7 +1862,7 @@ body.menu-open {
 .pricing-availability-note { color: var(--text-muted); font-size: .8rem; }
 .pricing-free-hero { padding: 96px 0 80px; text-align: center; }
 .pricing-free-hero h1 { margin: 0 0 32px; font-size: clamp(2.6rem, 5.8vw, 5rem); letter-spacing: -.055em; line-height: 1.12; }
-.pricing-free-hero h1 span { text-decoration: underline; text-decoration-color: var(--text-muted); text-decoration-thickness: .075em; text-underline-offset: .1em; }
+.pricing-free-hero h1 span { text-decoration: none; padding-bottom: .2em; background: url("/brand/pricing-underline.svg") left bottom / 100% .24em no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .pricing-free-promise { margin: 0 0 28px; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 600; line-height: 1.3; letter-spacing: -.035em; }
 .pricing-free-details { max-width: 620px; margin: 0 auto 18px; color: var(--text-secondary); font-size: .95rem; line-height: 1.7; }
 .pricing-addons { padding-top: 24px; }
@@ -1971,5 +1971,7 @@ body.menu-open {
   color: var(--red, #ff6b6b);
 }
 
-.pricing-discount { margin-left: 8px; padding: 2px 5px; border-radius: 4px; background: var(--surface-soft); color: var(--text-secondary); font-size: .7rem; white-space: nowrap; }
+.pricing-discount { margin-left: 8px; padding: 2px 5px; border-radius: 4px; background: rgb(34 197 94 / 15%); color: #86efac; font-size: .7rem; white-space: nowrap; }
 .pricing-original-price { margin-left: 12px; color: var(--text-muted); font-size: 1rem; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
+
+html[data-theme="light"] .pricing-discount { background: #dcfce7; color: #166534; }

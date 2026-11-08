@@ -23,3 +23,9 @@
   .founders-benefits, .founders-capabilities, .founders-steps { grid-template-columns: 1fr; gap: 24px; }
   .founders-contact { margin-block: 24px 48px; padding: 32px 20px; }
 }
+
+.founders-technical-note { padding: 32px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+.founders-technical-note h2 { font-size: clamp(1.6rem, 3vw, 2rem); letter-spacing: -.03em; line-height: 1.2; }
+.founders-technical-note > p:not(.subpage-kicker) { max-width: 850px; color: var(--text-secondary); line-height: 1.8; }
+.founders-technical-note > p:last-child { margin-bottom: 0; }
+@media (max-width: 720px) { .founders-technical-note { padding: 24px 20px; } }

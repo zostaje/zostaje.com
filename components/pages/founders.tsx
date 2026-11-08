@@ -11,8 +11,8 @@ export function FoundersContent() {
       <section className="subpage-hero founders-hero">
         <div className="container subpage-hero-copy">
           <p className="subpage-kicker">Founders Edition</p>
-          <T as="h1" pl="Budujesz biznes. Zadbajmy o jego finanse." en="You’re building a business. Let’s take care of its finances." />
-          <T as="p" className="subpage-lead" pl="Dla freelancerów, startupów i osób prowadzących JDG. Zostaje może być czymś więcej niż domowym budżetem — rozwijajmy je wokół Twojej działalności." en="For freelancers, startups and sole traders. Zostaje can go beyond a household budget — let’s build it around your business." />
+          <T as="h1" pl="Budujesz biznes? Dopasujmy Zostaje do Ciebie." en="Building a business? Let’s make Zostaje fit you." />
+          <T as="p" className="subpage-lead" pl="Dopasowujemy Zostaje do Twojej firmy, pokazujemy, jak z niego korzystać, i dajemy dostęp do Founders Edition — wersji z większą liczbą narzędzi analitycznych dla freelancerów, startupów i JDG." en="We tailor Zostaje to your business, show you how to use it and provide access to Founders Edition — with more analytical tools for freelancers, startups and sole traders." />
           <div className="subpage-actions">
             <T as="a" className="button button-primary" href="#founders-contact" pl="Porozmawiajmy o Twoim biznesie" en="Let’s talk about your business" />
             <T as="a" className="text-link" href="/pricing/" pl="Zobacz wszystkie plany →" en="Explore all plans →" />
@@ -21,19 +21,19 @@ export function FoundersContent() {
       </section>
       <section className="container founders-section" aria-labelledby="founders-collaboration">
         <div className="founders-section-heading">
-          <T as="h2" id="founders-collaboration" pl="Więcej niż kolejny abonament." en="More than another subscription." />
-          <T as="p" pl="Founders Edition to indywidualna współpraca przy rozwoju Zostaje. Wnosisz realny problem swojej działalności, a my wspólnie z Tobą określamy, jakie narzędzia warto zbudować." en="Founders Edition is a tailored collaboration on Zostaje’s development. Bring a real business problem, and we’ll work with you to decide which tools are worth building." />
+          <T as="h2" id="founders-collaboration" pl="Twoje potrzeby. Twoje narzędzia." en="Your needs. Your tools." />
+          <T as="p" pl="Nie musisz dopasowywać swojej firmy do gotowego schematu aplikacji. Poznajemy Twój sposób pracy i konfigurujemy zakres Founders Edition tak, by pomagał Ci prowadzić finanse swojej działalności." en="Your business doesn’t have to fit a fixed app template. We learn how you work and configure the scope of Founders Edition to help you manage your business finances." />
         </div>
         <div className="founders-benefits">
           <article><T as="h3" pl="Zakres dopasowany do Ciebie" en="A scope that fits you" /><T as="p" pl="Wspólnie wybieramy najważniejsze przepływy i analizy. Zakres, harmonogram i cenę uzgadniamy przed rozpoczęciem współpracy." en="We choose the most useful workflows and analyses together. Scope, timeline and price are agreed before collaboration begins." /></article>
-          <article><T as="h3" pl="Bezpośredni kontakt" en="Direct contact" /><T as="p" pl="Rozmawiasz bezpośrednio z twórcą projektu, pokazujesz swój sposób pracy i przekazujesz uwagi do powstających rozwiązań." en="Talk directly with the project creator, show how you work and share feedback on solutions as they take shape." /></article>
-          <article><T as="h3" pl="Wpływ na rozwój" en="A voice in development" /><T as="p" pl="Twoje doświadczenia pomagają ustalać kierunek funkcji dla małych firm. Zamiast gotowego szablonu szukamy rozwiązania dla konkretnej potrzeby." en="Your experience helps shape features for small businesses. We work from a specific need rather than a fixed template." /></article>
+          <article><T as="h3" pl="Pokazujemy, jak to działa" en="We show you how it works" /><T as="p" pl="Przeprowadzamy Cię przez uzgodnione narzędzia i sposób pracy z aplikacją. Uczysz się korzystać z analiz na przykładach związanych z Twoją działalnością." en="We guide you through the agreed tools and workflows. Learn to use the analyses with examples relevant to your own business." /></article>
+          <article><T as="h3" pl="Dostęp do Founders Edition" en="Access to Founders Edition" /><T as="p" pl="Otrzymujesz dostęp do wersji Zostaje z rozszerzonym zestawem narzędzi analitycznych. Wybieramy te możliwości, które będą przydatne w finansach Twojej firmy lub startupu." en="Get access to Zostaje with an expanded set of analytical tools. We select the capabilities that will be useful for your company or startup’s finances." /></article>
         </div>
       </section>
       <section className="container founders-section" aria-labelledby="founders-capabilities">
         <div className="founders-section-heading">
-          <T as="h2" id="founders-capabilities" pl="Co możemy rozwijać razem?" en="What could we build together?" />
-          <T as="p" pl="Poniższe obszary pokazują kierunek wersji biznesowej. To propozycje do wspólnego ustalenia, nie lista funkcji już dostępnych w aplikacji." en="These areas outline the direction of the business edition. They are options to agree together, not features already available in the app." />
+          <T as="h2" id="founders-capabilities" pl="Więcej możliwości dla Twojej firmy." en="More capabilities for your business." />
+          <T as="p" pl="Wspólnie wybieramy narzędzia, które odpowiadają na Twoje potrzeby. Dokładny zakres analiz, dostępność funkcji i sposób wdrożenia potwierdzamy w indywidualnej ofercie." en="Together, we choose tools that match your needs. The exact analyses, feature availability and deployment approach are confirmed in your individual proposal." />
         </div>
         <div className="founders-capabilities">
           <article className="subpage-card"><T as="h3" pl="Płynność przy nieregularnych wpływach" en="Cash flow with irregular income" /><T as="p" pl="Widok przyszłych wpływów i zobowiązań, który pomoże zauważyć, na jak długo wystarczą środki i kiedy potrzebny będzie większy bufor." en="A view of expected income and commitments to help you see how long funds could last and when a larger buffer may be needed." /></article>
@@ -42,18 +42,33 @@ export function FoundersContent() {
           <article className="subpage-card"><T as="h3" pl="Analizy i AI pod Twój sposób pracy" en="Analytics and AI for your workflow" /><T as="p" pl="Podsumowania i pytania analityczne dobrane do potrzeb firmy. Sposób podłączenia AI, zakres danych i ewentualne integracje określamy w indywidualnej ofercie." en="Summaries and analytical questions shaped around your business. AI setup, data scope and any integrations are specified in your individual proposal." /></article>
         </div>
       </section>
+      <section className="container founders-section" aria-labelledby="founders-technical">
+        <div className="founders-technical-note">
+          <T as="p" className="subpage-kicker" pl="Dla osób technicznych w firmie" en="For your technical team" />
+          <T as="h2" id="founders-technical" pl="Zostaje także na Twoim serwerze." en="Zostaje on your own server, too." />
+          <T as="p" pl="Founders Edition może obejmować hosting aplikacji na Twoim serwerze. Wariant serwerowy projektujemy w Rust, z naciskiem na szybkie działanie, wydajność i oszczędne wykorzystanie zasobów." en="Founders Edition can include hosting the application on your own server. We design the server-side edition in Rust with a focus on fast operation, performance and efficient resource use." />
+          <T as="p" pl="Z Twoim zespołem technicznym ustalamy wymagania infrastruktury, sposób instalacji i aktualizacji oraz zakres dostępu do danych. Warunki wdrożenia, utrzymania i ewentualnych integracji określamy w ofercie; wydajność zależy też od konfiguracji serwera i obciążenia." en="With your technical team, we agree on infrastructure requirements, installation, updates and data access. Deployment, maintenance and any integrations are defined in the proposal; performance also depends on server configuration and workload." />
+        </div>
+      </section>
+      <section className="container founders-section" aria-labelledby="founders-budget">
+        <div className="founders-section-heading">
+          <T as="h2" id="founders-budget" pl="Płatna wersja. Budżet ustalony z Tobą." en="A paid edition. A budget agreed with you." />
+          <T as="p" pl="Nie ukrywamy: Founders Edition jest płatna. Nie mamy jednak sztywnych ram finansowych. Punktem wyjścia są Twoje potrzeby i budżet — wyceniamy to, co będzie Ci niezbędne do prowadzenia finansów firmy lub startupu." en="We’re upfront: Founders Edition is paid. But we don’t impose rigid pricing packages. We start with your needs and budget, then price what you’ll need to manage your company or startup’s finances." />
+          <T as="p" pl="Wspólnie określamy zakres dostosowania, narzędzia analityczne i sposób wdrożenia. Cenę i warunki współpracy znasz przed podjęciem decyzji." en="Together, we define the customisation, analytical tools and deployment approach. You know the price and collaboration terms before deciding." />
+        </div>
+      </section>
       <section className="container founders-section" aria-labelledby="founders-start">
         <div className="founders-section-heading"><T as="h2" id="founders-start" pl="Zaczynamy od rozmowy." en="We start with a conversation." /></div>
         <ol className="founders-steps">
           <li><T as="h3" pl="Opowiedz o swojej działalności" en="Tell us about your business" /><T as="p" pl="Napisz, czym się zajmujesz i co dziś utrudnia Ci kontrolowanie finansów." en="Tell us what you do and what makes managing finances difficult today." /></li>
           <li><T as="h3" pl="Ustalmy zakres i wycenę" en="Agree on scope and pricing" /><T as="p" pl="Wybieramy priorytety i uzgadniamy możliwy zakres, terminy oraz warunki współpracy." en="We choose priorities and agree on a feasible scope, timing and collaboration terms." /></li>
-          <li><T as="h3" pl="Budujmy i sprawdzajmy w praktyce" en="Build and test in practice" /><T as="p" pl="Rozwijamy uzgodnione rozwiązania i weryfikujemy je z Tobą na realnych przypadkach." en="We develop the agreed solutions and evaluate them with you using real use cases." /></li>
+          <li><T as="h3" pl="Wdróżmy Zostaje i pokażmy Ci narzędzia" en="Set up Zostaje and walk you through the tools" /><T as="p" pl="Dostosowujemy aplikację, udostępniamy uzgodniony zakres Founders Edition i pokazujemy, jak korzystać z niego w codziennej pracy." en="We tailor the app, provide the agreed Founders Edition capabilities and show you how to use them in your daily work." /></li>
         </ol>
       </section>
       <section className="container founders-contact" id="founders-contact" aria-labelledby="founders-contact-heading">
         <p className="subpage-kicker">Founders Edition</p>
         <T as="h2" id="founders-contact-heading" pl="Może zostaniemy razem na dłużej?" en="Perhaps we’ll stay together for the long run?" />
-        <T as="p" pl="Wciąż się rozwijamy. Jeśli chcesz współtworzyć Zostaje dla swojej działalności, napisz do nas. Cenę ustalimy na podstawie uzgodnionego zakresu." en="We’re still growing. If you’d like to help shape Zostaje for your business, get in touch. Pricing will be based on the scope we agree." />
+        <T as="p" pl="Opowiedz nam o swojej firmie lub startupie, potrzebach i budżecie. Zaproponujemy zakres Founders Edition, sposób wdrożenia i wycenę dopasowaną do Twojej sytuacji." en="Tell us about your company or startup, your needs and your budget. We’ll propose a Founders Edition scope, deployment approach and price that fit your situation." />
         <T as="a" className="button button-primary" href="mailto:sales@zostaje.com?subject=Zostaje%20Founders%20Edition" pl="Napisz do nas" en="Get in touch" />
         <a className="founders-email" href="mailto:sales@zostaje.com">sales@zostaje.com</a>
       </section>
