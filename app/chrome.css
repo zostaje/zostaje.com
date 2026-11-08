@@ -44,3 +44,22 @@
 @media (prefers-reduced-motion: reduce) {
   .compact-language .language-chevron { transition: none; }
 }
+
+/* Neutral decoration; the primary action retains the brand colour. */
+:root { --nav-highlight: #262626; }
+:root[data-theme="light"] { --nav-highlight: #e8e8e8; }
+:root .main-nav a:is(:hover, :focus-visible, [aria-current="page"]),
+:root .mobile-primary-nav a:is(:hover, :focus-visible, [aria-current="page"]) {
+  background: var(--nav-highlight);
+  color: var(--text);
+  box-shadow: none;
+  font-weight: 500;
+}
+.main-nav a:focus-visible, .mobile-primary-nav a:focus-visible { outline: 2px solid var(--text-muted); outline-offset: 2px; }
+.pricing-page-list li::before, .subpage-kicker { color: var(--text-muted); }
+.hero-visual::before { box-shadow: none; }
+.scene-note, .pricing-status { background: var(--surface-soft); color: var(--text-secondary); }
+.context-visual > span, :root[data-theme="light"] .context-visual > span { background: var(--surface-soft); color: var(--text-secondary); }
+.platform-table .platform-selected { background: var(--surface-raised); }
+.platform-pick[aria-pressed="true"] { border-color: var(--text-muted); color: var(--text); }
+.download-release-dot { background: var(--text-muted); }
