@@ -58,11 +58,6 @@ export function DownloadEmblem() {
         { transform: `translate(${endX}px, ${endY}px) scale(.15)`, opacity: 0, offset: 1 },
       ], { duration: 950 + (index % 5) * 100, delay: landing, easing: "cubic-bezier(.12,.65,.22,1)" }));
     });
-    const ring = particles.querySelector(".download-impact-ring");
-    if (ring) animations.current.push(ring.animate([
-      { transform: "translateY(12px) scale(.82)", opacity: .7 },
-      { transform: "translateY(12px) scale(1.8)", opacity: 0 },
-    ], { duration: 650, delay: landing, easing: "cubic-bezier(.16,1,.3,1)" }));
   }, []);
   return (
     <div className="download-emblem-stage">
@@ -74,7 +69,6 @@ export function DownloadEmblem() {
         </GlareCard>
       </div>
       <div ref={burst} className="download-impact-burst" aria-hidden="true">
-        <div className="download-impact-ring" />
         {Array.from({ length: 36 }, (_, index) => <i key={index} className="download-impact-particle" style={{ "--particle-size": `${4 + index % 4}px`, "--particle-color": ["#84adff", "#155eef", "#c4b5fd", "#b9e6fe"][index % 4] } as CSSProperties} />)}
       </div>
       {!reducedMotion && <LaserFlow onImpact={reactToImpact} surfaceRef={surface} intro beamPosition={0.5} color="#155EEF" intensity={1.45} flare={1.15} spread={1.25} spill={0.8} fog={0.12} dust={0.65} streaks={1.35} dots={0.35} pulse={0.8} speed={0.85} dpr={1} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
