@@ -1,43 +1,46 @@
 "use client";
 
-import { T } from "@/components/site-provider";
+import { useState } from "react";
+import { T, useSite } from "@/components/site-provider";
 import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 
 export function PricingContent() {
+  const { language } = useSite();
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const yearly = billing === "yearly";
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
       <SiteHeader />
       <main className="subpage-main" id="main">
-        <section className="subpage-hero">
-          <div className="container subpage-hero-copy">
-            <T as="p" pl="Cennik" en="Pricing" className="subpage-kicker" />
-            <T as="h1" pl="Twoje finanse. Twój wybór." en="Your finances. Your choice." />
-            <T as="p" pl="Pełna aplikacja lokalna jest darmowa. Płacisz, gdy chcesz powierzyć nam obsługę AI i sięgnąć po rozszerzoną analitykę. A jeśli budujesz własny biznes — porozmawiajmy." en="The full local app is free. Pay when you want us to handle AI for you and add advanced analytics. And if you’re building a business, let’s talk." className="subpage-lead" />
+        <section className="pricing-free-hero" aria-labelledby="pricing-heading">
+          <div className="container">
+            <h1 id="pricing-heading"><T as="span" pl="Za darmo. Bez ograniczeń." en="Free without limits." /></h1>
+            <p className="pricing-free-promise"><T as="span" pl="Bez konta." en="No sign-up required." /><br /><T as="span" pl="Bez abonamentu." en="No subscription needed." /></p>
+            <T as="p" className="pricing-free-details" pl="Wszystkie funkcje aplikacji lokalnej są darmowe. Twoje dane zostają na Twoim urządzeniu, a własne AI do analizy możesz podłączyć samodzielnie." en="Every feature of the local app is free. Your data stays on your device, and you can connect your own AI for analysis." />
+            <T as="a" className="text-link" href="/download/" pl="Przejdź do pobierania →" en="Go to downloads →" />
           </div>
         </section>
-        <section className="subpage-content" aria-label="Plany Zostaje / Zostaje plans">
+        <section className="subpage-content pricing-addons" aria-labelledby="pricing-addons-heading">
+          <div className="container pricing-addons-intro">
+            <T as="h2" id="pricing-addons-heading" pl="Opcjonalnie, gdy chcesz więcej." en="Optional, when you want more." />
+            <T as="p" pl="Powierz nam obsługę AI i rozszerz analizę finansów albo rozwijaj z nami narzędzia dla swojego biznesu." en="Let us handle AI and expand your financial analysis, or build tools for your business with us." />
+            <div className="pricing-billing-toggle" role="group" aria-label={language === "pl" ? "Okres rozliczenia Premium" : "Premium billing period"}>
+              <button type="button" aria-pressed={yearly} onClick={() => setBilling("yearly")}><T as="span" pl="Rocznie" en="Yearly" /></button>
+              <button type="button" aria-pressed={!yearly} onClick={() => setBilling("monthly")}><T as="span" pl="Miesięcznie" en="Monthly" /></button>
+            </div>
+          </div>
           <div className="container pricing-page-grid">
-            <article className="pricing-page-card" aria-labelledby="plan-free">
-              <T as="span" pl="Na co dzień" en="For everyday life" className="pricing-plan-label" />
-              <T as="h2" id="plan-free" pl="Darmowy" en="Free" />
-              <p className="pricing-page-price">0 zł<T as="span" pl="/ bez abonamentu" en="/ no subscription" /></p>
-              <T as="p" className="pricing-plan-description" pl="Twoje finanse na Twoim urządzeniu. Wszystkie funkcje aplikacji lokalnej, bez opłat." en="Your finances on your device. Every feature of the local app, free of charge." />
-              <ul className="pricing-page-list">
-                <T as="li" pl="Pełna funkcjonalność aplikacji lokalnej" en="Full local app functionality" />
-                <T as="li" pl="Dane przechowywane na Twoim urządzeniu" en="Data stored on your device" />
-                <T as="li" pl="Budżet, wpływy, wydatki i cele finansowe" en="Budgets, income, expenses and financial goals" />
-                <T as="li" pl="Samodzielne podłączenie własnego AI do analizy" en="Connect your own AI for analysis" />
-              </ul>
-              <div className="pricing-plan-action"><T as="a" pl="Przejdź do pobierania" en="Go to downloads" className="button button-outline" href="/download/" /></div>
-            </article>
             <article className="pricing-page-card pricing-page-card-premium" aria-labelledby="plan-premium">
               <T as="span" pl="AI bez konfiguracji" en="AI without the setup" className="pricing-plan-label" />
               <T as="h2" id="plan-premium" pl="Premium" en="Premium" />
-              <p className="pricing-page-price">39 zł<T as="span" pl="/ miesiąc" en="/ month" /></p>
+              <div className="pricing-price-block" aria-live="polite" aria-atomic="true">
+                <p className="pricing-page-price">{yearly ? "468 zł" : "39 zł"}<T as="span" pl={yearly ? "/ rok" : "/ miesiąc"} en={yearly ? "/ year" : "/ month"} /></p>
+                <T as="p" className="pricing-billing-detail" pl={yearly ? "Płatne raz w roku. Równowartość 39 zł miesięcznie." : "Rozliczane co miesiąc."} en={yearly ? "Billed once a year. Equivalent to PLN 39 per month." : "Billed monthly."} />
+              </div>
               <T as="p" className="pricing-plan-description" pl="Nie chcesz samodzielnie łączyć AI do analizy? Zostaw to nam i zyskaj więcej możliwości analitycznych." en="Prefer not to connect AI for analysis yourself? Let us handle it and get more analytical capabilities." />
               <ul className="pricing-page-list">
-                <T as="li" pl="Wszystko z planu Darmowego" en="Everything in Free" />
+                <T as="li" pl="Wszystkie funkcje darmowej aplikacji" en="Every feature of the free app" />
                 <T as="li" pl="AI do analizy obsługiwane przez Zostaje" en="AI analysis managed by Zostaje" />
                 <T as="li" pl="Bez samodzielnego podłączania dostawcy AI" en="No need to connect an AI provider yourself" />
                 <T as="li" pl="Rozszerzone funkcje analityczne" en="Advanced analytics features" />
@@ -47,7 +50,10 @@ export function PricingContent() {
             <article className="pricing-page-card" aria-labelledby="plan-founders">
               <T as="span" pl="Dla Twojego biznesu" en="For your business" className="pricing-plan-label" />
               <h2 id="plan-founders">Founders Edition</h2>
-              <T as="p" className="pricing-page-price pricing-page-price-custom" pl="Porozmawiajmy" en="Let’s talk" />
+              <div className="pricing-price-block">
+                <T as="p" className="pricing-page-price pricing-page-price-custom" pl="Porozmawiajmy" en="Let’s talk" />
+                <T as="p" className="pricing-billing-detail" pl="Cena i forma rozliczenia ustalane indywidualnie." en="Pricing and billing agreed individually." />
+              </div>
               <T as="p" className="pricing-plan-description" pl="Freelancer, startup czy JDG? Zostaje to więcej niż domowy budżet. Pomoże Ci pilnować finansów także na starcie własnej działalności." en="Freelancer, startup or sole trader? Zostaje goes beyond a household budget, helping you keep track of finances as you start your business." />
               <ul className="pricing-page-list">
                 <T as="li" pl="Wspólnie określony zakres i cena" en="Scope and pricing agreed together" />
