@@ -168,5 +168,19 @@
         "en"
       ]
     }
+  ],
+  "founders": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Zostaje Founders Edition",
+      "url": "https://zostaje.com/founders-edition/",
+      "description": "Indywidualna współpraca przy rozwoju Zostaje dla freelancerów, startupów i JDG.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Zostaje",
+        "url": "https://zostaje.com/"
+      }
+    }
   ]
 }

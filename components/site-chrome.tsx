@@ -178,6 +178,7 @@ export function LegacyFooter() {
                   {"Demo"}
                 </a>
                 <T as="a" pl="Cennik" en="Pricing" href="/pricing/" />
+                <a href="/founders-edition/">Founders Edition</a>
                 <T as="a" pl="Pobierz" en="Download" href="/download/" />
               </nav>
               <nav aria-label={language === "pl" ? "Platformy" : "Platforms"}>

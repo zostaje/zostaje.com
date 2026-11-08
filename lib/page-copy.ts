@@ -23,6 +23,11 @@ export const pageCopy = {
     },
     "path": "/projekt/"
   },
+  "founders": {
+    "title": { "pl": "Founders Edition — Zostaje dla Twojej działalności", "en": "Founders Edition — Zostaje for your business" },
+    "description": { "pl": "Founders Edition dla freelancerów, startupów i JDG. Poznaj kierunki rozwoju wersji biznesowej, zasady współpracy i indywidualnej wyceny.", "en": "Founders Edition for freelancers, startups and sole traders. Explore the business edition’s direction, collaboration process and tailored pricing." },
+    "path": "/founders-edition/"
+  },
   "pricing": {
     "title": {
       "pl": "Cennik Zostaje — Darmowy, Premium i Founders Edition",

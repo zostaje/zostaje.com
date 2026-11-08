@@ -1,4 +1,5 @@
 export const searchablePages = [
+  { href: "/founders-edition/", pl: "Founders Edition", en: "Founders Edition", plText: "Współpraca i finanse dla freelancerów, startupów i JDG", enText: "Collaboration and finances for freelancers, startups and sole traders", keywords: "biznes business firma współpraca collaboration indywidualna wycena" },
   { href: "/", pl: "Strona główna", en: "Home", plText: "Jak działa Zostaje, plan pieniędzy i cele oszczędnościowe", enText: "How Zostaje works, money planning and savings goals", keywords: "budżet budget finanse finance" },
   { href: "/download/", pl: "Pobierz", en: "Download", plText: "Dostępność aplikacji na iOS, macOS, Windows, Linux i Android", enText: "App availability on iOS, macOS, Windows, Linux and Android", keywords: "instalacja install platformy platforms" },
   { href: "/pricing/", pl: "Cennik", en: "Pricing", plText: "Darmowa aplikacja, Premium z AI i Founders Edition", enText: "Free app, Premium with AI and Founders Edition", keywords: "cena price koszt cost plan miesięczny monthly roczny yearly rabat discount abonament subscription" },

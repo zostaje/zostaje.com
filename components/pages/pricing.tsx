@@ -66,7 +66,7 @@ export function PricingContent() {
                 <T as="li" pl="Rozwój funkcji wokół potrzeb Twojej działalności" en="Features shaped around your business needs" />
                 <T as="li" pl="Bezpośredni kontakt z zespołem" en="Direct contact with the team" />
               </ul>
-              <div className="pricing-plan-action"><T as="a" pl="Skontaktuj się z nami" en="Contact us" className="button button-outline" href="mailto:sales@zostaje.com?subject=Zostaje%20Founders%20Edition" />
+              <div className="pricing-plan-action"><T as="a" pl="Poznaj Founders Edition" en="Explore Founders Edition" className="button button-outline" href="/founders-edition/" />
               <a className="pricing-sales-email" href="mailto:sales@zostaje.com">sales@zostaje.com</a></div>
             </article>
           </div>

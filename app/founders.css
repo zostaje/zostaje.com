@@ -1,0 +1,25 @@
+.founders-hero .subpage-hero-copy { max-width: 900px; }
+.founders-hero h1 { font-size: clamp(2.5rem, 5vw, 4.3rem); line-height: 1.12; letter-spacing: -.05em; }
+.founders-section { padding-block: 48px; }
+.founders-section-heading { max-width: 700px; margin-bottom: 32px; }
+.founders-section-heading h2, .founders-contact h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.2; letter-spacing: -.035em; }
+.founders-section-heading p, .founders-benefits p, .founders-steps p, .founders-contact > p { color: var(--text-secondary); line-height: 1.8; }
+.founders-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.founders-benefits article { border-top: 1px solid var(--line); padding-top: 24px; }
+.founders-page h3 { margin: 0 0 12px; font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; }
+.founders-benefits p, .founders-steps p { margin: 0; font-size: .9rem; }
+.founders-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.founders-capabilities p { font-size: .95rem; line-height: 1.8; }
+.founders-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 0; padding: 0; list-style: none; counter-reset: founders-step; }
+.founders-steps li { counter-increment: founders-step; }
+.founders-steps li::before { content: "0" counter(founders-step); display: block; margin-bottom: 20px; color: var(--text-muted); font-size: .85rem; }
+.founders-contact { margin-block: 40px 80px; padding: 48px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface-raised); text-align: center; scroll-margin-top: 100px; }
+.founders-contact > p { max-width: 640px; margin-inline: auto; }
+.founders-contact .button { margin-top: 12px; }
+.founders-email { display: block; width: max-content; max-width: 100%; margin: 18px auto 0; color: var(--text-muted); font-size: .9rem; text-underline-offset: 4px; }
+.founders-email:hover { color: var(--text); text-decoration: underline; }
+@media (max-width: 720px) {
+  .founders-section { padding-block: 32px; }
+  .founders-benefits, .founders-capabilities, .founders-steps { grid-template-columns: 1fr; gap: 24px; }
+  .founders-contact { margin-block: 24px 48px; padding: 32px 20px; }
+}
