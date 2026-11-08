@@ -25,6 +25,7 @@ export interface LaserFlowProps extends Omit<HTMLAttributes<HTMLDivElement>, 'co
   revealRadius?: number;
   revealOpacity?: number;
   intro?: boolean;
+  onImpact?: () => void;
   theme?: 'dark' | 'light';
   paused?: boolean;
   dpr?: number;
@@ -52,6 +53,7 @@ type Settings = {
   revealRadius: number;
   revealOpacity: number;
   intro: boolean;
+  onImpact?: () => void;
   theme: 'dark' | 'light';
   paused: boolean;
   dpr?: number;
@@ -540,6 +542,7 @@ export const LaserFlow = ({
   revealRadius = 220,
   revealOpacity = 0.6,
   intro = true,
+  onImpact,
   theme = 'dark',
   paused = false,
   dpr,
@@ -570,6 +573,7 @@ export const LaserFlow = ({
     revealRadius: Math.max(1, revealRadius),
     revealOpacity: clamp(revealOpacity, 0, 1),
     intro,
+    onImpact,
     theme,
     paused,
     dpr
@@ -641,6 +645,7 @@ export const LaserFlow = ({
     const state = {
       time: 0,
       introTime: settingsRef.current.intro && !reduce ? 0 : INTRO_END,
+      impactNotified: false,
       width: 1,
       height: 1,
       ratio: 1,
@@ -784,6 +789,12 @@ export const LaserFlow = ({
       const front = settled ? surface.top + 0.3 * height : startY + span * Math.pow(clamp(it / INTRO_DROP, 0, 1), 1.3);
       const impact = INTRO_DROP * Math.pow(Math.max(0, surface.top - startY) / span, 1 / 1.3);
       const tau = it - impact;
+      // Notify at the actual intro intersection, independent of frame rate or
+      // loading time. Resizes, pointer movement and theme changes never replay it.
+      if (s.intro && !reduce && !state.impactNotified && tau >= 0) {
+        state.impactNotified = true;
+        s.onImpact?.();
+      }
       const bloom = settled ? 1 : tau <= 0 ? 0 : spring(tau);
       const flash = settled || tau <= 0 ? 0 : Math.exp(-tau / 0.35) * (1 - Math.exp(-tau / 0.05));
       const runRange = s.spread * 250 * 1.3 + 80;

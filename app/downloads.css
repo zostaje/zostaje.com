@@ -146,3 +146,10 @@
 @media (prefers-reduced-motion: reduce) {
   .download-emblem-glow { transition: none; }
 }
+
+/* Single impact burst; only transform and opacity animate, never page layout. */
+.download-impact-burst { pointer-events: none; position: absolute; z-index: 3; top: var(--icon-top); left: 50%; width: var(--icon-size); height: var(--icon-size); transform: translateX(-50%); }
+.download-impact-particle { position: absolute; top: 50%; left: 50%; width: var(--particle-size); height: var(--particle-size); margin: -2px 0 0 -2px; border-radius: 50%; opacity: 0; background: var(--particle-color); box-shadow: 0 0 7px var(--particle-color); }
+.download-impact-particle:nth-child(3n) { border-radius: 2px; height: calc(var(--particle-size) * 1.8); }
+.download-impact-ring { position: absolute; inset: -2%; border: 2px solid #84adff; border-radius: 50%; opacity: 0; box-shadow: 0 0 20px #155eef40; }
+@media (prefers-reduced-motion: reduce) { .download-impact-burst { display: none; } }
