@@ -71,7 +71,7 @@ export function DownloadEmblem() {
       <div ref={burst} className="download-impact-burst" aria-hidden="true">
         {Array.from({ length: 36 }, (_, index) => <i key={index} className="download-impact-particle" style={{ "--particle-size": `${4 + index % 4}px`, "--particle-color": ["#84adff", "#155eef", "#c4b5fd", "#b9e6fe"][index % 4] } as CSSProperties} />)}
       </div>
-      {!reducedMotion && <LaserFlow onImpact={reactToImpact} surfaceRef={surface} intro beamPosition={0.5} color="#155EEF" intensity={1.45} flare={1.15} spread={1.25} spill={0.8} fog={0.12} dust={0.65} streaks={1.35} dots={0.35} pulse={0.8} speed={0.85} dpr={1} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
+      {!reducedMotion && <LaserFlow onImpact={reactToImpact} surfaceRef={surface} intro beamPosition={0.5} color="#155EEF" intensity={1.45} flare={1.15} spread={1.25} spill={0.8} fog={0.12} dust={0.65} streaks={1.35} dots={0.35} pulse={0.8} speed={0.85} dpr={2} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
     </div>
   );
 }
