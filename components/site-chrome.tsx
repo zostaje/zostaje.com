@@ -1,7 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { T, LanguageLabel, useSite } from "@/components/site-provider";
+import { T, useSite } from "@/components/site-provider";
+import { SiteSearch } from "./site-search";
+import { LanguageSelector } from "./language-selector";
 import { ThemeToggle } from "./theme-toggle";
 import { AiLink, AiNote } from "@/components/ai-links";
 
@@ -51,9 +53,9 @@ function FooterAiLinks() {
 }
 
 const primaryPages = [
-  { href: "/download/", label: { pl: "Download", en: "Download" } },
-  { href: "/pricing/", label: { pl: "Pricing", en: "Pricing" } },
-  { href: "/knowledge/", label: { pl: "Knowledge", en: "Knowledge" } },
+  { href: "/download/", label: { pl: "Pobierz", en: "Download" } },
+  { href: "/pricing/", label: { pl: "Cennik", en: "Pricing" } },
+  { href: "/knowledge/", label: { pl: "Baza wiedzy", en: "Knowledge" } },
   { href: "/developers/", label: { pl: "Dokumentacja", en: "Documentation" } },
 ];
 
@@ -68,20 +70,15 @@ function PrimaryNavLinks({ mobile = false }: { mobile?: boolean }) {
 }
 
 export function SiteHeader() {
-  const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
+  const { language, menuOpen, menuMounted, openMenu, closeMenu, scrolled, opener, closer } = useSite();
   return <>
     <header className={"site-header" + (scrolled ? " is-scrolled" : "")}>
       <div className="container nav-wrap">
         <a className="brand" href="/" aria-label={language === "pl" ? "Zostaje — strona główna" : "Zostaje — home"}><BrandWordmark /></a>
         <nav className="main-nav" aria-label={language === "pl" ? "Główna nawigacja" : "Main navigation"}><PrimaryNavLinks /></nav>
         <div className="nav-right">
-          <details className="language-menu">
-            <summary aria-label="Język / Language"><span className="current-language"><LanguageLabel /></span></summary>
-            <div className="language-dropdown">
-              <button onClick={() => setLanguage("pl")} type="button" data-language="pl">Polski</button>
-              <button onClick={() => setLanguage("en")} type="button" data-language="en">English</button>
-            </div>
-          </details>
+          <SiteSearch />
+          <LanguageSelector header />
           <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
           <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu"><span /><span /><span /></button>
         </div>
@@ -92,10 +89,11 @@ export function SiteHeader() {
         <div className="mobile-menu-top">
           <a onClick={() => closeMenu(false)} className="brand" href="/" aria-label="Zostaje"><BrandWordmark /></a>
           <div className="mobile-menu-tools">
-            <button onClick={toggleMobileLanguage} className="mobile-language-toggle" type="button" aria-label={language === "pl" ? "Zmień język" : "Change language"} aria-expanded={mobileLanguageOpen} aria-controls="mobile-language-panel"><LanguageLabel /></button>
+            <LanguageSelector header />
             <button ref={closer} onClick={() => closeMenu()} aria-label={language === "pl" ? "Zamknij menu" : "Close menu"} className="menu-close" type="button"><span /><span /></button>
           </div>
         </div>
+        <SiteSearch mobile />
         <nav className="mobile-primary-nav" aria-label={language === "pl" ? "Nawigacja mobilna" : "Mobile navigation"}><PrimaryNavLinks mobile /></nav>
         <div className="mobile-secondary-nav">
           <T as="p" pl="Dowiedz się więcej" en="Learn more" />
@@ -106,18 +104,14 @@ export function SiteHeader() {
             <T as="a" pl="Polityka prywatności" en="Privacy policy" onClick={() => closeMenu(false)} href="/privacy/" />
           </div>
         </div>
-        <div hidden={!mobileLanguageOpen} className="mobile-language-panel" id="mobile-language-panel">
-          <T as="p" pl="Język strony" en="Website language" />
-          <button onClick={() => setLanguage("pl")} type="button" data-language="pl">Polski</button>
-          <button onClick={() => setLanguage("en")} type="button" data-language="en">English</button>
-        </div>
+
       </div>
     </div>
   </>;
 }
 
 export function MinimalFooter({ home = false }: { home?: boolean }) {
-  const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
+  const { language } = useSite();
   return (
     <>
       <footer className="site-footer">
@@ -129,10 +123,11 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
             <T as="p" pl="Zrozum pieniądze. Wybierz po swojemu." en="Understand your money. Choose for yourself." />
             <FooterSocialLinks />
             <FooterAiLinks />
+            <LanguageSelector />
           </div>
           <div className="footer-links">
             <div>
-              <nav aria-label="Produkt">
+              <nav aria-label={language === "pl" ? "Produkt" : "Product"}>
                 <T as="strong" pl="Zostaje" en="Zostaje" />
                 <T as="a" pl="Jak działa" en="How it works" href={home ? "#jak-dziala" : "/#jak-dziala"} />
                 <T as="a" pl="Polityka prywatności" en="Privacy policy" href="/privacy/" />
@@ -141,7 +136,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
               </nav>
             </div>
             <div>
-              <nav aria-label="Projekt">
+              <nav aria-label={language === "pl" ? "Projekt" : "Project"}>
                 <T as="strong" pl="Projekt" en="Project" />
                 <T as="a" pl="Cele i hipotezy" en="Goals and hypotheses" href="/projekt/" />
                 <T as="span" pl="iOS · prototyp" en="iOS · prototype" />
@@ -161,7 +156,7 @@ export function MinimalFooter({ home = false }: { home?: boolean }) {
 }
 
 export function LegacyFooter() {
-  const { language, setLanguage, menuOpen, menuMounted, openMenu, closeMenu, scrolled, mobileLanguageOpen, toggleMobileLanguage, opener, closer } = useSite();
+  const { language } = useSite();
   return (
     <>
       <footer className="site-footer subpage-footer">
@@ -172,44 +167,11 @@ export function LegacyFooter() {
             </a>
             <FooterSocialLinks />
             <FooterAiLinks />
-            <details className="footer-language">
-              <summary>
-                <svg className="language-globe" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10">
-
-                  </circle>
-                  <path d="M2 12h20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 1 0 20">
-
-                  </path>
-                  <path d="M12 2a15.3 15.3 0 0 0 0 20">
-
-                  </path>
-                </svg>
-                <span className="footer-language-name">
-                  <LanguageLabel fullName />
-                </span>
-                <svg className="language-chevron" viewBox="0 0 24 24">
-                  <path d="m6 9 6 6 6-6">
-
-                  </path>
-                </svg>
-              </summary>
-              <div>
-                <button onClick={() => setLanguage("pl")} type="button" data-language="pl">
-                  {"Polski"}
-                </button>
-                <button onClick={() => setLanguage("en")} type="button" data-language="en">
-                  {"English"}
-                </button>
-              </div>
-            </details>
+            <LanguageSelector />
           </div>
           <div className="footer-links">
             <div>
-              <nav aria-label="Produkt">
+              <nav aria-label={language === "pl" ? "Produkt" : "Product"}>
                 <T as="strong" pl="Produkt" en="Product" />
                 <T as="a" pl="Jak działa" en="How it works" href="/#jak-dziala" />
                 <a href="/demo/">
@@ -218,7 +180,7 @@ export function LegacyFooter() {
                 <T as="a" pl="Cennik" en="Pricing" href="/pricing/" />
                 <T as="a" pl="Pobierz" en="Download" href="/download/" />
               </nav>
-              <nav aria-label="Platformy">
+              <nav aria-label={language === "pl" ? "Platformy" : "Platforms"}>
                 <T as="strong" pl="Platformy" en="Platforms" />
                 <T as="span" pl="iOS · w budowie" en="iOS · in development" />
                 <T as="span" pl="macOS · planowane" en="macOS · planned" />
@@ -226,19 +188,17 @@ export function LegacyFooter() {
               </nav>
             </div>
             <div>
-              <nav aria-label="Projekt">
+              <nav aria-label={language === "pl" ? "Projekt" : "Project"}>
                 <T as="strong" pl="Projekt" en="Project" />
                 <a href="https://github.com/zostaje">
                   {"GitHub"}
                 </a>
                 <T as="a" pl="Historia wersji" en="Release history" href="/releases/" />
-                <a href="/developers/">
-                  {"Developers"}
-                </a>
+                <T as="a" pl="Dokumentacja" en="Documentation" href="/developers/" />
                 <T as="a" pl="Demo" en="Demo" href="/demo/" />
                 <T as="a" pl="Bezpieczeństwo" en="Security" href="/#bezpieczenstwo" />
               </nav>
-              <nav aria-label="Technologia">
+              <nav aria-label={language === "pl" ? "Technologia" : "Technology"}>
                 <T as="strong" pl="Technologia" en="Technology" />
                 <span>
                   {"Swift"}
@@ -248,14 +208,14 @@ export function LegacyFooter() {
               </nav>
             </div>
             <div>
-              <nav aria-label="Kontakt">
+              <nav aria-label={language === "pl" ? "Kontakt" : "Contact"}>
                 <T as="strong" pl="Kontakt" en="Contact" />
                 <a href="mailto:demo@zostaje.app">
                   {"demo@zostaje.app"}
                 </a>
                 <T as="span" pl="Polska" en="Poland" />
               </nav>
-              <nav aria-label="Informacje">
+              <nav aria-label={language === "pl" ? "Informacje" : "Information"}>
                 <T as="strong" pl="Informacje" en="Information" />
                 <T as="a" pl="Pomoc" en="Help" href="/help/" />
                 <T as="a" pl="Zamknięte demo" en="Private demo" href="/#demo" />

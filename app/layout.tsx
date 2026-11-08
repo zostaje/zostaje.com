@@ -7,6 +7,7 @@ import "./site-refresh.css";
 import "./themes.css";
 import "./newsletter.css";
 import "./downloads.css";
+import "./chrome.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 

@@ -58,12 +58,12 @@ export const pageCopy = {
   },
   "developers": {
     "title": {
-      "pl": "Zostaje Developers — integracje i testy",
-      "en": "Zostaje Developers — integrations and testing"
+      "pl": "Dokumentacja Zostaje — integracje i testy",
+      "en": "Zostaje documentation — integrations and testing"
     },
     "description": {
-      "pl": "Zostaje Developers: informacje dla programistów i testerów o planowanym MCP, wspólnym backendzie, integracjach, testach i rozwoju projektu.",
-      "en": "Zostaje Developers: information for developers and testers about the planned MCP, shared backend, integrations, testing and project development."
+      "pl": "Dokumentacja Zostaje: informacje dla programistów i testerów o planowanym MCP, wspólnym backendzie, integracjach, testach i rozwoju projektu.",
+      "en": "Zostaje documentation: information for developers and testers about the planned MCP, shared backend, integrations, testing and project development."
     },
     "path": "/developers/"
   },

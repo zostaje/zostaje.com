@@ -11,9 +11,7 @@ export function DevelopersContent() {
       <main className="subpage-main" id="main">
         <section className="subpage-hero">
           <div className="container subpage-hero-copy">
-            <p className="subpage-kicker">
-              {"Developers"}
-            </p>
+            <T as="p" className="subpage-kicker" pl="Dokumentacja" en="Documentation" />
             <T as="h1" pl="Buduj i testuj Zostaje razem z nami." en="Build and test Zostaje with us." />
             <T as="p" pl="To centrum technicznego kierunku projektu dla programistów, integratorów i testerów. Dokumentacja będzie rosnąć razem z publicznymi interfejsami Zostaje." en="This is the technical project hub for developers, integrators and testers. Documentation will grow as Zostaje interfaces become public." className="subpage-lead" />
             <div className="subpage-actions">
@@ -35,9 +33,7 @@ export function DevelopersContent() {
                 <T as="p" pl="Jedna logika danych i kont dla iOS, macOS i Windows. Kontrakty API zostaną opublikowane, gdy będą stabilne." en="One data and account layer for iOS, macOS and Windows. API contracts will be published once stable." />
               </article>
               <article className="help-card">
-                <h2>
-                  {"Publiczne MCP"}
-                </h2>
+                <T as="h2" pl="Publiczne MCP" en="Public MCP" />
                 <T as="p" pl="Planowany serwer MCP ma dawać kompatybilnym asystentom dostęp wyłącznie do zakresu danych zatwierdzonego przez użytkownika." en="The planned MCP server is intended to give compatible assistants access only to data scopes approved by the user." />
               </article>
               <article className="help-card">

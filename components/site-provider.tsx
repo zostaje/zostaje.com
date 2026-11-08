@@ -108,9 +108,13 @@ export function SiteProvider({ copy, children, minimal = false }: { copy: PageCo
   useEffect(() => {
     if (!menuMounted) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape") {
+        // Search and language controls close their own popup first.
+        const target = event.target;
+        if (!(target instanceof Element && target.closest(".site-search, .compact-language"))) closeMenu();
+      }
       if (event.key !== "Tab") return;
-      const controls = Array.from(document.querySelectorAll<HTMLElement>('#mobile-menu a, #mobile-menu button'))
+      const controls = Array.from(document.querySelectorAll<HTMLElement>('#mobile-menu a, #mobile-menu button, #mobile-menu input, #mobile-menu summary'))
         .filter(element => element.getClientRects().length > 0);
       const first = controls[0], last = controls.at(-1);
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
