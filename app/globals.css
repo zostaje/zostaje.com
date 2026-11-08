@@ -1970,3 +1970,6 @@ body.menu-open {
 .demo-form .form-error {
   color: var(--red, #ff6b6b);
 }
+
+.pricing-discount { margin-left: 8px; padding: 2px 5px; border-radius: 4px; background: rgb(21 94 239 / 15%); color: var(--green-light); font-size: .7rem; white-space: nowrap; }
+.pricing-original-price { margin-left: 12px; color: var(--text-muted); font-size: 1rem; font-weight: 400; letter-spacing: 0; white-space: nowrap; }

@@ -51,17 +51,18 @@ function FooterAiLinks() {
 }
 
 const primaryPages = [
-  { href: "/download/", label: "Download" },
-  { href: "/pricing/", label: "Pricing" },
-  { href: "/knowledge/", label: "Knowledge" },
+  { href: "/download/", label: { pl: "Download", en: "Download" } },
+  { href: "/pricing/", label: { pl: "Pricing", en: "Pricing" } },
+  { href: "/knowledge/", label: { pl: "Knowledge", en: "Knowledge" } },
+  { href: "/developers/", label: { pl: "Dokumentacja", en: "Documentation" } },
 ];
 
 function PrimaryNavLinks({ mobile = false }: { mobile?: boolean }) {
   const pathname = usePathname();
-  const { closeMenu } = useSite();
+  const { closeMenu, language } = useSite();
   return primaryPages.map(({ href, label }) => (
     <a key={href} href={href} aria-current={pathname.replace(/\/$/, "") === href.replace(/\/$/, "") ? "page" : undefined} onClick={mobile ? () => closeMenu(false) : undefined}>
-      {label}
+      {label[language]}
     </a>
   ));
 }

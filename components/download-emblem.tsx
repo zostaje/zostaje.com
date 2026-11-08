@@ -25,7 +25,7 @@ export function DownloadEmblem() {
           <img className="wordmark-light" src="/brand/icon-light.svg" width={248} height={248} alt="Zostaje" />
         </GlareCard>
       </div>
-      {!reducedMotion && <LaserFlow surfaceRef={surface} intro beamPosition={0.5} color="#155EEF" intensity={1.35} flare={1.1} spread={1.25} spill={0.8} fog={0.1} dust={1.1} streaks={1.8} pulse={1} speed={1.1} dpr={1.25} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
+      {!reducedMotion && <LaserFlow surfaceRef={surface} intro beamPosition={0.5} color="#155EEF" intensity={1.45} flare={1.15} spread={1.25} spill={0.8} fog={0.12} dust={0.65} streaks={1.35} dots={0.35} pulse={0.8} speed={0.85} dpr={1} theme={resolvedTheme ?? "dark"} aria-hidden="true" />}
     </div>
   );
 }

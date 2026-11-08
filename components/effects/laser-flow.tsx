@@ -396,11 +396,15 @@ void main() {
     (frag.y - (uSurface.w - 30.0)) / (iconHeight * uScale * 0.85 + 100.0)
   );
   float cloudFeather = pow(1.0 - smoothstep(0.15, 1.0, length(cloudBounds)), 2.0);
-  vec2 cloudUV = p / 115.0 + vec2(t * 0.025, -t * 0.018);
-  float cloudTexture = fbm(cloudUV + vec2(fbm(cloudUV + 2.7), fbm(cloudUV - 4.1)));
-  float atmosphere = pointerCloud * cloudZone * cloudFeather * (0.18 + 0.42 * cloudTexture)
-    * smoothstep(-0.75, 0.25, sd * uScale) * uAtmosphere;
-  emit += (1.0 - exp(-BEAM * atmosphere)) * mix(1.0, 0.65, uTheme);
+  // Avoid procedural cloud noise across the entire canvas when no pointer
+  // cloud is visible. This is the most expensive part of the background.
+  if (pointerCloud * cloudZone * cloudFeather > 0.001 && sd * uScale > -0.75) {
+    vec2 cloudUV = p / 115.0 + vec2(t * 0.025, -t * 0.018);
+    float cloudTexture = fbm(cloudUV + vec2(fbm(cloudUV + 2.7), fbm(cloudUV - 4.1)));
+    float atmosphere = pointerCloud * cloudZone * cloudFeather * (0.18 + 0.42 * cloudTexture)
+      * smoothstep(-0.75, 0.25, sd * uScale) * uAtmosphere;
+    emit += (1.0 - exp(-BEAM * atmosphere)) * mix(1.0, 0.65, uTheme);
+  }
   float peak = max(emit.r, max(emit.g, emit.b));
   if (uTheme > 0.5) {
     float low = min(emit.r, min(emit.g, emit.b));

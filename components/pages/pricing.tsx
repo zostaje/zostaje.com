@@ -4,10 +4,16 @@ import { useState } from "react";
 import { T, useSite } from "@/components/site-provider";
 import { SiteHeader, LegacyFooter } from "@/components/site-chrome";
 
+const MONTHLY_PRICE = 39;
+const YEARLY_DISCOUNT = 15;
+const YEARLY_FULL_PRICE = MONTHLY_PRICE * 12;
+const YEARLY_PRICE = Math.round(YEARLY_FULL_PRICE * (100 - YEARLY_DISCOUNT)) / 100;
+
 export function PricingContent() {
   const { language } = useSite();
   const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const yearly = billing === "yearly";
+  const formatPrice = (value: number) => new Intl.NumberFormat(language === "pl" ? "pl-PL" : "en-GB", { style: "currency", currency: "PLN", minimumFractionDigits: Number.isInteger(value) ? 0 : 2, maximumFractionDigits: 2 }).format(value);
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
@@ -26,7 +32,7 @@ export function PricingContent() {
             <T as="h2" id="pricing-addons-heading" pl="Opcjonalnie, gdy chcesz więcej." en="Optional, when you want more." />
             <T as="p" pl="Powierz nam obsługę AI i rozszerz analizę finansów albo rozwijaj z nami narzędzia dla swojego biznesu." en="Let us handle AI and expand your financial analysis, or build tools for your business with us." />
             <div className="pricing-billing-toggle" role="group" aria-label={language === "pl" ? "Okres rozliczenia Premium" : "Premium billing period"}>
-              <button type="button" aria-pressed={yearly} onClick={() => setBilling("yearly")}><T as="span" pl="Rocznie" en="Yearly" /></button>
+              <button type="button" aria-pressed={yearly} onClick={() => setBilling("yearly")}><T as="span" pl="Rocznie" en="Yearly" /><span className="pricing-discount">−{YEARLY_DISCOUNT}%</span></button>
               <button type="button" aria-pressed={!yearly} onClick={() => setBilling("monthly")}><T as="span" pl="Miesięcznie" en="Monthly" /></button>
             </div>
           </div>
@@ -35,8 +41,8 @@ export function PricingContent() {
               <T as="span" pl="AI bez konfiguracji" en="AI without the setup" className="pricing-plan-label" />
               <T as="h2" id="plan-premium" pl="Premium" en="Premium" />
               <div className="pricing-price-block" aria-live="polite" aria-atomic="true">
-                <p className="pricing-page-price">{yearly ? "468 zł" : "39 zł"}<T as="span" pl={yearly ? "/ rok" : "/ miesiąc"} en={yearly ? "/ year" : "/ month"} /></p>
-                <T as="p" className="pricing-billing-detail" pl={yearly ? "Płatne raz w roku. Równowartość 39 zł miesięcznie." : "Rozliczane co miesiąc."} en={yearly ? "Billed once a year. Equivalent to PLN 39 per month." : "Billed monthly."} />
+                <p className="pricing-page-price">{formatPrice(yearly ? YEARLY_PRICE : MONTHLY_PRICE)}{yearly && <del className="pricing-original-price">{formatPrice(YEARLY_FULL_PRICE)}</del>}<T as="span" pl={yearly ? "/ rok" : "/ miesiąc"} en={yearly ? "/ year" : "/ month"} /></p>
+                <T as="p" className="pricing-billing-detail" pl={yearly ? `Płatne raz w roku. ${formatPrice(YEARLY_PRICE / 12)} miesięcznie — oszczędzasz ${formatPrice(YEARLY_FULL_PRICE - YEARLY_PRICE)} w roku.` : "Rozliczane co miesiąc."} en={yearly ? `Billed once a year. ${formatPrice(YEARLY_PRICE / 12)} per month — save ${formatPrice(YEARLY_FULL_PRICE - YEARLY_PRICE)} per year.` : "Billed monthly."} />
               </div>
               <T as="p" className="pricing-plan-description" pl="Nie chcesz samodzielnie łączyć AI do analizy? Zostaw to nam i zyskaj więcej możliwości analitycznych." en="Prefer not to connect AI for analysis yourself? Let us handle it and get more analytical capabilities." />
               <ul className="pricing-page-list">
