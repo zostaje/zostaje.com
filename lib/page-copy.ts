@@ -3,12 +3,12 @@ import type { PageCopy } from "@/components/site-provider";
 export const pageCopy = {
   "home": {
     "title": {
-      "pl": "Zostaje — zobacz, ile zostaje",
-      "en": "Zostaje — see what’s left"
+      "pl": "Zostaje — darmowa aplikacja do budżetu i oszczędności",
+      "en": "Zostaje — free budgeting and savings app"
     },
     "description": {
-      "pl": "Plan do kolejnego wpływu, rachunki i cel oszczędnościowy. Zostaje to rozwijana aplikacja iOS do świadomego planowania pieniędzy.",
-      "en": "A plan until your next income, bills and a savings goal. Zostaje is an iOS app in development for informed money planning."
+      "pl": "Zaplanuj budżet do kolejnego wpływu, uwzględnij rachunki i odkładaj na cel. Darmowa aplikacja lokalna bez konta. MVP na iOS w rozwoju.",
+      "en": "Plan your budget until your next income, account for bills and save towards a goal. Free local app without an account. iOS MVP in development."
     },
     "path": "/"
   },

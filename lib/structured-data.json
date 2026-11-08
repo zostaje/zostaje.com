@@ -9,7 +9,8 @@
           "name": "Zostaje",
           "url": "https://zostaje.com/",
           "sameAs": [
-            "https://github.com/zostaje"
+            "https://github.com/zostaje",
+            "https://x.com/ZostajeApp"
           ]
         },
         {
@@ -17,10 +18,7 @@
           "@id": "https://zostaje.com/#website",
           "url": "https://zostaje.com/",
           "name": "Zostaje",
-          "inLanguage": [
-            "pl",
-            "en"
-          ],
+          "inLanguage": "pl",
           "publisher": {
             "@id": "https://zostaje.com/#organization"
           }
@@ -31,85 +29,313 @@
           "name": "Zostaje",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "iOS",
-          "description": "Rozwijany prototyp iOS do planowania kwoty do dyspozycji i symulowania regularnych wpłat.",
+          "description": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS.",
           "url": "https://zostaje.com/",
           "isAccessibleForFree": true,
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN",
-            "description": "Bezpłatny osobisty prototyp w przygotowaniu"
-          },
           "publisher": {
             "@id": "https://zostaje.com/#organization"
           }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/#webpage",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje — darmowa aplikacja do budżetu i oszczędności",
+          "description": "Zaplanuj budżet do kolejnego wpływu, uwzględnij rachunki i odkładaj na cel. Darmowa aplikacja lokalna bez konta. MVP na iOS w rozwoju.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "mainEntity": {
+            "@id": "https://zostaje.com/#app"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://zostaje.com/#questions",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#webpage"
+          },
+          "inLanguage": "pl",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym jest Zostaje?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy muszę wpisywać każdy wydatek?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nie. Pierwszy plan opiera się na aktualnym saldzie, terminie kolejnego wpływu, nieopłaconych rachunkach i wybranych rezerwach. Historię można uzupełnić importem w opisanym formacie CSV. Automatyczne integracje bankowe są kierunkiem dalszego rozwoju."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Co jest darmowe, a za co zapłacę?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, z możliwością podłączenia własnego AI. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy mogę już pobrać aplikację?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Publiczne instalatory nie są jeszcze dostępne. Na stronie Pobierz sprawdzisz status platform i historię wersji, a zapis do newslettera pozwoli otrzymywać informacje o nowych wersjach i rozwoju projektu."
+              }
+            }
+          ]
         }
       ]
     }
   ],
-  "projekt": [],
+  "projekt": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/projekt/#webpage",
+          "url": "https://zostaje.com/projekt/",
+          "name": "Zostaje — cele i hipotezy projektu",
+          "description": "Cele projektu licencjackiego Zostaje, zakres MVP i hipotezy do zbadania. Nie są to wyniki badań.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/projekt/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/projekt/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Zostaje — cele i hipotezy projektu",
+              "item": "https://zostaje.com/projekt/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "founders": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/founders-edition/#webpage",
+          "url": "https://zostaje.com/founders-edition/",
+          "name": "Founders Edition — Zostaje dla Twojej działalności",
+          "description": "Founders Edition dla freelancerów, startupów i JDG. Dostosowanie aplikacji, rozszerzona analityka, wdrożenie na własnym serwerze i wycena dopasowana do Twoich potrzeb.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/founders-edition/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/founders-edition/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Founders Edition — Zostaje dla Twojej działalności",
+              "item": "https://zostaje.com/founders-edition/"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "pricing": [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Cennik Zostaje",
-      "url": "https://zostaje.com/pricing/",
-      "description": "Cennik aplikacji Zostaje i informacje o bezpłatnym pierwszym demie.",
-      "mainEntity": {
-        "@type": "Offer",
-        "name": "Pierwsze zamknięte demo Zostaje",
-        "price": "0",
-        "priceCurrency": "PLN",
-        "availability": "https://schema.org/PreOrder"
-      }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/pricing/#webpage",
+          "url": "https://zostaje.com/pricing/",
+          "name": "Cennik Zostaje — Darmowy, Premium i Founders Edition",
+          "description": "Pełna aplikacja lokalna za darmo. Premium z obsługą AI i rozszerzoną analityką za 39 zł miesięcznie. Founders Edition dla freelancerów, startupów i JDG.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/pricing/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/pricing/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cennik Zostaje — Darmowy, Premium i Founders Edition",
+              "item": "https://zostaje.com/pricing/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "download": [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Pobierz Zostaje",
-      "url": "https://zostaje.com/download/",
-      "description": "Dostępność aplikacji na docelowe platformy i historia wydań. Publiczne instalatory nie są jeszcze dostępne."
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/download/#webpage",
+          "url": "https://zostaje.com/download/",
+          "name": "Pobierz Zostaje — macOS, Linux, Windows, Android i iOS",
+          "description": "Wybierz platformę, sprawdź dostępność Zostaje i historię wersji. Publiczne instalatory są w przygotowaniu.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/download/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/download/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pobierz Zostaje — macOS, Linux, Windows, Android i iOS",
+              "item": "https://zostaje.com/download/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "help": [
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "url": "https://zostaje.com/help/",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "Kiedy będzie dostępne Zostaje?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Aplikacja jest w trakcie tworzenia. Pierwsza wersja będzie dostępna w zamkniętym demie na iOS."
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/help/#webpage",
+          "url": "https://zostaje.com/help/",
+          "name": "Pomoc Zostaje — najczęstsze pytania",
+          "description": "Pomoc Zostaje: odpowiedzi na pytania o demo, platformy, bezpieczeństwo danych, konto i planowaną integrację MCP.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/help/#breadcrumb"
           }
         },
         {
-          "@type": "Question",
-          "name": "Czy pierwsze demo będzie płatne?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nie. Pierwsze zamknięte demo ma być bezpłatne."
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
           }
         },
         {
-          "@type": "Question",
-          "name": "Na jakich platformach pojawi się aplikacja?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Najpierw na iOS, a w kolejnym etapie planowane są lekkie aplikacje na macOS i Windows."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czym będzie Zostaje MCP?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Planowane publiczne MCP ma pozwolić użytkownikowi udostępniać wybrane dane kompatybilnym asystentom AI na jasno określonych zasadach."
-          }
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/help/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pomoc Zostaje — najczęstsze pytania",
+              "item": "https://zostaje.com/help/"
+            }
+          ]
         }
       ]
     }
@@ -117,70 +343,197 @@
   "developers": [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Zostaje Developers",
-      "url": "https://zostaje.com/developers/",
-      "description": "Centrum informacji technicznych dla programistów i testerów projektu Zostaje.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Zostaje",
-        "url": "https://zostaje.com/"
-      },
-      "about": {
-        "@type": "SoftwareApplication",
-        "name": "Zostaje",
-        "applicationCategory": "FinanceApplication"
-      }
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/developers/#webpage",
+          "url": "https://zostaje.com/developers/",
+          "name": "Dokumentacja Zostaje — integracje i testy",
+          "description": "Dokumentacja Zostaje: informacje dla programistów i testerów o planowanym MCP, wspólnym backendzie, integracjach, testach i rozwoju projektu.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/developers/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/developers/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Dokumentacja Zostaje — integracje i testy",
+              "item": "https://zostaje.com/developers/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "demo": [
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Zostaje — interaktywne demo",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web demo",
-      "url": "https://zostaje.com/demo/",
-      "isAccessibleForFree": true,
-      "description": "Lokalne demo finansowej Skrzynki, bezpiecznej kwoty i Mapy Konsekwencji Zostaje."
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/demo/#webpage",
+          "url": "https://zostaje.com/demo/",
+          "name": "Demo Zostaje — przetestuj finansowy notatnik",
+          "description": "Wypróbuj interaktywne demo Zostaje — wpisz wydatek, plan, cel albo pytanie i zobacz bezpieczną kwotę oraz Mapę Konsekwencji.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/demo/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/demo/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Demo Zostaje — przetestuj finansowy notatnik",
+              "item": "https://zostaje.com/demo/"
+            }
+          ]
+        }
+      ]
     }
   ],
   "privacy": [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Polityka prywatności Zostaje",
-      "url": "https://zostaje.com/privacy/",
-      "inLanguage": [
-        "pl",
-        "en"
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/privacy/#webpage",
+          "url": "https://zostaje.com/privacy/",
+          "name": "Polityka prywatności Zostaje",
+          "description": "Jak przetwarzamy adres e-mail: informacje o wersjach i rozwoju aplikacji, bez reklam i ofert sprzedażowych.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/privacy/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/privacy/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Polityka prywatności Zostaje",
+              "item": "https://zostaje.com/privacy/"
+            }
+          ]
+        }
       ]
     }
   ],
   "releases": [
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Historia wersji Zostaje",
-      "url": "https://zostaje.com/releases/",
-      "inLanguage": [
-        "pl",
-        "en"
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://zostaje.com/releases/#webpage",
+          "url": "https://zostaje.com/releases/",
+          "name": "Historia wersji Zostaje",
+          "description": "Wersje projektu Zostaje, daty publikacji i wprowadzone zmiany.",
+          "inLanguage": "pl",
+          "isPartOf": {
+            "@id": "https://zostaje.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://zostaje.com/releases/#breadcrumb"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zostaje.com/#website",
+          "url": "https://zostaje.com/",
+          "name": "Zostaje",
+          "inLanguage": "pl",
+          "publisher": {
+            "@id": "https://zostaje.com/#organization"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zostaje.com/releases/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Zostaje",
+              "item": "https://zostaje.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Historia wersji Zostaje",
+              "item": "https://zostaje.com/releases/"
+            }
+          ]
+        }
       ]
-    }
-  ],
-  "founders": [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Zostaje Founders Edition",
-      "url": "https://zostaje.com/founders-edition/",
-      "description": "Indywidualna współpraca przy rozwoju Zostaje dla freelancerów, startupów i JDG.",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Zostaje",
-        "url": "https://zostaje.com/"
-      }
     }
   ]
 }

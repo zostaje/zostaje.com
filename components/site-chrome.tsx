@@ -79,7 +79,6 @@ export function SiteHeader() {
         <div className="nav-right">
           <SiteSearch />
           <LanguageSelector header />
-          <T as="button" pl="Konto" en="Account" className="account-link" type="button" disabled title={language === "pl" ? "Konto — w przygotowaniu" : "Account — coming soon"} />
           <button ref={opener} onClick={openMenu} aria-expanded={menuOpen} aria-label={language === "pl" ? "Otwórz menu" : "Open menu"} className="menu-toggle" type="button" aria-controls="mobile-menu"><span /><span /><span /></button>
         </div>
       </div>

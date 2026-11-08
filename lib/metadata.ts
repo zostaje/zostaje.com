@@ -7,7 +7,7 @@ export function metadataFor(page: PageName): Metadata {
     title: copy.title.pl,
     description: copy.description.pl,
     alternates: { canonical: copy.path },
-    robots: { index: true, follow: true },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     openGraph: {
       type: "website", siteName: "Zostaje", locale: "pl_PL", url: copy.path,
       title: copy.title.pl, description: copy.description.pl,

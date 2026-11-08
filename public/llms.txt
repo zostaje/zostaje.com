@@ -1,0 +1,27 @@
+# Zostaje
+
+> Zostaje is a student-built budgeting and savings application in development. The primary website language is Polish; an English interface is available using the language selector.
+
+## Product facts
+- The first MVP targets iOS. Public installers are not available yet.
+- The personal app is intended to work locally, free of charge and without a mandatory account.
+- Planning uses a dated current balance, the next income date, unpaid bills, a chosen buffer and a savings-goal reserve. Results are estimates based on those inputs, not financial guarantees or transfers.
+- A complete transaction history is not required for the first plan. CSV import uses a documented format. Bank integrations are a future direction.
+- AI is optional. The free edition allows users to connect their own AI. Paid services are in development.
+- Premium is advertised at PLN 39/month or PLN 397.80/year (15% below twelve monthly payments), with managed AI and additional analytics.
+- Founders Edition is a paid, tailored offering for freelancers, startups and sole traders: onboarding, additional analytical tools and optional self-hosting. Scope and budget are agreed individually. Contact: sales@zostaje.com.
+- The thesis page describes project goals and hypotheses, not established research findings.
+
+## Primary pages
+- [Product overview](https://zostaje.com/): purpose, workflow and common questions.
+- [Availability](https://zostaje.com/download/): platform status; do not infer installer availability from platform names.
+- [Pricing](https://zostaje.com/pricing/): free edition and optional paid plans.
+- [Founders Edition](https://zostaje.com/founders-edition/): business customization and contact.
+- [Help](https://zostaje.com/help/): support and product questions.
+- [Documentation](https://zostaje.com/developers/): technical direction and planned integrations.
+- [Project](https://zostaje.com/projekt/): thesis goals and hypotheses.
+- [Release history](https://zostaje.com/releases/): release dates and changes.
+- [Privacy](https://zostaje.com/privacy/): newsletter data handling and contact.
+- [Browser demo](https://zostaje.com/demo/): illustrative web demo, separate from the native iOS MVP.
+
+This file is an auxiliary reading guide. The linked public pages are the source for current availability and terms.

@@ -1,0 +1,42 @@
+[
+  {
+    "question": {
+      "pl": "Czym jest Zostaje?",
+      "en": "What is Zostaje?"
+    },
+    "answer": {
+      "pl": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS.",
+      "en": "Zostaje is a free budgeting and savings app in development. It helps estimate what remains until your next income after bills, your chosen buffer and a goal reserve. The first MVP is being built for iOS."
+    }
+  },
+  {
+    "question": {
+      "pl": "Czy muszę wpisywać każdy wydatek?",
+      "en": "Do I have to enter every expense?"
+    },
+    "answer": {
+      "pl": "Nie. Pierwszy plan opiera się na aktualnym saldzie, terminie kolejnego wpływu, nieopłaconych rachunkach i wybranych rezerwach. Historię można uzupełnić importem w opisanym formacie CSV. Automatyczne integracje bankowe są kierunkiem dalszego rozwoju.",
+      "en": "No. Your first plan uses your current balance, next income date, unpaid bills and chosen reserves. History can be added using the documented CSV format. Automatic bank integrations are a future development direction."
+    }
+  },
+  {
+    "question": {
+      "pl": "Co jest darmowe, a za co zapłacę?",
+      "en": "What is free and what is paid?"
+    },
+    "answer": {
+      "pl": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, z możliwością podłączenia własnego AI. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu.",
+      "en": "The full local app is intended to be free, without a mandatory account, with the option to connect your own AI. Optional Premium includes managed AI and advanced analytics: PLN 39 per month or PLN 397.80 per year. Founders Edition is individually priced for businesses. Paid services are in development."
+    }
+  },
+  {
+    "question": {
+      "pl": "Czy mogę już pobrać aplikację?",
+      "en": "Can I download the app now?"
+    },
+    "answer": {
+      "pl": "Publiczne instalatory nie są jeszcze dostępne. Na stronie Pobierz sprawdzisz status platform i historię wersji, a zapis do newslettera pozwoli otrzymywać informacje o nowych wersjach i rozwoju projektu.",
+      "en": "Public installers are not available yet. The Download page lists platform availability and release history. Subscribe to the newsletter to receive release and project development updates."
+    }
+  }
+]

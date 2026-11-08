@@ -1,11 +1,14 @@
 "use client";
 
-import { T, HeroHeading } from "@/components/site-provider";
+import { T, HeroHeading, useSite } from "@/components/site-provider";
 import { ProductPreview, PhonePreview } from "@/components/product-preview";
 import { DemoSignupForm } from "@/components/demo-signup-form";
 import { SiteHeader, MinimalFooter } from "@/components/site-chrome";
 
+import homeFaq from "@/lib/home-faq.json";
+
 export function HomeContent() {
+  const { language } = useSite();
   return (
     <>
       <T as="a" className="skip-link" href="#main" pl="Przejdź do treści" en="Skip to content" />
@@ -14,9 +17,9 @@ export function HomeContent() {
         <section className="hero" id="top">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <T as="p" pl="Prototyp iOS w rozwoju" en="iOS prototype in development" className="status-pill" />
+              <T as="p" pl="Darmowa aplikacja do budżetu · MVP na iOS w rozwoju" en="Free budgeting app · iOS MVP in development" className="status-pill" />
               <HeroHeading />
-              <T as="p" pl="Uwzględnij rachunki, zostaw własny bufor i sprawdź, jak regularne odkładanie przybliża Cię do celu. Ty wybierasz, co zrobisz z pieniędzmi." en="Account for bills, keep your own buffer and see how regular saving brings your goal closer. You decide what to do with your money." className="hero-lead" />
+              <T as="p" pl="Zostaje pomaga planować budżet i oszczędności bez wpisywania każdego zakupu. Uwzględnij rachunki, zostaw własny bufor i zobacz, ile możesz odłożyć. Zrozum swoje pieniądze i sam zdecyduj, co dalej." en="Zostaje helps you plan your budget and savings without logging every purchase. Account for bills, keep your own buffer and see what you could set aside. Understand your money and decide what comes next." className="hero-lead" />
               <div className="hero-actions">
                 <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-primary" href="#demo" />
                 <T as="a" pl="Jak to działa ↓" en="How it works ↓" className="text-link" href="#jak-dziala" />
@@ -25,7 +28,7 @@ export function HomeContent() {
             <ProductPreview />
           </div>
         </section>
-        <section className="trust-strip" aria-label="Najważniejsze cechy">
+        <section className="trust-strip" aria-label={language === "pl" ? "Najważniejsze cechy" : "Key features"}>
           <div className="container trust-grid">
             <p>
               <T as="strong" pl="Bez konta" en="No account" />
@@ -75,7 +78,7 @@ export function HomeContent() {
             <div>
               <T as="h2" pl="Mniej przepisywania. Więcej zrozumienia." en="Less typing. More understanding." />
             </div>
-            <T as="p" pl="Pierwsza wersja: plan, historia i jeden cel." en="The first version: a plan, history and one goal." />
+            <T as="p" pl="MVP skupia się na planie, historii i jednym celu oszczędnościowym. Kolejne funkcje rozwijamy etapami." en="The MVP focuses on a plan, history and one savings goal. Further features are being developed in stages." />
           </div>
           <div className="container feature-grid">
             <article className="feature-card feature-large">
@@ -128,8 +131,50 @@ export function HomeContent() {
               <T as="h2" pl="Twoje dane zostają u Ciebie." en="Your data stays with you." />
             </div>
             <div className="security-copy">
-              <T as="p" pl="Wersja osobista działa lokalnie i bez obowiązkowego konta. Planujemy bezpłatny rdzeń: plan, historię i cel. Dane możesz wyeksportować." en="The personal version works locally without a mandatory account. We plan a free core: your plan, history and goal. You can export your data." />
+              <T as="p" pl="Darmowa wersja osobista powstaje z myślą o pracy lokalnej, bez obowiązkowego konta. Planowanie budżetu nie wymaga połączenia z AI. Jeśli zechcesz je podłączyć, sam wybierzesz zakres udostępnianych danych." en="The free personal edition is being built to work locally, without a mandatory account. Budget planning does not require AI. If you choose to connect it, you decide which data to share." />
               <T as="p" pl="Wynik jest szacunkiem na podstawie podanych danych. Nieznane wydatki mogą go zmienić, a wpisanie celu nie wykonuje przelewu." en="The result is an estimate based on your inputs. Unknown expenses may change it, and entering a goal does not make a transfer." className="security-note" />
+            </div>
+          </div>
+        </section>
+        <section className="section home-editions" aria-labelledby="editions-heading">
+          <div className="container narrow-heading">
+            <T as="h2" id="editions-heading" pl="Darmowo dla Ciebie. Więcej, kiedy potrzebujesz." en="Free for you. More when you need it." />
+            <T as="p" pl="Lokalna aplikacja pozostaje darmowa. Płatne usługi są opcjonalne i rozwijamy je obok osobistego MVP." en="The local app stays free. Paid services are optional and are being developed alongside the personal MVP." />
+          </div>
+          <div className="container home-edition-grid">
+            <article>
+              <T as="h3" pl="Twój budżet, Twoje urządzenie" en="Your budget, your device" />
+              <T as="p" pl="Plan, historia i oszczędności bez abonamentu. Pierwsza wersja na iOS; status pozostałych platform znajdziesz na stronie pobierania." en="Planning, history and savings without a subscription. The first version is for iOS; check the download page for other platforms." />
+              <T as="a" className="text-link" href="/download/" pl="Sprawdź dostępność →" en="Check availability →" />
+            </article>
+            <article>
+              <h3>Premium</h3>
+              <T as="p" pl="Nie chcesz samodzielnie łączyć AI? Planujemy obsługę po naszej stronie i rozszerzoną analitykę. 39 zł miesięcznie lub 15% taniej w planie rocznym." en="Prefer us to connect AI for you? We’re planning managed AI and advanced analytics. PLN 39 per month, or 15% less with annual billing." />
+              <T as="a" className="text-link" href="/pricing/" pl="Porównaj plany →" en="Compare plans →" />
+            </article>
+            <article>
+              <h3>Founders Edition</h3>
+              <T as="p" pl="Budujesz biznes? Dostosujemy Zostaje do potrzeb Twojej działalności: wdrożenie, więcej narzędzi analitycznych i możliwość hostowania na własnym serwerze. Zakres i wycenę ustalamy wspólnie." en="Building a business? We’ll tailor Zostaje to your needs: onboarding, more analytical tools and optional self-hosting. We agree on scope and pricing together." />
+              <T as="a" className="text-link" href="/founders-edition/" pl="Poznaj Founders Edition →" en="Explore Founders Edition →" />
+            </article>
+          </div>
+        </section>
+        <section className="section home-faq" aria-labelledby="home-faq-heading">
+          <div className="container home-faq-layout">
+            <div>
+              <T as="h2" id="home-faq-heading" pl="Zanim zaczniesz" en="Before you start" />
+              <T as="p" pl="Krótko o działaniu i dostępności Zostaje." en="How Zostaje works and when it’s available." />
+              <T as="a" className="text-link" href="/help/" pl="Więcej odpowiedzi →" en="More answers →" />
+            </div>
+            <div className="home-faq-list">
+              {homeFaq.map(item => <article key={item.question.pl}>
+                <h3>{item.question[language]}</h3>
+                <p>{item.answer[language]}</p>
+              </article>)}
+              <p className="home-resource-links">
+                <T as="a" href="/developers/" pl="Dokumentacja" en="Documentation" />
+                <T as="a" href="/projekt/" pl="Cele i hipotezy projektu" en="Project goals and hypotheses" />
+              </p>
             </div>
           </div>
         </section>
@@ -137,7 +182,7 @@ export function HomeContent() {
           <div className="container demo-panel">
             <div className="demo-copy">
               <T as="h2" id="newsletter-heading" pl="Dowiedz się pierwszy, kiedy wystartujemy" en="Be the first to know when we launch" />
-              <T as="p" pl="Jeszcze budujemy. Zapisz się, a damy Ci znać, kiedy demo na iPhone’a będzie gotowe. Bez spamu, obiecujemy!" en="We’re still building. Subscribe and we’ll let you know when the iPhone demo is ready. No spam, we promise!" />
+              <T as="p" pl="Pracujemy nad pierwszym MVP na iPhone’a. Zostaw e-mail, żeby otrzymywać informacje o nowych wersjach i rozwoju Zostaje. Bez reklam i ofert sprzedażowych." en="We’re building the first iPhone MVP. Leave your email for new releases and Zostaje development updates. No ads or sales offers." />
               <DemoSignupForm />
             </div>
             <div className="newsletter-visual" aria-hidden="true">
