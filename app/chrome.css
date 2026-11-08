@@ -18,9 +18,9 @@
 .compact-language > div { z-index: 30; min-width: 125px; }
 .compact-language button { padding: 7px 9px; font-size: .75rem; }
 .compact-language button[aria-pressed="true"] { background: var(--surface-soft); }
-.site-header .compact-language { width: 108px; flex-shrink: 0; }
+.site-header .compact-language { width: 48px; flex-shrink: 0; }
 .site-header .nav-right .compact-language summary { min-height: 30px; padding: 4px 8px; }
-.mobile-menu-tools .compact-language { width: 116px; }
+.mobile-menu-tools .compact-language { width: 48px; }
 .mobile-menu-tools .compact-language > div { position: absolute; top: calc(100% + 8px); right: 0; }
 .site-search { position: relative; display: flex; align-items: center; gap: 6px; margin: 0; color: var(--text-muted); }
 .site-search > svg { position: absolute; left: 9px; width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.7; pointer-events: none; }
@@ -63,3 +63,19 @@
 .platform-table .platform-selected { background: var(--surface-raised); }
 .platform-pick[aria-pressed="true"] { border-color: var(--text-muted); color: var(--text); }
 .download-release-dot { background: var(--text-muted); }
+
+/* Icon-only header control; footer keeps its name beside the globe. */
+.site-header .nav-right .language-menu.compact-language summary,
+.mobile-menu-tools .language-menu.compact-language summary { justify-content: center; gap: 7px; }
+.footer-language.compact-language summary { justify-content: flex-start; }
+.footer-language .language-current { flex: 1; text-align: left; }
+.language-menu.compact-language > .language-dropdown { width: 224px; max-width: calc(100vw - 32px); padding: 6px; }
+.language-search { position: relative; margin-bottom: 6px; }
+.language-search > svg { position: absolute; top: 50%; left: 9px; width: 14px; height: 14px; transform: translateY(-50%); fill: none; stroke: currentColor; stroke-width: 1.7; color: var(--text-muted); pointer-events: none; }
+.language-search input { width: 100%; min-width: 0; min-height: 34px; padding: 6px 8px 6px 29px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); font-size: .8rem; line-height: 20px; }
+.language-search input::placeholder { color: var(--text-muted); }
+.language-search input:focus-visible { outline: 2px solid var(--green-light); outline-offset: 1px; }
+.language-options { max-height: 240px; overflow-y: auto; }
+.compact-language .language-options button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; }
+.language-options small { color: var(--text-muted); font-size: .65rem; }
+.language-no-results { margin: 0; padding: 10px 8px; color: var(--text-muted); font-size: .75rem; }
