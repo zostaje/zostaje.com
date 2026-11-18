@@ -13,10 +13,9 @@ export function DevelopersContent() {
           <div className="container subpage-hero-copy">
             <T as="p" className="subpage-kicker" pl="Dokumentacja" en="Documentation" />
             <T as="h1" pl="Buduj i testuj Zostaje razem z nami." en="Build and test Zostaje with us." />
-            <T as="p" pl="To centrum technicznego kierunku projektu dla programistów, integratorów i testerów. Dokumentacja będzie rosnąć razem z publicznymi interfejsami Zostaje." en="This is the technical project hub for developers, integrators and testers. Documentation will grow as Zostaje interfaces become public." className="subpage-lead" />
+            <T as="p" pl="Masz pytania o dokumentację, integracje lub testowanie Zostaje? Skontaktuj się z nami — napisz na info@rajanbor.com." en="Questions about documentation, integrations or testing Zostaje? Contact us at info@rajanbor.com." className="subpage-lead" />
             <div className="subpage-actions">
-              <T as="a" pl="Zobacz GitHub" en="View GitHub" className="button button-primary" href="https://github.com/zostaje" />
-              <T as="a" pl="Zgłoś się do testów" en="Join testing" className="text-link" href="mailto:demo@zostaje.app" />
+              <a className="button button-primary" href="mailto:info@rajanbor.com">info@rajanbor.com</a>
             </div>
           </div>
         </section>
@@ -41,8 +40,8 @@ export function DevelopersContent() {
                 <T as="p" pl="Dane są zapisywane w folderze wskazanym przy uruchomieniu: manifest, przestrzenie, kategorie i wpisy w plikach JSON oraz NDJSON. MVP nie wysyła tych danych na serwer." en="Data is saved in a folder selected at startup: manifest, spaces, categories and entries in JSON and NDJSON files. The MVP does not send this data to a server." />
               </article>
               <article className="help-card">
-                <T as="h2" pl="Repozytoria publiczne" en="Public repositories" />
-                <T as="p" pl="Kod i dokumentacja przeznaczone do publicznego użycia będą rozwijane w organizacji Zostaje na GitHubie." en="Code and documentation intended for public use will be developed in the Zostaje GitHub organization." />
+                <T as="h2" pl="Dostęp do dokumentacji" en="Documentation access" />
+                <T as="p" pl="Potrzebujesz szczegółów technicznych lub materiałów do testów? Napisz na info@rajanbor.com, aby ustalić zakres i dostęp." en="Need technical details or testing materials? Email info@rajanbor.com to discuss scope and access." />
               </article>
             </div>
             <div className="help-section-heading">
