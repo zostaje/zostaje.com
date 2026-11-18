@@ -14,6 +14,10 @@
 
 - Budgets is a separate module in development: virtual funds for existing money, user-confirmed income allocations, expense assignments and carry-over balances. Allocation does not execute bank transfers or create money.
 
+- Spending-pace status compares recorded money against even spending over a calendar month. It does not include all future obligations and is not a guarantee of affordability.
+- After a break, balance reconciliation updates the starting point but does not reconstruct missing transaction history.
+- The vault is a user-selected folder. A chosen Files provider may synchronize that folder independently; Zostaje operates no cloud/sync service. The user is responsible for backups.
+
 ## Primary pages
 - [Product overview](https://zostaje.com/): purpose, workflow and common questions.
 - [Availability](https://zostaje.com/download/): platform status; do not infer installer availability from platform names.

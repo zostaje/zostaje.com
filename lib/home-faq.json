@@ -5,8 +5,8 @@
       "en": "What is Zostaje?"
     },
     "answer": {
-      "pl": "Zostaje to rozwijana, darmowa aplikacja iOS do budżetu osobistego. Pokazuje pozostałą kwotę na dziś, tydzień i miesiąc oraz pomaga ograniczyć wysiłek zapisywania wydatków. Obecne MVP działa offline, bez konta.",
-      "en": "Zostaje is a free personal budgeting app in development for iOS. It shows remaining money for today, this week and this month while reducing the effort of recording expenses. The current MVP works offline without an account."
+      "pl": "Zostaje to aplikacja iOS do budżetu osobistego, rozwijana z myślą o prostym zapisie wydatków i wpływów. Pokazuje, ile zostało z zapisanych pieniędzy, gdzie są one przechowywane i jak wygląda tempo wydawania. Pierwsza wersja działa bez konta i własnego serwera.",
+      "en": "Zostaje is an iOS personal budgeting app being developed for simple expense and income capture. It shows what remains of recorded money, where it is held and the spending pace. The first version works without an account or its own server."
     }
   },
   {
@@ -17,6 +17,16 @@
     "answer": {
       "pl": "Operacje nadal trzeba zapisać, ale nie musisz przepisywać całego paragonu. Możesz użyć szybkiego formularza, zrobić zdjęcie paragonu i sprawdzić odczytaną kwotę albo otworzyć dodawanie z widżetu. CSV i automatyczne integracje bankowe są dalszym rozwojem.",
       "en": "Operations still need to be recorded, but you do not have to copy a whole receipt. Use a quick form, photograph a receipt and review the recognized amount, or open capture from a widget. CSV and automatic bank integrations are future development."
+    }
+  },
+  {
+    "question": {
+      "pl": "Czy status oznacza, że mogę bezpiecznie wydać tę kwotę?",
+      "en": "Does the status mean I can safely spend that amount?"
+    },
+    "answer": {
+      "pl": "Status porównuje zapisane pieniądze z równym tempem wydawania w miesiącu kalendarzowym. Nie uwzględnia wszystkich przyszłych zobowiązań i nie jest poradą finansową. Pominięte wpisy wpływają na wynik; po przerwie możesz uzgodnić saldo, ale nie odtworzy to brakującej historii.",
+      "en": "Status compares recorded money with an even spending pace over a calendar month. It does not account for all future obligations and is not financial advice. Missing entries affect the result; after a break you can reconcile your balance, but that does not reconstruct missing history."
     }
   },
   {
@@ -47,6 +57,16 @@
     "answer": {
       "pl": "Publiczne instalatory nie są jeszcze dostępne. Na stronie Pobierz sprawdzisz status platform i historię wersji, a zapis do newslettera pozwoli otrzymywać informacje o nowych wersjach i rozwoju projektu.",
       "en": "Public installers are not available yet. The Download page lists platform availability and release history. Subscribe to the newsletter to receive release and project development updates."
+    }
+  },
+  {
+    "question": {
+      "pl": "Gdzie są moje dane i kopia zapasowa?",
+      "en": "Where are my data and backup?"
+    },
+    "answer": {
+      "pl": "Sejf to folder plików wskazany przez Ciebie przy uruchomieniu. Możesz wybrać pamięć iPhone’a lub folder dostawcy dostępnego w aplikacji Pliki. Zostaje nie prowadzi własnej chmury ani synchronizacji. Za kopię zapasową odpowiadasz Ty, a ochrona plików zależy także od zabezpieczeń urządzenia i wybranego dostawcy.",
+      "en": "Your vault is a folder you choose at startup. It can be on your iPhone or with a provider available in the Files app. Zostaje has no cloud or sync service of its own. You maintain the backup, and file protection also depends on your device and chosen provider."
     }
   }
 ]

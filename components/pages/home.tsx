@@ -20,7 +20,7 @@ export function HomeContent() {
             <div className="hero-copy">
               <T as="p" pl="Darmowa aplikacja do budżetu · MVP na iOS w rozwoju" en="Free budgeting app · iOS MVP in development" className="status-pill" />
               <HeroHeading />
-              <T as="p" pl="Szybki wpis, zdjęcie paragonu albo widżet — mniej pracy przy dodawaniu wydatków. Zostaje pokazuje, ile masz do dyspozycji dziś, w tygodniu i w miesiącu. Bez konta. Bez wysyłania danych na serwer." en="A quick entry, receipt photo or widget — less effort to record expenses. Zostaje shows what you have left today, this week and this month. No account. No data sent to a server." className="hero-lead" />
+              <T as="p" pl="Wydatki i wpływy zamieniają się w czytelny obraz: ile masz, gdzie trzymasz pieniądze i w jakim tempie je wydajesz. Zapisuj je formularzem, zdjęciem paragonu lub skrótem z widżetu. Bez konta i serwera Zostaje." en="Your expenses and income become a clear picture: what you have, where you keep it and how quickly you spend it. Record them with a form, receipt photo or widget shortcut. No account or Zostaje server." className="hero-lead" />
               <div className="hero-actions">
                 <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-primary" href="#demo" />
                 <T as="a" pl="Jak to działa ↓" en="How it works ↓" className="text-link" href="#jak-dziala" />
@@ -47,32 +47,26 @@ export function HomeContent() {
         </section>
         <section className="section intro" id="jak-dziala">
           <div className="container narrow-heading">
-            <T as="h2" pl="Od pierwszego wpisu do jasnego obrazu." en="From your first entry to a clear picture." />
-            <T as="p" pl="Zacznij od tego, co masz. Dopisuj wydatki na bieżąco i wracaj po odpowiedź: ile jeszcze zostaje?" en="Start with what you have. Record spending as you go and come back to one answer: what’s left?" />
+            <T as="h2" pl="Kilka prostych kroków. Własny obraz finansów." en="A few simple steps. Your own view of your money." />
+            <T as="p" pl="Nie musisz zaczynać od rozbudowanego arkusza. Ustal punkt wyjścia, zapisuj operacje i sprawdzaj wynik wtedy, kiedy go potrzebujesz." en="You do not need a complex spreadsheet to begin. Set a starting point, record operations and check the result when you need it." />
           </div>
-          <div className="container steps-grid">
-            <article className="step-card ">
-              <span className="step-number">
-                {"01"}
-              </span>
-              <T as="h3" pl="Zacznij od salda" en="Start with your balance" />
-              <T as="p" pl="Wybierz folder na dane i podaj saldo początkowe. Oddziel konto, gotówkę czy inne pieniądze we własnych przestrzeniach." en="Choose your data folder and enter a starting balance. Keep accounts, cash and other funds in spaces you create." />
-            </article>
-            <article className="step-card featured">
-              <span className="step-number">
-                {"02"}
-              </span>
-              <T as="h3" pl="Dodaj wydatek bez rozpisywania" en="Record an expense with less typing" />
-              <T as="p" pl="Użyj krótkiego formularza, zdjęcia paragonu lub skrótu z widżetu. Odczytaną kwotę sprawdzasz przed zapisaniem." en="Use a quick form, a receipt photo or a widget shortcut. Check the recognized amount before saving." />
-            </article>
-            <article className="step-card ">
-              <span className="step-number">
-                {"03"}
-              </span>
-              <T as="h3" pl="Zrozum, ile Ci zostaje" en="Understand what you have left" />
-              <T as="p" pl="Sprawdź dzień, tydzień lub miesiąc. Zobacz, jak zmieniają się wydatki i co oznacza Twój status. Wyjaśnienie kwoty masz pod ręką." en="Check today, this week or this month. See how your spending changes and what your status means. The explanation is always at hand." />
-            </article>
-          </div>
+          <ol className="container home-start-grid">
+            <li className="home-start-card">
+              <span className="home-start-number" aria-hidden="true">01</span>
+              <T as="h3" pl="Zacznij od tego, co masz" en="Start with what you have" />
+              <T as="p" pl="Wybierz folder na dane i podaj saldo początkowe. Konto, gotówkę i inne środki możesz rozdzielić na własne przestrzenie." en="Choose your data folder and enter a starting balance. Keep accounts, cash and other funds in spaces you create." />
+            </li>
+            <li className="home-start-card">
+              <span className="home-start-number" aria-hidden="true">02</span>
+              <T as="h3" pl="Zapisz wydatek po swojemu" en="Record an expense your way" />
+              <T as="p" pl="Podaj kwotę, zapisz krótkie zdanie albo odczytaj paragon ze zdjęcia. Widżet otworzy dodawanie, a Ty sprawdzisz dane przed zapisem." en="Enter an amount, write a short sentence or read a receipt photo. A widget opens quick capture, and you review the details before saving." />
+            </li>
+            <li className="home-start-card">
+              <span className="home-start-number" aria-hidden="true">03</span>
+              <T as="h3" pl="Zobacz kwotę i jej znaczenie" en="See the amount and what it means" />
+              <T as="p" pl="Sprawdź, ile zostało z zapisanych pieniędzy. Przełącz dzień, tydzień lub miesiąc i otwórz wyjaśnienie tempa wydawania." en="See what remains of your recorded money. Switch between today, this week and this month, and open the spending-pace explanation." />
+            </li>
+          </ol>
         </section>
         <section className="section feature-section" id="funkcje">
           <div className="container narrow-heading">
@@ -94,6 +88,19 @@ export function HomeContent() {
             </article>
           </div>
           <p className="container home-development-note"><T as="span" pl="Dalszy rozwój: import CSV, koszty cykliczne, integracje bankowe i synchronizacja. Nie są częścią obecnego MVP. " en="Future development: CSV import, recurring costs, bank connections and synchronization. They are not part of the current MVP. " /><T as="a" className="text-link" href="/releases/" pl="Zobacz, co się zmieniło →" en="See what changed →" /></p>
+        </section>
+        <section className="section home-understanding" aria-labelledby="understanding-heading">
+          <div className="container home-understanding-layout">
+            <div>
+              <T as="p" className="status-pill" pl="Wynik, który możesz zrozumieć" en="A result you can understand" />
+              <T as="h2" id="understanding-heading" pl="Jedna kwota. Z wyjaśnieniem." en="One amount. Explained." />
+            </div>
+            <div className="home-understanding-copy">
+              <T as="p" pl="Na pulpicie widzisz, ile zostało z podanego salda i zapisanych operacji. Obok sprawdzisz tempo wydawania: jak ta kwota wypada na tle równomiernego wydawania w miesiącu. Znaczenie statusu możesz rozwinąć." en="The dashboard shows what remains from your starting balance and recorded operations. Alongside it, check spending pace: how that amount compares with even spending throughout the month. You can open the status explanation." />
+              <T as="p" pl="Wracasz po kilku dniach? Możesz uzgodnić saldo z faktyczną kwotą i zacząć od aktualnego stanu. Brakujące wydatki nie dopiszą się same, więc wcześniejsze statystyki mogą pozostać niepełne." en="Coming back after a few days? Reconcile the balance with the actual amount and continue from the current state. Missing expenses are not filled in automatically, so earlier statistics may remain incomplete." />
+              <T as="p" className="home-understanding-note" pl="Wskaźnik opisuje zapisane dane i tempo wydawania. Nie zna wszystkich przyszłych rachunków i nie jest zapewnieniem, że pieniędzy wystarczy do końca miesiąca." en="The indicator describes recorded data and spending pace. It does not know all future bills and does not guarantee that your money will last until month end." />
+            </div>
+          </div>
         </section>
         <section className="section home-budgets" id="budzety" aria-labelledby="budgets-heading">
           <div className="container home-budget-layout">
@@ -122,8 +129,8 @@ export function HomeContent() {
               <T as="h2" pl="Twoje dane zostają u Ciebie." en="Your data stays with you." />
             </div>
             <div className="security-copy">
-              <T as="p" pl="Twoja historia nie potrzebuje naszego serwera. Obecna aplikacja działa offline, bez konta i śledzenia. Wybierasz folder na dane, a obliczenia i odczyt paragonów odbywają się na Twoim iPhonie." en="Your history does not need our server. The current app works offline, without an account or tracking. You choose the data folder, and calculations and receipt reading happen on your iPhone." />
-              <T as="p" pl="Kwoty zależą od wpisanego salda i zapisanych operacji. Pominięty wydatek zmienia obraz sytuacji. Status opisuje tempo wydawania, a nie gwarancję finansowego bezpieczeństwa." en="Amounts depend on the balance and operations you record. A missing expense changes the picture. Status describes spending pace, not a guarantee of financial security." className="security-note" />
+              <T as="p" pl="Dane to Twoje pliki w folderze, który wybierzesz. Aplikacja działa bez konta i własnego serwera, a kwoty oblicza na iPhonie według jawnych reguł. Do odczytania paragonu też nie potrzebuje zdalnego AI." en="Your data is files in a folder you choose. The app works without an account or its own server, and calculates amounts on your iPhone using explicit rules. Receipt reading needs no remote AI either." />
+              <T as="p" pl="Ty wybierasz miejsce przechowywania i dbasz o kopię zapasową. Jeśli wskażesz folder w usłudze chmurowej, jego obsługą zajmuje się wybrany dostawca plików — nie serwer Zostaje." en="You choose the storage location and maintain a backup. If you select a folder in a cloud service, that service handles the files — not a Zostaje server." className="security-note" />
             </div>
           </div>
         </section>
@@ -150,9 +157,9 @@ export function HomeContent() {
             </article>
           </div>
         </section>
-        <section className="section home-faq" aria-labelledby="home-faq-heading">
+        <section className="section home-faq" id="pytania" aria-labelledby="home-faq-heading">
           <div className="container home-faq-layout">
-            <div>
+            <div className="home-faq-intro">
               <T as="h2" id="home-faq-heading" pl="Zanim zaczniesz" en="Before you start" />
               <T as="p" pl="Krótko o działaniu i dostępności Zostaje." en="How Zostaje works and when it’s available." />
               <T as="a" className="text-link" href="/help/" pl="Więcej odpowiedzi →" en="More answers →" />
