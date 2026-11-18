@@ -21,6 +21,16 @@
   },
   {
     "question": {
+      "pl": "Czym są Budżety i fundusze?",
+      "en": "What are Budgets and funds?"
+    },
+    "answer": {
+      "pl": "Rozwijany moduł Budżety pozwala wirtualnie przypisać posiadane pieniądze do funduszy na bieżące koszty, oszczędności lub cel. Podział wpływu wymaga zatwierdzenia. Niewydane środki przechodzą na kolejny miesiąc, a przypisanie do funduszu nie wykonuje przelewu ani nie zmienia łącznej kwoty pieniędzy.",
+      "en": "The Budgets module in development lets you virtually allocate existing money to funds for everyday costs, savings or a goal. Income allocation requires confirmation. Unspent money carries over to the next month, and assigning money to a fund neither transfers it nor changes the total amount of money."
+    }
+  },
+  {
+    "question": {
       "pl": "Co jest darmowe, a za co zapłacę?",
       "en": "What is free and what is paid?"
     },

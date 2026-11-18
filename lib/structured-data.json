@@ -89,6 +89,14 @@
             },
             {
               "@type": "Question",
+              "name": "Czym są Budżety i fundusze?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rozwijany moduł Budżety pozwala wirtualnie przypisać posiadane pieniądze do funduszy na bieżące koszty, oszczędności lub cel. Podział wpływu wymaga zatwierdzenia. Niewydane środki przechodzą na kolejny miesiąc, a przypisanie do funduszu nie wykonuje przelewu ani nie zmienia łącznej kwoty pieniędzy."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Co jest darmowe, a za co zapłacę?",
               "acceptedAnswer": {
                 "@type": "Answer",

@@ -12,6 +12,8 @@
 - The local app is intended to be free. Optional paid services are in development: Premium at PLN 39/month or PLN 397.80/year, and individually priced Founders Edition. See pricing for planned service scope.
 - [Actual iOS screenshots](https://zostaje.com/) show a Polish development build, not public installer availability.
 
+- Budgets is a separate module in development: virtual funds for existing money, user-confirmed income allocations, expense assignments and carry-over balances. Allocation does not execute bank transfers or create money.
+
 ## Primary pages
 - [Product overview](https://zostaje.com/): purpose, workflow and common questions.
 - [Availability](https://zostaje.com/download/): platform status; do not infer installer availability from platform names.

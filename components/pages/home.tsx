@@ -47,8 +47,8 @@ export function HomeContent() {
         </section>
         <section className="section intro" id="jak-dziala">
           <div className="container narrow-heading">
-            <T as="h2" pl="Prosty plan. Świadomy wybór." en="A simple plan. An informed choice." />
-            <T as="p" pl="Dla osób, które chcą zacząć odkładać i rozumieć swoje pieniądze bez rozbudowanego arkusza." en="For people who want to start saving and understand their money without a complex spreadsheet." />
+            <T as="h2" pl="Od pierwszego wpisu do jasnego obrazu." en="From your first entry to a clear picture." />
+            <T as="p" pl="Zacznij od tego, co masz. Dopisuj wydatki na bieżąco i wracaj po odpowiedź: ile jeszcze zostaje?" en="Start with what you have. Record spending as you go and come back to one answer: what’s left?" />
           </div>
           <div className="container steps-grid">
             <article className="step-card ">
@@ -70,14 +70,14 @@ export function HomeContent() {
                 {"03"}
               </span>
               <T as="h3" pl="Zrozum, ile Ci zostaje" en="Understand what you have left" />
-              <T as="p" pl="Przełącz dzień, tydzień lub miesiąc. Zobacz historię, analitykę i wyjaśnienie statusu względem równego tempa wydawania." en="Switch between today, this week and this month. Review history, analytics and an explanation of your status against an even spending pace." />
+              <T as="p" pl="Sprawdź dzień, tydzień lub miesiąc. Zobacz, jak zmieniają się wydatki i co oznacza Twój status. Wyjaśnienie kwoty masz pod ręką." en="Check today, this week or this month. See how your spending changes and what your status means. The explanation is always at hand." />
             </article>
           </div>
         </section>
         <section className="section feature-section" id="funkcje">
           <div className="container narrow-heading">
-            <T as="h2" pl="Mniej przepisywania. Więcej zrozumienia." en="Less typing. More understanding." />
-            <T as="p" pl="Aktualne MVP skupia się na jednej aplikacji na iPhone’a, działającej offline. To funkcje już obecne w kodzie — publiczne instalatory są jeszcze w przygotowaniu." en="The current MVP focuses on one offline iPhone app. These features are already in the code; public installers are still in preparation." />
+            <T as="h2" pl="Codzienne finanse, mniej zachodu." en="Everyday money, less effort." />
+            <T as="p" pl="Zakupy, wspólna kolacja, pieniądze na kilku kontach. Zostaje pomaga poukładać te drobne sprawy w jednej aplikacji na iPhone’a. Wersja publiczna jest w przygotowaniu." en="Shopping, dinner with friends, money in different accounts. Zostaje brings those everyday details together in one iPhone app. The public version is in preparation." />
           </div>
           <div className="container home-edition-grid">
             <article>
@@ -85,15 +85,36 @@ export function HomeContent() {
               <T as="p" pl="Zrób zdjęcie paragonu. Aplikacja odczyta tekst i zaproponuje kwotę, którą możesz poprawić przed zapisem. Rozpoznawanie działa na urządzeniu, bez wysyłania zdjęcia do AI." en="Take a receipt photo. The app reads the text and proposes an amount you can correct before saving. Recognition runs on the device, without sending the photo to an AI service." />
             </article>
             <article>
-              <T as="h3" pl="Twoje pieniądze w osobnych przestrzeniach" en="Separate spaces for your money" />
-              <T as="p" pl="Konto, gotówka, wspólny wyjazd — sam nadajesz nazwy przestrzeniom. Każda ma własne saldo i wpisy, a widok całości pokazuje ich sumę. Widżety pomagają szybko wrócić do dodawania wydatku." en="An account, cash, a shared trip — you name your spaces. Each has its own balance and entries, while the overall view shows their total. Widgets help you jump back to recording an expense." />
+              <T as="h3" pl="Każde miejsce na pieniądze ma swój widok" en="A clear view of each place you keep money" />
+              <T as="p" pl="Oddziel konto od gotówki albo utwórz przestrzeń na wspólny wyjazd. Każda ma własne saldo i historię. Gdy chcesz zobaczyć całość, przełącz się na wspólne podsumowanie." en="Keep an account separate from cash or create a space for a shared trip. Each has its own balance and history. Switch to the overall summary when you want the full picture." />
             </article>
             <article>
               <T as="h3" pl="Podziel rachunek i pamiętaj o zwrotach" en="Split a bill and track repayments" />
-              <T as="p" pl="Zapisz, z kim dzielisz rachunek i kto oddał swoją część. Opcjonalne lokalne przypomnienie pomoże wrócić do nierozliczonych kwot. Oznaczenie zwrotu nie wykonuje przelewu ani nie zmienia automatycznie salda." en="Record who shares a bill and who has paid their part back. An optional local reminder helps you revisit unsettled amounts. Marking a repayment does not transfer money or automatically change the balance." />
+              <T as="p" pl="Kolacja ze znajomymi? Podziel rachunek, zapisz udziały i oznacz, kto już oddał swoją część. Możesz włączyć przypomnienie o nierozliczonym rachunku. Aplikacja zapisuje rozliczenie; nie wykonuje przelewów." en="Dinner with friends? Split the bill, record each share and mark who has paid you back. You can enable a reminder for an unsettled bill. The app records the settlement; it does not transfer money." />
             </article>
           </div>
           <p className="container home-development-note"><T as="span" pl="Dalszy rozwój: import CSV, koszty cykliczne, integracje bankowe i synchronizacja. Nie są częścią obecnego MVP. " en="Future development: CSV import, recurring costs, bank connections and synchronization. They are not part of the current MVP. " /><T as="a" className="text-link" href="/releases/" pl="Zobacz, co się zmieniło →" en="See what changed →" /></p>
+        </section>
+        <section className="section home-budgets" id="budzety" aria-labelledby="budgets-heading">
+          <div className="container home-budget-layout">
+            <div className="home-budget-copy">
+              <T as="p" className="status-pill" pl="Budżety i fundusze · moduł w rozwoju" en="Budgets and funds · module in development" />
+              <T as="h2" id="budgets-heading" pl="Nadaj pieniądzom konkretne zadanie." en="Give your money a purpose." />
+              <T as="p" pl="Codzienność, poduszka finansowa, wakacje. W Budżetach przypisujesz część posiadanych pieniędzy do własnych funduszy i widzisz, ile zostało na każdy cel. Przestrzenie pokazują, gdzie masz środki; fundusze pomagają zaplanować ich przeznaczenie." en="Everyday spending, an emergency buffer, a holiday. Budgets let you assign money you already have to your own funds and see what remains for each purpose. Spaces show where you keep money; funds help you plan what it is for." />
+              <ul className="home-budget-benefits">
+                <li><T as="strong" pl="Podział wpływu pod Twoją kontrolą" en="Income allocation under your control" /><T as="span" pl="Ustal stałą kwotę, procent wpływu lub podziel pieniądze ręcznie. Najpierw zobacz propozycję, popraw ją i zatwierdź." en="Choose a fixed amount, a share of income or manual allocation. Review the proposal, adjust it and confirm." /></li>
+                <li><T as="strong" pl="Na teraz i na później" en="For now and for later" /><T as="span" pl="Twórz fundusze na bieżące koszty, odkładanie i konkretny cel. Niewydane środki przechodzą na kolejny miesiąc." en="Create funds for everyday costs, saving or a specific goal. Unspent money carries over to the next month." /></li>
+                <li><T as="strong" pl="Wydatki, które mają swoje miejsce" en="A place for each expense" /><T as="span" pl="Przypisz wydatek do jednego lub kilku funduszy. Sprawdź historię, postęp celu i widoczne przekroczenia." en="Assign an expense to one or more funds. Check the history, goal progress and any overspending." /></li>
+              </ul>
+            </div>
+            <figure className="home-budget-example">
+              <T as="figcaption" pl="Przykładowy podział 1 000 zł" en="Example allocation of PLN 1,000" />
+              <div className="home-fund-row"><div><T as="strong" pl="Codzienność" en="Everyday spending" /><span>500 zł</span></div><div className="home-fund-track"><i style={{width:"50%"}} /></div></div>
+              <div className="home-fund-row"><div><T as="strong" pl="Poduszka finansowa" en="Emergency buffer" /><span>300 zł</span></div><div className="home-fund-track"><i style={{width:"30%"}} /></div></div>
+              <div className="home-fund-row"><div><T as="strong" pl="Wakacje" en="Holiday" /><span>200 zł</span></div><div className="home-fund-track"><i style={{width:"20%"}} /></div></div>
+              <T as="p" className="home-budget-note" pl="To wirtualny podział środków, które już masz. Nie tworzy nowych pieniędzy i nie wykonuje przelewów. Ilustracja zasad działania rozwijanego modułu." en="This is a virtual allocation of money you already have. It creates no new money and makes no transfers. An illustration of the module being developed." />
+            </figure>
+          </div>
         </section>
         <section className="section security-section" id="bezpieczenstwo">
           <div className="container security-panel">
@@ -101,15 +122,15 @@ export function HomeContent() {
               <T as="h2" pl="Twoje dane zostają u Ciebie." en="Your data stays with you." />
             </div>
             <div className="security-copy">
-              <T as="p" pl="Obecne MVP działa offline: bez konta, synchronizacji, telemetrii i zdalnego AI. Dane zapisujesz w wybranym folderze. Także odczyt tekstu paragonu i obliczenia odbywają się na iPhonie." en="The current MVP works offline: no account, sync, telemetry or remote AI. Your data is stored in a folder you choose. Receipt text recognition and calculations also run on your iPhone." />
+              <T as="p" pl="Twoja historia nie potrzebuje naszego serwera. Obecna aplikacja działa offline, bez konta i śledzenia. Wybierasz folder na dane, a obliczenia i odczyt paragonów odbywają się na Twoim iPhonie." en="Your history does not need our server. The current app works offline, without an account or tracking. You choose the data folder, and calculations and receipt reading happen on your iPhone." />
               <T as="p" pl="Kwoty zależą od wpisanego salda i zapisanych operacji. Pominięty wydatek zmienia obraz sytuacji. Status opisuje tempo wydawania, a nie gwarancję finansowego bezpieczeństwa." en="Amounts depend on the balance and operations you record. A missing expense changes the picture. Status describes spending pace, not a guarantee of financial security." className="security-note" />
             </div>
           </div>
         </section>
         <section className="section home-editions" aria-labelledby="editions-heading">
           <div className="container narrow-heading">
-            <T as="h2" id="editions-heading" pl="Darmowo dla Ciebie. Więcej, kiedy potrzebujesz." en="Free for you. More when you need it." />
-            <T as="p" pl="Lokalna aplikacja pozostaje darmowa. Płatne usługi są opcjonalne i rozwijamy je obok osobistego MVP." en="The local app stays free. Paid services are optional and are being developed alongside the personal MVP." />
+            <T as="h2" id="editions-heading" pl="Na co dzień za darmo. Dodatki po Twojemu." en="Free for everyday use. Extras on your terms." />
+            <T as="p" pl="Lokalna aplikacja i podstawowa analityka pozostają darmowe. Premium i Founders Edition to opcjonalne usługi w rozwoju — sięgniesz po nie, jeśli będą Ci potrzebne." en="The local app and core analytics stay free. Premium and Founders Edition are optional services in development, there if you need them." />
           </div>
           <div className="container home-edition-grid">
             <article>
