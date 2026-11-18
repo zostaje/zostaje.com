@@ -14,26 +14,20 @@ export function ReleasesContent() {
       <header className="container releases-heading">
         <T as="p" className="subpage-kicker" pl="Rozwój Zostaje" en="Zostaje development" />
         <T as="h1" pl="Historia wersji" en="Release history" />
-        <T as="p" pl="Opublikowane wersje projektu i najważniejsze zmiany. Wydania alfa dokumentują rozwój aplikacji; nie oznaczają dostępności publicznego instalatora." en="Published project releases and their main changes. Alpha releases document the app’s development; they do not mean a public installer is available." />
+        <T as="p" pl="Wersje aplikacji i krótki opis zmian." en="App versions and a brief description of changes." />
         <T as="a" className="text-link" href="/download/" pl="← Wróć do pobierania" en="← Back to downloads" />
       </header>
-      <section className="container home-development-note" aria-labelledby="development-heading">
-        <T as="h2" id="development-heading" pl="Aktualnie w rozwoju: iOS" en="Currently in development: iOS" />
-        <T as="p" pl="Stan kodu sprawdzony 18 listopada 2026: praca offline, folder danych wybrany przez użytkownika, przestrzenie, szybkie wpisy, odczyt paragonu na urządzeniu, widżety, analityka i podział rachunków. Zrzuty pochodzą z wersji rozwojowej. To aktualizacja postępu, nie nowe wydanie do pobrania." en="Code checked on 18 November 2026: offline use, a user-selected data folder, spaces, quick entries, on-device receipt reading, widgets, analytics and split bills. Screenshots come from a development build. This is a progress update, not a new downloadable release." />
-        <a className="text-link" href="https://github.com/zostaje/zostaje/commit/fbe1fdd">GitHub · fbe1fdd ↗</a>
-      </section>
       <div className="container release-table-wrap">
         <table className="release-table history-table">
           <caption className="visually-hidden">{language === "pl" ? "Wersje, daty publikacji i wprowadzone zmiany" : "Versions, publication dates and changes"}</caption>
           <thead><tr><th scope="col">{language === "pl" ? "Wersja" : "Version"}</th><th scope="col">{language === "pl" ? "Data" : "Date"}</th><th scope="col">{language === "pl" ? "Co nowego" : "What’s new"}</th></tr></thead>
           <tbody>{releases.map(release => <tr key={release.version}>
-            <th scope="row"><a href={release.url}>{release.version} <span aria-hidden="true">↗</span></a><time className="release-mobile-date" dateTime={release.date}>{formatDate(release.date)}</time></th>
+            <th scope="row"><span>{release.version}</span><time className="release-mobile-date" dateTime={release.date}>{formatDate(release.date)}</time></th>
             <td><time dateTime={release.date}>{formatDate(release.date)}</time></td>
             <td><ul>{release[language].map(change => <li key={change}>{change}</li>)}</ul></td>
           </tr>)}</tbody>
         </table>
       </div>
-      <p className="container release-source"><T as="span" pl="Źródło historii: " en="History source: " /><a href="https://github.com/zostaje/zostaje/releases">GitHub Releases</a></p>
     </main>
     <LegacyFooter />
   </>;

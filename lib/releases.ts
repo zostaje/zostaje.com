@@ -1,16 +1,16 @@
 // Published application releases checked against github.com/zostaje/zostaje on 2026-10-19.
 // These releases have no downloadable installers attached. Update this list when publishing a release.
 export const releases = [
-  { version: "0.0.4-alpha", date: "2026-07-14", url: "https://github.com/zostaje/zostaje/releases/tag/v0.0.4-alpha",
+  { version: "0.0.4-alpha", date: "2026-07-14",
     pl: ["Aplikacja desktop działa lokalnie, bez logowania i serwera.", "Wybór folderu danych, konta, transakcje i pulpit.", "Konfiguracja pakowania dla macOS, Windows i Linux."],
     en: ["The desktop app works locally, without a login or server.", "Data folder selection, accounts, transactions and dashboard.", "Packaging configuration for macOS, Windows and Linux."] },
-  { version: "0.0.3-alpha", date: "2026-07-07", url: "https://github.com/zostaje/zostaje/releases/tag/v0.0.3-alpha",
+  { version: "0.0.3-alpha", date: "2026-07-07",
     pl: ["Model kont i działający widok dodawania kont.", "Walidacja danych i pierwsza powłoka desktopowa.", "Poprawki wersjonowania i zależności projektu."],
     en: ["Account model and a working add-account view.", "Data validation and the first desktop shell.", "Project versioning and dependency fixes."] },
-  { version: "0.0.2-alpha", date: "2026-06-27", url: "https://github.com/zostaje/zostaje/releases/tag/v0.0.2-alpha",
+  { version: "0.0.2-alpha", date: "2026-06-27",
     pl: ["Lista transakcji połączona z backendem.", "Panel użytkownika i powiadomienia.", "Dokumentacja kierunku rozwoju aplikacji lokalnej."],
     en: ["Transaction list connected to the backend.", "User panel and notifications.", "Documentation for the local-first direction."] },
-  { version: "0.0.1-alpha", date: "2026-06-05", url: "https://github.com/zostaje/zostaje/releases/tag/v0.0.1-alpha",
+  { version: "0.0.1-alpha", date: "2026-06-05",
     pl: ["Fundament projektu i struktura repozytorium.", "Pierwszy interfejs aplikacji i tłumaczenia PL/EN.", "Początkowa architektura i automatyczne kontrole jakości."],
     en: ["Project foundation and repository structure.", "First application interface and PL/EN translations.", "Initial architecture and automated quality checks."] },
 ] as const;
