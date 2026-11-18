@@ -29,19 +29,32 @@
           "name": "Zostaje",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "iOS",
-          "description": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS.",
+          "description": "Zostaje to rozwijana, darmowa aplikacja iOS do budżetu osobistego. Pokazuje pozostałą kwotę na dziś, tydzień i miesiąc oraz pomaga ograniczyć wysiłek zapisywania wydatków. Obecne MVP działa offline, bez konta.",
           "url": "https://zostaje.com/",
           "isAccessibleForFree": true,
           "publisher": {
             "@id": "https://zostaje.com/#organization"
-          }
+          },
+          "screenshot": [
+            "https://zostaje.com/screenshots/ios/dashboard.png",
+            "https://zostaje.com/screenshots/ios/receipt.png",
+            "https://zostaje.com/screenshots/ios/analytics.png"
+          ],
+          "featureList": [
+            "Praca offline bez konta",
+            "Szybkie wpisy",
+            "Lokalny odczyt paragonów",
+            "Przestrzenie finansowe",
+            "Analityka",
+            "Podział rachunków"
+          ]
         },
         {
           "@type": "WebPage",
           "@id": "https://zostaje.com/#webpage",
           "url": "https://zostaje.com/",
           "name": "Zostaje — darmowa aplikacja do budżetu i oszczędności",
-          "description": "Zaplanuj budżet do kolejnego wpływu, uwzględnij rachunki i odkładaj na cel. Darmowa aplikacja lokalna bez konta. MVP na iOS w rozwoju.",
+          "description": "Zobacz, ile Ci zostaje. Budżet osobisty offline na iOS: szybkie wpisy, odczyt paragonów, przestrzenie i analityka. Darmowa aplikacja w rozwoju, bez konta.",
           "inLanguage": "pl",
           "isPartOf": {
             "@id": "https://zostaje.com/#website"
@@ -63,7 +76,7 @@
               "name": "Czym jest Zostaje?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS."
+                "text": "Zostaje to rozwijana, darmowa aplikacja iOS do budżetu osobistego. Pokazuje pozostałą kwotę na dziś, tydzień i miesiąc oraz pomaga ograniczyć wysiłek zapisywania wydatków. Obecne MVP działa offline, bez konta."
               }
             },
             {
@@ -71,7 +84,7 @@
               "name": "Czy muszę wpisywać każdy wydatek?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Nie. Pierwszy plan opiera się na aktualnym saldzie, terminie kolejnego wpływu, nieopłaconych rachunkach i wybranych rezerwach. Historię można uzupełnić importem w opisanym formacie CSV. Automatyczne integracje bankowe są kierunkiem dalszego rozwoju."
+                "text": "Operacje nadal trzeba zapisać, ale nie musisz przepisywać całego paragonu. Możesz użyć szybkiego formularza, zrobić zdjęcie paragonu i sprawdzić odczytaną kwotę albo otworzyć dodawanie z widżetu. CSV i automatyczne integracje bankowe są dalszym rozwojem."
               }
             },
             {
@@ -79,7 +92,7 @@
               "name": "Co jest darmowe, a za co zapłacę?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, z możliwością podłączenia własnego AI. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu."
+                "text": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, a połączenie z AI jest planem dalszego rozwoju. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu."
               }
             },
             {

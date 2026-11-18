@@ -12,3 +12,18 @@
 @media (max-width: 800px) {
   .product-home .home-edition-grid, .product-home .home-faq-layout { grid-template-columns: 1fr; gap: 32px; }
 }
+
+.app-screenshot-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(20px,4vw,64px); max-width: 1020px; margin: 0 auto; align-items: start; }
+.app-screenshot-grid figure { margin: 0; min-width: 0; }
+.app-screenshot-grid img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: clamp(18px,3vw,38px); box-shadow: 0 18px 48px #0002; }
+.app-screenshot-grid a { display: block; border-radius: 24px; }
+.app-screenshot-grid a:focus-visible { outline: 3px solid var(--brand); outline-offset: 6px; }
+.app-screenshot-grid figcaption { margin-top: 18px; font-size: .85rem; line-height: 1.5; color: var(--text-secondary); }
+.app-screenshot-note { text-align: center; color: var(--text-muted); font-size: .75rem; margin: 28px 0 0; }
+.home-development-note { margin-top: 40px; color: var(--text-muted); line-height: 1.7; }
+.newsletter-visual .newsletter-app-screen { position: relative; display: block; width: 340px; height: auto; max-width: 90%; margin-inline: auto; border: 1px solid var(--line); border-radius: 36px; }
+@media(max-width:600px) {
+  .app-screenshot-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; padding: 4px 4px 24px; }
+  .app-screenshot-grid figure { flex: 0 0 74%; scroll-snap-align: center; }
+  .app-screenshot-note { text-align: left; line-height: 1.6; }
+}

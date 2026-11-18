@@ -17,6 +17,11 @@ export function ReleasesContent() {
         <T as="p" pl="Opublikowane wersje projektu i najważniejsze zmiany. Wydania alfa dokumentują rozwój aplikacji; nie oznaczają dostępności publicznego instalatora." en="Published project releases and their main changes. Alpha releases document the app’s development; they do not mean a public installer is available." />
         <T as="a" className="text-link" href="/download/" pl="← Wróć do pobierania" en="← Back to downloads" />
       </header>
+      <section className="container home-development-note" aria-labelledby="development-heading">
+        <T as="h2" id="development-heading" pl="Aktualnie w rozwoju: iOS" en="Currently in development: iOS" />
+        <T as="p" pl="Stan kodu sprawdzony 18 listopada 2026: praca offline, folder danych wybrany przez użytkownika, przestrzenie, szybkie wpisy, odczyt paragonu na urządzeniu, widżety, analityka i podział rachunków. Zrzuty pochodzą z wersji rozwojowej. To aktualizacja postępu, nie nowe wydanie do pobrania." en="Code checked on 18 November 2026: offline use, a user-selected data folder, spaces, quick entries, on-device receipt reading, widgets, analytics and split bills. Screenshots come from a development build. This is a progress update, not a new downloadable release." />
+        <a className="text-link" href="https://github.com/zostaje/zostaje/commit/fbe1fdd">GitHub · fbe1fdd ↗</a>
+      </section>
       <div className="container release-table-wrap">
         <table className="release-table history-table">
           <caption className="visually-hidden">{language === "pl" ? "Wersje, daty publikacji i wprowadzone zmiany" : "Versions, publication dates and changes"}</caption>

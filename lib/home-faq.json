@@ -5,8 +5,8 @@
       "en": "What is Zostaje?"
     },
     "answer": {
-      "pl": "Zostaje to rozwijana, darmowa aplikacja do planowania budżetu i oszczędności. Pomaga oszacować, ile zostaje do kolejnego wpływu po uwzględnieniu rachunków, własnego bufora i rezerwy na cel. Pierwsze MVP powstaje na iOS.",
-      "en": "Zostaje is a free budgeting and savings app in development. It helps estimate what remains until your next income after bills, your chosen buffer and a goal reserve. The first MVP is being built for iOS."
+      "pl": "Zostaje to rozwijana, darmowa aplikacja iOS do budżetu osobistego. Pokazuje pozostałą kwotę na dziś, tydzień i miesiąc oraz pomaga ograniczyć wysiłek zapisywania wydatków. Obecne MVP działa offline, bez konta.",
+      "en": "Zostaje is a free personal budgeting app in development for iOS. It shows remaining money for today, this week and this month while reducing the effort of recording expenses. The current MVP works offline without an account."
     }
   },
   {
@@ -15,8 +15,8 @@
       "en": "Do I have to enter every expense?"
     },
     "answer": {
-      "pl": "Nie. Pierwszy plan opiera się na aktualnym saldzie, terminie kolejnego wpływu, nieopłaconych rachunkach i wybranych rezerwach. Historię można uzupełnić importem w opisanym formacie CSV. Automatyczne integracje bankowe są kierunkiem dalszego rozwoju.",
-      "en": "No. Your first plan uses your current balance, next income date, unpaid bills and chosen reserves. History can be added using the documented CSV format. Automatic bank integrations are a future development direction."
+      "pl": "Operacje nadal trzeba zapisać, ale nie musisz przepisywać całego paragonu. Możesz użyć szybkiego formularza, zrobić zdjęcie paragonu i sprawdzić odczytaną kwotę albo otworzyć dodawanie z widżetu. CSV i automatyczne integracje bankowe są dalszym rozwojem.",
+      "en": "Operations still need to be recorded, but you do not have to copy a whole receipt. Use a quick form, photograph a receipt and review the recognized amount, or open capture from a widget. CSV and automatic bank integrations are future development."
     }
   },
   {
@@ -25,8 +25,8 @@
       "en": "What is free and what is paid?"
     },
     "answer": {
-      "pl": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, z możliwością podłączenia własnego AI. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu.",
-      "en": "The full local app is intended to be free, without a mandatory account, with the option to connect your own AI. Optional Premium includes managed AI and advanced analytics: PLN 39 per month or PLN 397.80 per year. Founders Edition is individually priced for businesses. Paid services are in development."
+      "pl": "Pełna aplikacja lokalna ma być darmowa, bez obowiązkowego konta, a połączenie z AI jest planem dalszego rozwoju. Opcjonalne Premium obejmuje obsługę AI przez nas i rozszerzoną analitykę: 39 zł miesięcznie lub 397,80 zł rocznie. Founders Edition to indywidualnie wyceniana wersja dla firm. Płatne usługi są w przygotowaniu.",
+      "en": "The full local app is intended to be free, without a mandatory account, with AI connections planned for future development. Optional Premium includes managed AI and advanced analytics: PLN 39 per month or PLN 397.80 per year. Founders Edition is individually priced for businesses. Paid services are in development."
     }
   },
   {

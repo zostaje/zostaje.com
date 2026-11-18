@@ -32,8 +32,8 @@ export function HelpContent() {
                 <T as="p" pl="Nie. Pierwsze zamknięte demo ma być bezpłatne i nie uruchomi automatycznej płatności." en="No. The first private demo is intended to be free and will not start an automatic payment." />
               </article>
               <article className="help-card">
-                <T as="h2" pl="Jakie platformy są planowane?" en="Which platforms are planned?" />
-                <T as="p" pl="Najpierw iOS w Swift. Później planujemy lekkie wersje na macOS i Windows, korzystające ze wspólnego backendu." en="First, iOS in Swift. Lightweight macOS and Windows versions using a shared backend are planned next." />
+                <T as="h2" pl="Co obejmuje aktualne MVP?" en="What does the current MVP include?" />
+                <T as="p" pl="Jedną aplikację offline na iPhone’a: szybkie wpisy, zdjęcia paragonów, widżety, przestrzenie, historię, analitykę i podział rachunków. Inne platformy są dalszym rozwojem." en="One offline iPhone app: quick entries, receipt photos, widgets, spaces, history, analytics and split bills. Other platforms are future development." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="Czym będzie Zostaje MCP?" en="What will Zostaje MCP be?" />
@@ -47,15 +47,15 @@ export function HelpContent() {
             <div className="help-grid">
               <article className="help-card">
                 <T as="h2" pl="1. Zbierz całość" en="1. Bring it together" />
-                <T as="p" pl="Salda, stałe opłaty, plany i codzienne wydatki mają spotykać się w jednym czytelnym widoku." en="Balances, recurring bills, plans and daily spending are intended to meet in one clear view." />
+                <T as="p" pl="Podaj saldo początkowe i dodawaj operacje formularzem, ze zdjęcia paragonu lub przez skrót z widżetu. Możesz tworzyć własne przestrzenie finansowe." en="Enter a starting balance and record operations using a form, receipt photo or widget shortcut. You can create your own financial spaces." />
               </article>
               <article className="help-card">
-                <T as="h2" pl="2. Poznaj bezpieczną kwotę" en="2. Know the safe amount" />
-                <T as="p" pl="Zostaje ma pokazywać, ile możesz wydać po uwzględnieniu rachunków, celów i nadchodzących płatności." en="Zostaje is intended to show how much you can spend after bills, goals and upcoming payments." />
+                <T as="h2" pl="2. Zobacz pozostałą kwotę" en="2. See your remaining money" />
+                <T as="p" pl="Widoki dnia, tygodnia i miesiąca pokazują pozostałą kwotę oraz status względem równego tempa wydawania. Wynik zależy od kompletności Twoich wpisów." en="Day, week and month views show remaining money and status against an even spending pace. The result depends on the completeness of your entries." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="3. Podejmij decyzję" en="3. Make a decision" />
-                <T as="p" pl="Przed zakupem widzisz jego wpływ na plan, zamiast analizować konsekwencje dopiero pod koniec miesiąca." en="Before a purchase, see its impact on the plan instead of reviewing the consequences at month end." />
+                <T as="p" pl="Sprawdź historię i analitykę. Wyjaśnienie statusu pokazuje, skąd bierze się ocena tempa wydawania; decyzja pozostaje po Twojej stronie." en="Check history and analytics. The status explanation shows how the spending-pace assessment is calculated; you make the decision." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="4. Wracaj na chwilę" en="4. Check in briefly" />

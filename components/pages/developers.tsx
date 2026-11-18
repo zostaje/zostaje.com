@@ -22,23 +22,23 @@ export function DevelopersContent() {
         </section>
         <section className="subpage-content">
           <div className="container">
-            <T as="p" pl="Projekt jest na wczesnym etapie. Publiczne API, MCP i narzędzia testowe opisane poniżej są planowanym kierunkiem, a nie gotową ofertą." en="The project is at an early stage. The public API, MCP and testing tools described below are planned direction, not a finished offering." className="developer-status" />
+            <T as="p" pl="Aktualne MVP to jedna aplikacja iOS działająca offline. Kod backendu i synchronizacji istnieje w repozytorium, ale nie jest podłączony do obecnego MVP. Integracje i MCP to osobny kierunek rozwoju." en="The current MVP is one offline iOS app. Backend and sync code exists in the repository but is not connected to this MVP. Integrations and MCP are a separate development direction." className="developer-status" />
             <div className="help-section-heading">
               <T as="h2" pl="Dla programistów" en="For developers" />
               <T as="p" pl="Interfejsy mają pozwalać rozwijać integracje bez łączenia ich bezpośrednio z interfejsem aplikacji." en="Interfaces are intended to support integrations without coupling them directly to the app UI." />
             </div>
             <div className="help-grid">
               <article className="help-card">
-                <T as="h2" pl="Wspólny backend" en="Shared backend" />
-                <T as="p" pl="Jedna logika danych i kont dla iOS, macOS i Windows. Kontrakty API zostaną opublikowane, gdy będą stabilne." en="One data and account layer for iOS, macOS and Windows. API contracts will be published once stable." />
+                <T as="h2" pl="Swift i obliczenia na urządzeniu" en="Swift and on-device calculations" />
+                <T as="p" pl="Interfejs powstaje w SwiftUI. Obliczenia finansowe działają lokalnie, a wspólne przypadki wzorcowe kontrolują zgodność reguł w Swift i TypeScript." en="The interface uses SwiftUI. Financial calculations run locally, with shared fixtures checking rule consistency in Swift and TypeScript." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="Publiczne MCP" en="Public MCP" />
                 <T as="p" pl="Planowany serwer MCP ma dawać kompatybilnym asystentom dostęp wyłącznie do zakresu danych zatwierdzonego przez użytkownika." en="The planned MCP server is intended to give compatible assistants access only to data scopes approved by the user." />
               </article>
               <article className="help-card">
-                <T as="h2" pl="Integracje i automatyzacje" en="Integrations and automations" />
-                <T as="p" pl="Przyszłe integracje mają korzystać z udokumentowanych uprawnień, wersjonowanych kontraktów i możliwości cofnięcia dostępu." en="Future integrations are intended to use documented permissions, versioned contracts and revocable access." />
+                <T as="h2" pl="Folder danych użytkownika" en="User-selected data folder" />
+                <T as="p" pl="Dane są zapisywane w folderze wskazanym przy uruchomieniu: manifest, przestrzenie, kategorie i wpisy w plikach JSON oraz NDJSON. MVP nie wysyła tych danych na serwer." en="Data is saved in a folder selected at startup: manifest, spaces, categories and entries in JSON and NDJSON files. The MVP does not send this data to a server." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="Repozytoria publiczne" en="Public repositories" />
@@ -60,7 +60,7 @@ export function DevelopersContent() {
               </article>
               <article className="help-card">
                 <T as="h2" pl="Testy prywatności" en="Privacy testing" />
-                <T as="p" pl="Szczególną uwagę poświęcimy zgodom, ograniczeniom dostępu, usuwaniu danych i wycofywaniu integracji." en="Special attention will go to consent, access limits, data deletion and integration revocation." />
+                <T as="p" pl="Sprawdzamy działanie bez sieci, lokalny odczyt paragonu, dostęp do wybranego folderu i ochronę danych przy błędach odczytu." en="We check offline operation, on-device receipt reading, access to the selected folder and data protection when a read fails." />
               </article>
               <article className="help-card">
                 <T as="h2" pl="Informacja zwrotna" en="Product feedback" />

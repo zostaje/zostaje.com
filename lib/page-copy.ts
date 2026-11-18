@@ -7,8 +7,8 @@ export const pageCopy = {
       "en": "Zostaje — free budgeting and savings app"
     },
     "description": {
-      "pl": "Zaplanuj budżet do kolejnego wpływu, uwzględnij rachunki i odkładaj na cel. Darmowa aplikacja lokalna bez konta. MVP na iOS w rozwoju.",
-      "en": "Plan your budget until your next income, account for bills and save towards a goal. Free local app without an account. iOS MVP in development."
+      "pl": "Zobacz, ile Ci zostaje. Budżet osobisty offline na iOS: szybkie wpisy, odczyt paragonów, przestrzenie i analityka. Darmowa aplikacja w rozwoju, bez konta.",
+      "en": "See what you have left. Offline iOS budgeting: quick entries, receipt reading, spaces and analytics. A free app in development, without an account."
     },
     "path": "/"
   },

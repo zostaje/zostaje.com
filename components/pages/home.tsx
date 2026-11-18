@@ -1,7 +1,8 @@
 "use client";
 
 import { T, HeroHeading, useSite } from "@/components/site-provider";
-import { ProductPreview, PhonePreview } from "@/components/product-preview";
+import Image from "next/image";
+import { AppScreenshots } from "@/components/app-screenshots";
 import { DemoSignupForm } from "@/components/demo-signup-form";
 import { SiteHeader, MinimalFooter } from "@/components/site-chrome";
 
@@ -19,13 +20,13 @@ export function HomeContent() {
             <div className="hero-copy">
               <T as="p" pl="Darmowa aplikacja do budżetu · MVP na iOS w rozwoju" en="Free budgeting app · iOS MVP in development" className="status-pill" />
               <HeroHeading />
-              <T as="p" pl="Zostaje pomaga planować budżet i oszczędności bez wpisywania każdego zakupu. Uwzględnij rachunki, zostaw własny bufor i zobacz, ile możesz odłożyć. Zrozum swoje pieniądze i sam zdecyduj, co dalej." en="Zostaje helps you plan your budget and savings without logging every purchase. Account for bills, keep your own buffer and see what you could set aside. Understand your money and decide what comes next." className="hero-lead" />
+              <T as="p" pl="Szybki wpis, zdjęcie paragonu albo widżet — mniej pracy przy dodawaniu wydatków. Zostaje pokazuje, ile masz do dyspozycji dziś, w tygodniu i w miesiącu. Bez konta. Bez wysyłania danych na serwer." en="A quick entry, receipt photo or widget — less effort to record expenses. Zostaje shows what you have left today, this week and this month. No account. No data sent to a server." className="hero-lead" />
               <div className="hero-actions">
                 <T as="a" pl="Zapisz się na demo" en="Join the demo" className="button button-primary" href="#demo" />
                 <T as="a" pl="Jak to działa ↓" en="How it works ↓" className="text-link" href="#jak-dziala" />
               </div>
             </div>
-            <ProductPreview />
+            <AppScreenshots />
           </div>
         </section>
         <section className="trust-strip" aria-label={language === "pl" ? "Najważniejsze cechy" : "Key features"}>
@@ -36,7 +37,7 @@ export function HomeContent() {
             </p>
             <p>
               <T as="strong" pl="Na Twoich zasadach" en="On your terms" />
-              <T as="span" pl="samodzielnie wybierasz rezerwy" en="you choose your reserves" />
+              <T as="span" pl="własne przestrzenie i folder danych" en="your own spaces and data folder" />
             </p>
             <p>
               <T as="strong" pl="Z wyjaśnieniem" en="With an explanation" />
@@ -55,75 +56,44 @@ export function HomeContent() {
                 {"01"}
               </span>
               <T as="h3" pl="Zacznij od salda" en="Start with your balance" />
-              <T as="p" pl="Podaj saldo, termin kolejnego wpływu i nieopłacone rachunki. Pełna historia zakupów nie jest potrzebna do pierwszego planu." en="Enter your balance, next income date and unpaid bills. A full purchase history is not needed for your first plan." />
+              <T as="p" pl="Wybierz folder na dane i podaj saldo początkowe. Oddziel konto, gotówkę czy inne pieniądze we własnych przestrzeniach." en="Choose your data folder and enter a starting balance. Keep accounts, cash and other funds in spaces you create." />
             </article>
             <article className="step-card featured">
               <span className="step-number">
                 {"02"}
               </span>
-              <T as="h3" pl="Sprawdź, ile zostaje" en="See what’s left" />
-              <T as="p" pl="Zobacz kwotę po odjęciu rachunków, bufora i rezerwy na cel. Rozwiń wyjaśnienie, żeby sprawdzić obliczenie." en="See the amount after bills, your buffer and goal reserve. Open the explanation to check the calculation." />
+              <T as="h3" pl="Dodaj wydatek bez rozpisywania" en="Record an expense with less typing" />
+              <T as="p" pl="Użyj krótkiego formularza, zdjęcia paragonu lub skrótu z widżetu. Odczytaną kwotę sprawdzasz przed zapisaniem." en="Use a quick form, a receipt photo or a widget shortcut. Check the recognized amount before saving." />
             </article>
             <article className="step-card ">
               <span className="step-number">
                 {"03"}
               </span>
-              <T as="h3" pl="Zobacz własny scenariusz" en="Explore your own scenario" />
-              <T as="p" pl="Ustal cel i miesięczną wpłatę. Zmień horyzont i zobacz sumę wpłat oraz orientacyjny czas do celu." en="Set a goal and monthly contribution. Change the horizon to see total contributions and estimated time to your goal." />
+              <T as="h3" pl="Zrozum, ile Ci zostaje" en="Understand what you have left" />
+              <T as="p" pl="Przełącz dzień, tydzień lub miesiąc. Zobacz historię, analitykę i wyjaśnienie statusu względem równego tempa wydawania." en="Switch between today, this week and this month. Review history, analytics and an explanation of your status against an even spending pace." />
             </article>
           </div>
         </section>
         <section className="section feature-section" id="funkcje">
-          <div className="container section-heading-row">
-            <div>
-              <T as="h2" pl="Mniej przepisywania. Więcej zrozumienia." en="Less typing. More understanding." />
-            </div>
-            <T as="p" pl="MVP skupia się na planie, historii i jednym celu oszczędnościowym. Kolejne funkcje rozwijamy etapami." en="The MVP focuses on a plan, history and one savings goal. Further features are being developed in stages." />
+          <div className="container narrow-heading">
+            <T as="h2" pl="Mniej przepisywania. Więcej zrozumienia." en="Less typing. More understanding." />
+            <T as="p" pl="Aktualne MVP skupia się na jednej aplikacji na iPhone’a, działającej offline. To funkcje już obecne w kodzie — publiczne instalatory są jeszcze w przygotowaniu." en="The current MVP focuses on one offline iPhone app. These features are already in the code; public installers are still in preparation." />
           </div>
-          <div className="container feature-grid">
-            <article className="feature-card feature-large">
-              <div className="feature-copy">
-                <T as="h3" pl="Historia z pliku CSV" en="History from a CSV file" />
-                <T as="p" pl="Import ma podgląd, edycję kategorii i wykrywanie możliwych duplikatów. Import obsługuje opisany format CSV. Automatyczne połączenia z bankami to przyszły kierunek rozwoju." en="Import includes a preview, category editing and possible duplicate detection. Import supports a documented CSV format. Automatic bank connections are a future direction." />
-              </div>
-              <div className="mini-panel">
-                <div>
-                  <T as="span" pl="Saldo" en="Balance" />
-                  <strong>
-                    {"5 000 zł"}
-                  </strong>
-                </div>
-                <div>
-                  <T as="span" pl="Rachunki" en="Bills" />
-                  <strong>
-                    {"− 2 400 zł"}
-                  </strong>
-                </div>
-                <div>
-                  <T as="span" pl="Bufor i cel" en="Buffer and goal" />
-                  <strong>
-                    {"− 800 zł"}
-                  </strong>
-                </div>
-                <div className="panel-total">
-                  <T as="span" pl="Zostaje" en="Remaining" />
-                  <strong>
-                    {"1 800 zł"}
-                  </strong>
-                </div>
-              </div>
+          <div className="container home-edition-grid">
+            <article>
+              <T as="h3" pl="Paragon odczytany na telefonie" en="Receipt reading on your phone" />
+              <T as="p" pl="Zrób zdjęcie paragonu. Aplikacja odczyta tekst i zaproponuje kwotę, którą możesz poprawić przed zapisem. Rozpoznawanie działa na urządzeniu, bez wysyłania zdjęcia do AI." en="Take a receipt photo. The app reads the text and proposes an amount you can correct before saving. Recognition runs on the device, without sending the photo to an AI service." />
             </article>
-            <article className="feature-card savings-feature">
-              <T as="h3" pl="Mała kwota, dłuższy horyzont" en="A small amount, a longer horizon" />
-              <T as="p" pl="300 zł miesięcznie przez 10 lat to 36 000 zł samych wpłat. Symulacja pokazuje Twoje założenia, bez obietnic zysku." en="300 zł a month for 10 years means 36,000 zł in contributions alone. The simulation shows your assumptions, without promises of returns." />
-              <div className="savings-visual" aria-hidden="true"><span>300 zł × 120</span><strong>36 000 <small>zł</small></strong><div className="savings-columns">{Array.from({ length: 10 }, (_, i) => <i key={i} style={{ height: `${18 + i * 8}%` }} />)}</div></div>
+            <article>
+              <T as="h3" pl="Twoje pieniądze w osobnych przestrzeniach" en="Separate spaces for your money" />
+              <T as="p" pl="Konto, gotówka, wspólny wyjazd — sam nadajesz nazwy przestrzeniom. Każda ma własne saldo i wpisy, a widok całości pokazuje ich sumę. Widżety pomagają szybko wrócić do dodawania wydatku." en="An account, cash, a shared trip — you name your spaces. Each has its own balance and entries, while the overall view shows their total. Widgets help you jump back to recording an expense." />
             </article>
-            <article className="feature-card context-feature">
-              <T as="h3" pl="Wynik z kontekstem" en="A result with context" />
-              <T as="p" pl="Saldo i historia wydatków to różne rzeczy. Krótkie wyjaśnienia pomagają zrozumieć rezerwy, bufor i regularne odkładanie." en="Balance and spending history are different things. Short explanations help you understand reserves, a buffer and regular saving." />
-              <div className="context-visual"><span aria-hidden="true">=</span><T as="p" pl="Saldo − rachunki − bufor − cel" en="Balance − bills − buffer − goal" /><strong>1 800 zł</strong></div>
+            <article>
+              <T as="h3" pl="Podziel rachunek i pamiętaj o zwrotach" en="Split a bill and track repayments" />
+              <T as="p" pl="Zapisz, z kim dzielisz rachunek i kto oddał swoją część. Opcjonalne lokalne przypomnienie pomoże wrócić do nierozliczonych kwot. Oznaczenie zwrotu nie wykonuje przelewu ani nie zmienia automatycznie salda." en="Record who shares a bill and who has paid their part back. An optional local reminder helps you revisit unsettled amounts. Marking a repayment does not transfer money or automatically change the balance." />
             </article>
           </div>
+          <p className="container home-development-note"><T as="span" pl="Dalszy rozwój: import CSV, koszty cykliczne, integracje bankowe i synchronizacja. Nie są częścią obecnego MVP. " en="Future development: CSV import, recurring costs, bank connections and synchronization. They are not part of the current MVP. " /><T as="a" className="text-link" href="/releases/" pl="Zobacz, co się zmieniło →" en="See what changed →" /></p>
         </section>
         <section className="section security-section" id="bezpieczenstwo">
           <div className="container security-panel">
@@ -131,8 +101,8 @@ export function HomeContent() {
               <T as="h2" pl="Twoje dane zostają u Ciebie." en="Your data stays with you." />
             </div>
             <div className="security-copy">
-              <T as="p" pl="Darmowa wersja osobista powstaje z myślą o pracy lokalnej, bez obowiązkowego konta. Planowanie budżetu nie wymaga połączenia z AI. Jeśli zechcesz je podłączyć, sam wybierzesz zakres udostępnianych danych." en="The free personal edition is being built to work locally, without a mandatory account. Budget planning does not require AI. If you choose to connect it, you decide which data to share." />
-              <T as="p" pl="Wynik jest szacunkiem na podstawie podanych danych. Nieznane wydatki mogą go zmienić, a wpisanie celu nie wykonuje przelewu." en="The result is an estimate based on your inputs. Unknown expenses may change it, and entering a goal does not make a transfer." className="security-note" />
+              <T as="p" pl="Obecne MVP działa offline: bez konta, synchronizacji, telemetrii i zdalnego AI. Dane zapisujesz w wybranym folderze. Także odczyt tekstu paragonu i obliczenia odbywają się na iPhonie." en="The current MVP works offline: no account, sync, telemetry or remote AI. Your data is stored in a folder you choose. Receipt text recognition and calculations also run on your iPhone." />
+              <T as="p" pl="Kwoty zależą od wpisanego salda i zapisanych operacji. Pominięty wydatek zmienia obraz sytuacji. Status opisuje tempo wydawania, a nie gwarancję finansowego bezpieczeństwa." en="Amounts depend on the balance and operations you record. A missing expense changes the picture. Status describes spending pace, not a guarantee of financial security." className="security-note" />
             </div>
           </div>
         </section>
@@ -144,7 +114,7 @@ export function HomeContent() {
           <div className="container home-edition-grid">
             <article>
               <T as="h3" pl="Twój budżet, Twoje urządzenie" en="Your budget, your device" />
-              <T as="p" pl="Plan, historia i oszczędności bez abonamentu. Pierwsza wersja na iOS; status pozostałych platform znajdziesz na stronie pobierania." en="Planning, history and savings without a subscription. The first version is for iOS; check the download page for other platforms." />
+              <T as="p" pl="Lokalny budżet, historia i analityka bez abonamentu. Pierwsza wersja na iOS; pozostałe platformy i funkcje rozszerzone rozwijamy osobno." en="Local budgeting, history and analytics without a subscription. The first version is for iOS; other platforms and extended features are separate development directions." />
               <T as="a" className="text-link" href="/download/" pl="Sprawdź dostępność →" en="Check availability →" />
             </article>
             <article>
@@ -186,7 +156,7 @@ export function HomeContent() {
               <DemoSignupForm />
             </div>
             <div className="newsletter-visual" aria-hidden="true">
-              <PhonePreview />
+              <Image className="newsletter-app-screen" src="/screenshots/ios/dashboard.png" width={1206} height={2622} sizes="(max-width: 800px) 80vw, 340px" alt="" />
             </div>
           </div>
         </section>

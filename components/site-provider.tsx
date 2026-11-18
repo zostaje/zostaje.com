@@ -145,8 +145,8 @@ export function T({ as, pl, en, ...props }: TranslationProps) {
 export function HeroHeading() {
   const { language } = useSite();
   return language === "pl"
-    ? <h1>Zobacz, ile <em>zostaje.</em><span>Do kolejnego wpływu.</span></h1>
-    : <h1>See what’s <em>left.</em><span>Until your next income.</span></h1>;
+    ? <h1>Zobacz, ile Ci <em>zostaje.</em><span>Decyduj po swojemu.</span></h1>
+    : <h1>See what you have <em>left.</em><span>Decide on your terms.</span></h1>;
 }
 export function LanguageLabel({ fullName = false }: { fullName?: boolean }) {
   const { language } = useSite();
